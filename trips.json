@@ -36,6 +36,19 @@
         "2026-08-28"
       ],
       "active": true
+    },
+    {
+      "id": "little-rock-gurdon-0724",
+      "type": "open",
+      "label": "Little Rock - Gurdon",
+      "dest": "LIT",
+      "airlines": [
+        "UA",
+        "DL",
+        "AA"
+      ],
+      "active": true,
+      "weeks_ahead": 12
     }
   ]
 }
