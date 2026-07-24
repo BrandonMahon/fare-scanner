@@ -725,3 +725,16 @@ scan_date,trip,dest,dep,ret,combo,cabin,airline,price
 2026-07-24,englehart-aug,YYZ,2026-08-24,2026-08-27,Mon-Thu,economy,UA,631
 2026-07-24,englehart-aug,YYZ,2026-08-24,2026-08-28,Mon-Fri,economy,AA,591
 2026-07-24,englehart-aug,YYZ,2026-08-24,2026-08-28,Mon-Fri,first,DL,1292
+2026-07-24,englehart-aug,YYZ,2026-08-23,2026-08-27,Sun-Thu,economy,AA,493
+2026-07-24,englehart-aug,YYZ,2026-08-23,2026-08-27,Sun-Thu,economy,DL,493
+2026-07-24,englehart-aug,YYZ,2026-08-23,2026-08-27,Sun-Thu,first,AA,954
+2026-07-24,englehart-aug,YYZ,2026-08-23,2026-08-27,Sun-Thu,first,DL,1068
+2026-07-24,englehart-aug,YYZ,2026-08-23,2026-08-27,Sun-Thu,first,UA,1106
+2026-07-24,englehart-aug,YYZ,2026-08-23,2026-08-28,Sun-Fri,economy,AA,492
+2026-07-24,englehart-aug,YYZ,2026-08-23,2026-08-28,Sun-Fri,economy,DL,492
+2026-07-24,englehart-aug,YYZ,2026-08-23,2026-08-28,Sun-Fri,first,AA,954
+2026-07-24,englehart-aug,YYZ,2026-08-23,2026-08-28,Sun-Fri,first,DL,1068
+2026-07-24,englehart-aug,YYZ,2026-08-23,2026-08-28,Sun-Fri,first,UA,1106
+2026-07-24,englehart-aug,YYZ,2026-08-24,2026-08-27,Mon-Thu,economy,AA,591
+2026-07-24,englehart-aug,YYZ,2026-08-24,2026-08-28,Mon-Fri,economy,AA,591
+2026-07-24,englehart-aug,YYZ,2026-08-24,2026-08-28,Mon-Fri,first,DL,1292

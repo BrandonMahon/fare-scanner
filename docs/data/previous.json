@@ -20161,7 +20161,7 @@
     "AA",
     "AC"
    ],
-   "scanned_at": "2026-07-23",
+   "scanned_at": "2026-07-24",
    "entries": [
     {
      "dep": "2026-08-23",
@@ -20171,23 +20171,20 @@
      "cabins": {
       "economy": {
        "best": {
-        "DL": 552,
-        "AA": 552,
-        "UA": 706
+        "DL": 492,
+        "AA": 492
        },
        "low": {
-        "DL": 552,
-        "AA": 552,
-        "UA": 706
+        "DL": 492,
+        "AA": 492
        },
        "at_low": {
         "DL": true,
-        "AA": true,
-        "UA": true
+        "AA": true
        },
        "options": [
         {
-         "price": 552,
+         "price": 492,
          "airlines": [
           "DL"
          ],
@@ -20212,7 +20209,32 @@
          "arr_iso": "2026-08-23T10:25"
         },
         {
-         "price": 552,
+         "price": 492,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DCA",
+           "dep": "07:08",
+           "arr": "09:00"
+          },
+          {
+           "from": "DCA",
+           "to": "YYZ",
+           "dep": "11:42",
+           "arr": "13:26"
+          }
+         ],
+         "layovers": [
+          162
+         ],
+         "arr_iso": "2026-08-23T13:26"
+        },
+        {
+         "price": 492,
          "airlines": [
           "AA"
          ],
@@ -20237,7 +20259,7 @@
          "arr_iso": "2026-08-23T15:41"
         },
         {
-         "price": 552,
+         "price": 492,
          "airlines": [
           "DL"
          ],
@@ -20262,7 +20284,7 @@
          "arr_iso": "2026-08-23T17:19"
         },
         {
-         "price": 552,
+         "price": 492,
          "airlines": [
           "AA"
          ],
@@ -20287,7 +20309,7 @@
          "arr_iso": "2026-08-23T22:35"
         },
         {
-         "price": 552,
+         "price": 492,
          "airlines": [
           "DL"
          ],
@@ -20312,7 +20334,7 @@
          "arr_iso": "2026-08-23T23:03"
         },
         {
-         "price": 700,
+         "price": 492,
          "airlines": [
           "AA"
          ],
@@ -20321,71 +20343,45 @@
           {
            "from": "GSP",
            "to": "CLT",
-           "dep": "14:36",
-           "arr": "15:52"
+           "dep": "20:20",
+           "arr": "21:23"
           },
           {
            "from": "CLT",
            "to": "YYZ",
-           "dep": "16:31",
-           "arr": "18:44"
+           "dep": "09:01",
+           "arr": "11:10"
           }
          ],
          "layovers": [
-          39
+          698
          ],
-         "arr_iso": "2026-08-23T18:44"
+         "arr_iso": "2026-08-24T11:10"
         },
         {
-         "price": 706,
+         "price": 552,
          "airlines": [
-          "UA"
+          "DL"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "IAD",
-           "dep": "15:01",
-           "arr": "16:33"
+           "to": "ATL",
+           "dep": "17:20",
+           "arr": "18:25"
           },
           {
-           "from": "IAD",
+           "from": "ATL",
            "to": "YYZ",
-           "dep": "17:17",
-           "arr": "19:02"
+           "dep": "19:35",
+           "arr": "21:59"
           }
          ],
          "layovers": [
-          44
+          70
          ],
-         "arr_iso": "2026-08-23T19:02"
-        },
-        {
-         "price": 832,
-         "airlines": [
-          "UA",
-          "AC"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "EWR",
-           "dep": "20:29",
-           "arr": "22:35"
-          },
-          {
-           "from": "EWR",
-           "to": "YYZ",
-           "dep": "06:30",
-           "arr": "08:11"
-          }
-         ],
-         "layovers": [
-          475
-         ],
-         "arr_iso": "2026-08-24T08:11"
+         "arr_iso": "2026-08-23T21:59"
         }
        ]
       },
@@ -20393,7 +20389,7 @@
        "best": {
         "AA": 954,
         "DL": 1068,
-        "UA": 1076
+        "UA": 1106
        },
        "low": {
         "AA": 954,
@@ -20403,7 +20399,7 @@
        "at_low": {
         "AA": true,
         "DL": true,
-        "UA": true
+        "UA": false
        },
        "options": [
         {
@@ -20415,21 +20411,21 @@
          "legs": [
           {
            "from": "GSP",
-           "to": "DCA",
-           "dep": "07:08",
-           "arr": "09:00"
+           "to": "PHL",
+           "dep": "07:57",
+           "arr": "09:49"
           },
           {
-           "from": "DCA",
+           "from": "PHL",
            "to": "YYZ",
-           "dep": "11:42",
-           "arr": "13:26"
+           "dep": "15:29",
+           "arr": "17:18"
           }
          ],
          "layovers": [
-          162
+          340
          ],
-         "arr_iso": "2026-08-23T13:26"
+         "arr_iso": "2026-08-23T17:18"
         },
         {
          "price": 1022,
@@ -20466,45 +20462,45 @@
           {
            "from": "GSP",
            "to": "ATL",
-           "dep": "05:46",
-           "arr": "06:45"
+           "dep": "17:20",
+           "arr": "18:25"
           },
           {
            "from": "ATL",
            "to": "YYZ",
-           "dep": "08:05",
-           "arr": "10:25"
+           "dep": "19:35",
+           "arr": "21:59"
           }
          ],
          "layovers": [
-          80
+          70
          ],
-         "arr_iso": "2026-08-23T10:25"
+         "arr_iso": "2026-08-23T21:59"
         },
         {
-         "price": 1076,
+         "price": 1068,
          "airlines": [
-          "UA"
+          "DL"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "EWR",
-           "dep": "07:00",
-           "arr": "08:59"
+           "to": "DTW",
+           "dep": "18:58",
+           "arr": "20:49"
           },
           {
-           "from": "EWR",
+           "from": "DTW",
            "to": "YYZ",
-           "dep": "09:59",
-           "arr": "11:43"
+           "dep": "21:39",
+           "arr": "23:03"
           }
          ],
          "layovers": [
-          60
+          50
          ],
-         "arr_iso": "2026-08-23T11:43"
+         "arr_iso": "2026-08-23T23:03"
         },
         {
          "price": 1106,
@@ -20543,23 +20539,20 @@
      "cabins": {
       "economy": {
        "best": {
-        "DL": 552,
-        "AA": 552,
-        "UA": 706
+        "DL": 493,
+        "AA": 493
        },
        "low": {
-        "DL": 552,
-        "AA": 552,
-        "UA": 706
+        "DL": 493,
+        "AA": 493
        },
        "at_low": {
         "DL": true,
-        "AA": true,
-        "UA": true
+        "AA": true
        },
        "options": [
         {
-         "price": 552,
+         "price": 493,
          "airlines": [
           "DL"
          ],
@@ -20584,7 +20577,32 @@
          "arr_iso": "2026-08-23T10:25"
         },
         {
-         "price": 552,
+         "price": 493,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DCA",
+           "dep": "07:08",
+           "arr": "09:00"
+          },
+          {
+           "from": "DCA",
+           "to": "YYZ",
+           "dep": "11:42",
+           "arr": "13:26"
+          }
+         ],
+         "layovers": [
+          162
+         ],
+         "arr_iso": "2026-08-23T13:26"
+        },
+        {
+         "price": 493,
          "airlines": [
           "AA"
          ],
@@ -20609,7 +20627,7 @@
          "arr_iso": "2026-08-23T15:41"
         },
         {
-         "price": 552,
+         "price": 493,
          "airlines": [
           "DL"
          ],
@@ -20634,7 +20652,7 @@
          "arr_iso": "2026-08-23T17:19"
         },
         {
-         "price": 552,
+         "price": 493,
          "airlines": [
           "AA"
          ],
@@ -20659,7 +20677,7 @@
          "arr_iso": "2026-08-23T22:35"
         },
         {
-         "price": 552,
+         "price": 493,
          "airlines": [
           "DL"
          ],
@@ -20684,7 +20702,7 @@
          "arr_iso": "2026-08-23T23:03"
         },
         {
-         "price": 700,
+         "price": 493,
          "airlines": [
           "AA"
          ],
@@ -20693,71 +20711,45 @@
           {
            "from": "GSP",
            "to": "CLT",
-           "dep": "14:36",
-           "arr": "15:52"
+           "dep": "20:20",
+           "arr": "21:23"
           },
           {
            "from": "CLT",
            "to": "YYZ",
-           "dep": "16:31",
-           "arr": "18:44"
+           "dep": "09:01",
+           "arr": "11:10"
           }
          ],
          "layovers": [
-          39
+          698
          ],
-         "arr_iso": "2026-08-23T18:44"
+         "arr_iso": "2026-08-24T11:10"
         },
         {
-         "price": 706,
+         "price": 552,
          "airlines": [
-          "UA"
+          "DL"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "IAD",
-           "dep": "15:01",
-           "arr": "16:33"
+           "to": "ATL",
+           "dep": "17:20",
+           "arr": "18:25"
           },
           {
-           "from": "IAD",
+           "from": "ATL",
            "to": "YYZ",
-           "dep": "17:17",
-           "arr": "19:02"
+           "dep": "19:35",
+           "arr": "21:59"
           }
          ],
          "layovers": [
-          44
+          70
          ],
-         "arr_iso": "2026-08-23T19:02"
-        },
-        {
-         "price": 773,
-         "airlines": [
-          "UA",
-          "AC"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "EWR",
-           "dep": "20:29",
-           "arr": "22:35"
-          },
-          {
-           "from": "EWR",
-           "to": "YYZ",
-           "dep": "06:30",
-           "arr": "08:11"
-          }
-         ],
-         "layovers": [
-          475
-         ],
-         "arr_iso": "2026-08-24T08:11"
+         "arr_iso": "2026-08-23T21:59"
         }
        ]
       },
@@ -20765,7 +20757,7 @@
        "best": {
         "AA": 954,
         "DL": 1068,
-        "UA": 1076
+        "UA": 1106
        },
        "low": {
         "AA": 954,
@@ -20775,7 +20767,7 @@
        "at_low": {
         "AA": true,
         "DL": true,
-        "UA": true
+        "UA": false
        },
        "options": [
         {
@@ -20787,21 +20779,21 @@
          "legs": [
           {
            "from": "GSP",
-           "to": "DCA",
-           "dep": "07:08",
-           "arr": "09:00"
+           "to": "PHL",
+           "dep": "07:57",
+           "arr": "09:49"
           },
           {
-           "from": "DCA",
+           "from": "PHL",
            "to": "YYZ",
-           "dep": "11:42",
-           "arr": "13:26"
+           "dep": "15:29",
+           "arr": "17:18"
           }
          ],
          "layovers": [
-          162
+          340
          ],
-         "arr_iso": "2026-08-23T13:26"
+         "arr_iso": "2026-08-23T17:18"
         },
         {
          "price": 1022,
@@ -20838,45 +20830,45 @@
           {
            "from": "GSP",
            "to": "ATL",
-           "dep": "05:46",
-           "arr": "06:45"
+           "dep": "17:20",
+           "arr": "18:25"
           },
           {
            "from": "ATL",
            "to": "YYZ",
-           "dep": "08:05",
-           "arr": "10:25"
+           "dep": "19:35",
+           "arr": "21:59"
           }
          ],
          "layovers": [
-          80
+          70
          ],
-         "arr_iso": "2026-08-23T10:25"
+         "arr_iso": "2026-08-23T21:59"
         },
         {
-         "price": 1076,
+         "price": 1068,
          "airlines": [
-          "UA"
+          "DL"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "EWR",
-           "dep": "07:00",
-           "arr": "08:59"
+           "to": "DTW",
+           "dep": "18:58",
+           "arr": "20:49"
           },
           {
-           "from": "EWR",
+           "from": "DTW",
            "to": "YYZ",
-           "dep": "09:59",
-           "arr": "11:43"
+           "dep": "21:39",
+           "arr": "23:03"
           }
          ],
          "layovers": [
-          60
+          50
          ],
-         "arr_iso": "2026-08-23T11:43"
+         "arr_iso": "2026-08-23T23:03"
         },
         {
          "price": 1106,
@@ -20909,15 +20901,178 @@
     },
     {
      "dep": "2026-08-24",
+     "ret": "2026-08-27",
+     "label": "Mon-Thu",
+     "nights": 3,
+     "cabins": {
+      "economy": {
+       "best": {
+        "AA": 591,
+        "UA": 631
+       },
+       "low": {
+        "AA": 591,
+        "UA": 631
+       },
+       "at_low": {
+        "AA": true,
+        "UA": true
+       },
+       "options": [
+        {
+         "price": 591,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "CLT",
+           "dep": "06:00",
+           "arr": "07:16"
+          },
+          {
+           "from": "CLT",
+           "to": "YYZ",
+           "dep": "09:01",
+           "arr": "11:10"
+          }
+         ],
+         "layovers": [
+          105
+         ],
+         "arr_iso": "2026-08-24T11:10"
+        },
+        {
+         "price": 591,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DCA",
+           "dep": "06:27",
+           "arr": "08:14"
+          },
+          {
+           "from": "DCA",
+           "to": "YYZ",
+           "dep": "10:15",
+           "arr": "11:59"
+          }
+         ],
+         "layovers": [
+          121
+         ],
+         "arr_iso": "2026-08-24T11:59"
+        },
+        {
+         "price": 631,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "EWR",
+           "dep": "07:00",
+           "arr": "08:59"
+          },
+          {
+           "from": "EWR",
+           "to": "YYZ",
+           "dep": "09:59",
+           "arr": "11:43"
+          }
+         ],
+         "layovers": [
+          60
+         ],
+         "arr_iso": "2026-08-24T11:43"
+        }
+       ]
+      },
+      "first": {
+       "best": {},
+       "low": {},
+       "at_low": {},
+       "options": []
+      }
+     },
+     "arrive_by": "12:00"
+    },
+    {
+     "dep": "2026-08-24",
      "ret": "2026-08-28",
      "label": "Mon-Fri",
      "nights": 4,
      "cabins": {
       "economy": {
-       "best": {},
-       "low": {},
-       "at_low": {},
-       "options": []
+       "best": {
+        "AA": 591
+       },
+       "low": {
+        "AA": 591
+       },
+       "at_low": {
+        "AA": true
+       },
+       "options": [
+        {
+         "price": 591,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "CLT",
+           "dep": "06:00",
+           "arr": "07:16"
+          },
+          {
+           "from": "CLT",
+           "to": "YYZ",
+           "dep": "09:01",
+           "arr": "11:10"
+          }
+         ],
+         "layovers": [
+          105
+         ],
+         "arr_iso": "2026-08-24T11:10"
+        },
+        {
+         "price": 591,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DCA",
+           "dep": "06:27",
+           "arr": "08:14"
+          },
+          {
+           "from": "DCA",
+           "to": "YYZ",
+           "dep": "10:15",
+           "arr": "11:59"
+          }
+         ],
+         "layovers": [
+          121
+         ],
+         "arr_iso": "2026-08-24T11:59"
+        }
+       ]
       },
       "first": {
        "best": {
