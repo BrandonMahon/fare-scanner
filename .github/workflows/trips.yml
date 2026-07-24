@@ -1,0 +1,85 @@
+name: Manage trips
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "What to do"
+        required: true
+        type: choice
+        options: [add_open, add_anchored, retire]
+      dest:
+        description: "Airport code (e.g. LIT, IAH, YYZ)"
+        required: false
+      label:
+        description: "Trip label (e.g. 'Crossett AR mill')"
+        required: false
+      weeks:
+        description: "OPEN trips: weeks ahead to scan (default 8)"
+        required: false
+        default: "8"
+      outbound_dates:
+        description: "ANCHORED: outbound date options, comma-separated (2026-08-23,2026-08-24)"
+        required: false
+      return_dates:
+        description: "ANCHORED: return date options, comma-separated"
+        required: false
+      arrive_by:
+        description: "ANCHORED optional: 2026-08-24=12:00 (comma-separate multiples)"
+        required: false
+      airlines:
+        description: "Allowed airlines (default UA,DL,AA)"
+        required: false
+        default: "UA,DL,AA"
+      trip_id:
+        description: "RETIRE: trip id (or leave blank and set dest)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fare-scan
+  cancel-in-progress: false
+
+jobs:
+  manage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Update trips.json
+        id: manage
+        env:
+          ACTION: ${{ github.event.inputs.action }}
+          DEST: ${{ github.event.inputs.dest }}
+          LABEL: ${{ github.event.inputs.label }}
+          WEEKS: ${{ github.event.inputs.weeks }}
+          OUTBOUND_DATES: ${{ github.event.inputs.outbound_dates }}
+          RETURN_DATES: ${{ github.event.inputs.return_dates }}
+          ARRIVE_BY: ${{ github.event.inputs.arrive_by }}
+          AIRLINES: ${{ github.event.inputs.airlines }}
+          TRIP_ID: ${{ github.event.inputs.trip_id }}
+        run: python manage_trips.py
+
+      - name: Scan the new trip immediately
+        if: ${{ steps.manage.outputs.trip_id != '' }}
+        run: |
+          pip install fast-flights typing_extensions
+          python scanner.py --trip "${{ steps.manage.outputs.trip_id }}"
+
+      - name: Commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "fare-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase || true
+          git add trips.json docs/data
+          git diff --cached --quiet || git commit -m "Trips: ${{ github.event.inputs.action }} ${{ github.event.inputs.dest }}"
+          git push

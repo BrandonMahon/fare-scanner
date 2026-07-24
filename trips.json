@@ -1,0 +1,24 @@
+{
+  "trips": [
+    {
+      "id": "lit-rolling",
+      "type": "open",
+      "label": "Little Rock (Gurdon)",
+      "dest": "LIT",
+      "airlines": ["UA", "DL", "AA"],
+      "weeks_ahead": 8,
+      "active": true
+    },
+    {
+      "id": "englehart-aug",
+      "type": "anchored",
+      "label": "Englehart via Toronto",
+      "dest": "YYZ",
+      "airlines": ["UA", "DL", "AA", "AC"],
+      "outbound": ["2026-08-23", "2026-08-24"],
+      "arrive_by": { "2026-08-24": "12:00" },
+      "return_dates": ["2026-08-27", "2026-08-28"],
+      "active": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "origin": "GSP",
+  "combos": [
+    [0, 3], [0, 4], [0, 5], [0, 6],
+    [1, 4], [1, 5], [1, 6],
+    [2, 5], [2, 6]
+  ],
+  "combo_note": "open-trip day offsets from Sunday: 0=Sun ... 6=Sat; [depart, return]",
+  "default_airlines": ["UA", "DL", "AA"],
+  "max_stops": 1,
+  "cabins": ["economy", "first"],
+  "deal_ceiling": 1000,
+  "sweet_low": 700,
+  "sweet_high": 850,
+  "card_limit": 5000,
+  "sleep_min": 2.0,
+  "sleep_max": 4.5,
+  "options_per_query": 8
+}

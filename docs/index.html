@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fare Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F5F8; --card:#fff; --ink:#16294A; --soft:#5A6B85; --line:#D8DEE8;
+  --blue:#2456C8; --blue-soft:#E7EDFB;
+  --green:#1E7A46; --green-fill:#DFF3E6;
+  --amber:#9A6B08; --amber-fill:#FBF0D3;
+  --red:#A33B2E;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--paper);color:var(--ink);padding:20px 22px 60px}
+.eyebrow{font-family:'Barlow Condensed';font-weight:600;letter-spacing:.22em;font-size:12px;color:var(--blue)}
+h1{font-family:'Barlow Condensed';font-weight:700;font-size:44px;line-height:1;margin:2px 0 4px}
+.sub{font-size:13px;color:var(--soft);margin-bottom:14px}
+.topbar{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+.actions a{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:8px;
+  padding:8px 14px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;margin-left:8px}
+.actions a.primary{background:var(--ink);border-color:var(--ink);color:#fff}
+.actions a:hover{border-color:var(--blue)}
+.cardtrack{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:16px 0}
+.cardtrack h2{font-family:'Barlow Condensed';font-size:18px;letter-spacing:.08em;margin:0 0 8px;text-transform:uppercase}
+.bar{height:14px;border-radius:7px;background:var(--blue-soft);overflow:hidden;margin:6px 0}
+.bar>div{height:100%;background:var(--blue);border-radius:7px}
+.bar>div.hot{background:var(--red)}
+.cardline{font-size:13px;color:var(--soft)}
+.cardline strong{color:var(--ink);font-family:'IBM Plex Mono',monospace}
+.booklist{margin:8px 0 0;padding:0;list-style:none;font-size:13px}
+.booklist li{display:flex;gap:10px;padding:3px 0;color:var(--soft)}
+.booklist .amt{font-family:'IBM Plex Mono',monospace;color:var(--ink)}
+.booklist .done{text-decoration:line-through;opacity:.55}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.tab{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:7px 14px;cursor:pointer;
+  font-family:inherit;font-size:13px;font-weight:600;color:var(--soft);text-align:left}
+.tab .d{display:block;font-size:11px;font-weight:400}
+.tab.on{border-color:var(--blue);color:var(--blue);box-shadow:inset 0 0 0 1px var(--blue)}
+.week{margin:18px 0}
+.week h3,.pair h3{font-family:'Barlow Condensed';font-size:20px;letter-spacing:.06em;margin:0 0 6px;text-transform:uppercase}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+.matrix{min-width:840px}
+th{font-family:'Barlow Condensed';font-weight:600;letter-spacing:.07em;font-size:12.5px;text-transform:uppercase;
+  color:var(--soft);text-align:right;padding:9px 10px;border-bottom:2px solid var(--ink);white-space:nowrap}
+th.l{text-align:left}
+td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap;
+  font-family:'IBM Plex Mono',monospace;font-size:13px}
+tr:last-child>td{border-bottom:none}
+td.combo{font-weight:600;text-align:left;cursor:pointer}
+td.combo::before{content:"▸ ";color:var(--soft);font-size:11px}
+tr.openrow td.combo::before{content:"▾ "}
+td.dates{text-align:left;font-family:Inter;color:var(--soft);font-size:12.5px}
+.n{color:var(--soft);font-weight:400;font-size:11px;margin-left:6px}
+.fc-sweet{background:var(--green-fill);color:var(--green);font-weight:600;border-radius:5px;padding:2px 6px}
+.fc-deal{background:var(--amber-fill);color:var(--amber);font-weight:600;border-radius:5px;padding:2px 6px}
+.dim{color:#B7C0CE}
+.delta{font-size:10.5px;margin-left:4px}
+.delta.down{color:var(--green)}
+.delta.up{color:var(--red)}
+.star{color:var(--amber);margin-left:2px}
+.detail td{background:#FAFBFD;white-space:normal;text-align:left;font-family:Inter;padding:10px 14px}
+.opt{display:flex;gap:12px;flex-wrap:wrap;align-items:baseline;padding:4px 0;font-size:13px;border-bottom:1px dashed var(--line)}
+.opt:last-child{border-bottom:none}
+.opt .p{font-family:'IBM Plex Mono',monospace;font-weight:600;min-width:60px}
+.opt .al{font-weight:600;min-width:30px}
+.opt .rt{font-family:'IBM Plex Mono',monospace}
+.opt .lay{color:var(--soft);font-size:12px}
+.opt .cab{color:var(--soft);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.pair{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:14px 0}
+.pair .meta{font-size:12.5px;color:var(--soft);margin-bottom:8px}
+.legend{font-size:12px;color:var(--soft);margin-top:14px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.empty{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:40px;text-align:center;color:var(--soft)}
+.empty a{color:var(--blue)}
+@media(max-width:640px){body{padding:14px 12px 40px}h1{font-size:32px}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div>
+    <div class="eyebrow">DAILY TRIP FARE SCAN</div>
+    <h1 id="title">FARE BOARD</h1>
+    <div class="sub" id="sub">Loading…</div>
+  </div>
+  <div class="actions">
+    <a id="editBookings" href="#">Edit bookings</a>
+    <a id="manageTrips" href="#">Manage trips</a>
+    <a id="runNow" class="primary" href="#">Run scan →</a>
+  </div>
+</div>
+
+<div class="cardtrack" id="cardtrack" hidden>
+  <h2>Company card exposure</h2>
+  <div class="bar"><div id="barfill" style="width:0%"></div></div>
+  <div class="cardline" id="cardline"></div>
+  <ul class="booklist" id="booklist"></ul>
+</div>
+
+<div class="tabs" id="tabs"></div>
+<div id="content"></div>
+
+<div class="legend" id="legend" hidden>
+  <span class="fc-sweet">$780</span> First in sweet spot
+  <span class="fc-deal">$960</span> First under $1,000 (soft target, not a cap)
+  <span><span class="star">★</span> lowest ever recorded for this trip/date</span>
+  <span class="delta down">▼38</span>/<span class="delta up">▲25</span> vs last scan
+  <span>· Retail fares (outbound flight times shown) — confirm final pricing before booking.</span>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const usd = n => "$" + Math.round(n).toLocaleString();
+const hm = m => (m >= 60 ? Math.floor(m/60) + "h" : "") + String(m % 60).padStart(m >= 60 ? 2 : 1, "0") + (m < 60 ? "m" : "");
+const fmtD = s => { const d = new Date(s + "T12:00:00");
+  return d.toLocaleDateString(undefined,{weekday:"short",month:"numeric",day:"numeric"}); };
+
+function repoLinks(){
+  const owner = location.hostname.split(".")[0];
+  const repo = location.pathname.split("/").filter(Boolean)[0] || "";
+  const base = `https://github.com/${owner}/${repo}`;
+  $("runNow").href = `${base}/actions/workflows/scan.yml`;
+  $("manageTrips").href = `${base}/actions/workflows/trips.yml`;
+  $("editBookings").href = `${base}/edit/main/docs/data/bookings.json`;
+}
+
+async function grab(path, fallback){
+  try{
+    const r = await fetch(path + "?t=" + Date.now());
+    if(!r.ok) throw 0;
+    return await r.json();
+  }catch{ return fallback; }
+}
+
+function prevBest(prev, tripId, e, cabin, al){
+  const t = prev?.trips?.[tripId];
+  const m = t?.entries?.find(x => x.dep === e.dep && x.ret === e.ret);
+  return m?.cabins?.[cabin]?.best?.[al] ?? null;
+}
+
+function priceHTML(p, prevP, cfg, isFirst, atLow){
+  if(p == null) return `<span class="dim">—</span>`;
+  let cls = "";
+  if(isFirst){
+    if(p >= cfg.sweet_low && p <= cfg.sweet_high) cls = "fc-sweet";
+    else if(p < cfg.deal_ceiling) cls = "fc-deal";
+  }
+  let delta = "";
+  if(prevP != null && prevP !== p){
+    const d = p - prevP;
+    delta = `<span class="delta ${d<0?"down":"up"}">${d<0?"▼":"▲"}${Math.abs(d)}</span>`;
+  }
+  const star = atLow ? `<span class="star" title="lowest ever recorded">★</span>` : "";
+  return `<span class="${cls}">${usd(p)}</span>${star}${delta}`;
+}
+
+function optHTML(o, cabin){
+  const first = o.legs[0], last = o.legs[o.legs.length-1];
+  const via = o.legs.length > 1
+    ? ` · ${o.stops} stop ${o.legs.slice(0,-1).map((l,i)=>`${l.to} (${hm(o.layovers[i])})`).join(", ")}`
+    : " · nonstop";
+  return `<div class="opt">
+    <span class="p">${usd(o.price)}</span>
+    <span class="al">${o.airlines.join("/")}</span>
+    <span class="rt">${first.dep} → ${last.arr}</span>
+    <span class="lay">${via}</span>
+    <span class="cab">${cabin}</span>
+  </div>`;
+}
+
+function detailHTML(e){
+  const fc = e.cabins.first?.options || [];
+  const ec = e.cabins.economy?.options || [];
+  let html = fc.map(o => optHTML(o, "first")).join("");
+  html += ec.slice(0,3).map(o => optHTML(o, "econ")).join("");
+  return html || `<span class="dim">No itineraries captured for this pair.</span>`;
+}
+
+/* ---------- open trips: weekly matrices ---------- */
+function renderOpen(trip, tripId, prev, cfg){
+  const weeks = {};
+  for(const e of trip.entries){
+    const d = new Date(e.dep + "T12:00:00");
+    const sun = new Date(d); sun.setDate(d.getDate() - d.getDay());
+    const k = sun.toISOString().slice(0,10);
+    (weeks[k] = weeks[k] || []).push(e);
+  }
+  let html = "";
+  for(const [wk, entries] of Object.entries(weeks).sort()){
+    html += `<div class="week"><h3>Week of ${fmtD(wk)}</h3>
+      <div class="tablewrap"><table class="matrix"><thead><tr>
+      <th class="l">Combo</th><th class="l">Dates</th>
+      ${trip.airlines.map(a=>`<th>${a} Econ</th><th>${a} First</th>`).join("")}
+      </tr></thead><tbody>`;
+    for(const e of entries){
+      const cells = trip.airlines.map(al => {
+        const ec = e.cabins.economy, fc = e.cabins.first;
+        return `<td>${priceHTML(ec?.best?.[al], prevBest(prev,tripId,e,"economy",al), cfg, false, false)}</td>
+          <td>${priceHTML(fc?.best?.[al], prevBest(prev,tripId,e,"first",al), cfg, true, fc?.at_low?.[al])}</td>`;
+      }).join("");
+      const cols = 2 + trip.airlines.length * 2;
+      html += `<tr class="mainrow" data-k="${e.dep}_${e.ret}">
+        <td class="combo">${e.label}<span class="n">${e.nights}n</span></td>
+        <td class="dates">${fmtD(e.dep)} → ${fmtD(e.ret)}</td>${cells}</tr>
+        <tr class="detail" data-k="${e.dep}_${e.ret}" hidden><td colspan="${cols}">${detailHTML(e)}</td></tr>`;
+    }
+    html += `</tbody></table></div></div>`;
+  }
+  return html;
+}
+
+/* ---------- anchored trips: ranked pair cards ---------- */
+function renderAnchored(trip, tripId, prev, cfg){
+  const ranked = trip.entries.slice().sort((a,b) => {
+    const m = e => { const v = Object.values(e.cabins.first?.best||{}); return v.length?Math.min(...v):1e9; };
+    return m(a) - m(b);
+  });
+  return ranked.map(e => {
+    const ab = e.arrive_by ? ` · must arrive by ${e.arrive_by}` : "";
+    const ecBest = Object.entries(e.cabins.economy?.best || {})
+      .map(([al,p]) => `${al} ${usd(p)}`).join(" · ");
+    const fcOpts = (e.cabins.first?.options || []).map(o => optHTML(o,"first")).join("")
+      || `<span class="dim">No First itineraries met the constraints.</span>`;
+    return `<div class="pair"><h3>${e.label} · ${fmtD(e.dep)} → ${fmtD(e.ret)}</h3>
+      <div class="meta">${e.nights} nights${ab}${ecBest ? ` · economy from: ${ecBest}` : ""}</div>
+      ${fcOpts}</div>`;
+  }).join("");
+}
+
+function renderBookings(bookings, limit){
+  $("cardtrack").hidden = false;
+  if(!bookings || !bookings.length){
+    $("cardline").innerHTML = `No bookings logged. Use <em>Edit bookings</em> to add one.`;
+    return;
+  }
+  const open = bookings.filter(b=>!b.expensed).reduce((s,b)=>s+(+b.amount||0),0);
+  const pct = Math.min(100, open/limit*100);
+  $("barfill").style.width = pct + "%";
+  $("barfill").className = pct > 80 ? "hot" : "";
+  $("cardline").innerHTML =
+    `<strong>${usd(open)}</strong> open on card · <strong>${usd(Math.max(limit-open,0))}</strong> headroom of ${usd(limit)}`;
+  $("booklist").innerHTML = bookings.map(b =>
+    `<li class="${b.expensed?"done":""}"><span class="amt">${usd(+b.amount||0)}</span>
+     <span>${b.label||"trip"}</span><span>${b.booked||""}</span>
+     <span>${b.expensed?"expensed":"on card"}</span></li>`).join("");
+}
+
+async function main(){
+  repoLinks();
+  const latest = await grab("data/latest.json", null);
+  const prev = await grab("data/previous.json", {trips:{}});
+  const bookings = await grab("data/bookings.json", []);
+  const ids = Object.keys(latest?.trips || {});
+
+  if(!ids.length){
+    $("sub").textContent = "No scan data yet.";
+    $("content").innerHTML = `<div class="empty">No trips scanned yet. Use
+      <a href="${$("manageTrips").href}">Manage trips</a> to add one, or
+      <a href="${$("runNow").href}">Run scan</a> if trips are already set up.
+      Results appear here when the run finishes (~10 min).</div>`;
+    renderBookings(bookings, 5000);
+    return;
+  }
+
+  const cfg = latest.config || {deal_ceiling:1000,sweet_low:700,sweet_high:850,card_limit:5000};
+  renderBookings(bookings, cfg.card_limit || 5000);
+  $("legend").hidden = false;
+
+  let active = ids[0];
+  const draw = () => {
+    const t = latest.trips[active];
+    $("title").textContent = `${latest.origin} ⇄ ${t.dest}`;
+    $("sub").textContent = `${t.label} · ${t.type === "open" ? "rolling scan" : "anchored dates"} · last scanned ${t.scanned_at}`;
+    $("tabs").querySelectorAll(".tab").forEach(x=>x.classList.toggle("on", x.dataset.id===active));
+    $("content").innerHTML = t.type === "open"
+      ? renderOpen(t, active, prev, cfg)
+      : renderAnchored(t, active, prev, cfg);
+    $("content").querySelectorAll("td.combo").forEach(td => {
+      td.onclick = () => {
+        const tr = td.parentElement;
+        const det = $("content").querySelector(`tr.detail[data-k="${tr.dataset.k}"]`);
+        det.hidden = !det.hidden;
+        tr.classList.toggle("openrow", !det.hidden);
+      };
+    });
+  };
+  $("tabs").innerHTML = ids.map(id =>
+    `<button class="tab" data-id="${id}">${latest.trips[id].label}<span class="d">${latest.trips[id].dest} · ${latest.trips[id].type}</span></button>`).join("");
+  $("tabs").querySelectorAll(".tab").forEach(b => b.onclick = () => { active = b.dataset.id; draw(); });
+  draw();
+}
+main();
+</script>
+</body>
+</html>

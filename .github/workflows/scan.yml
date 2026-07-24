@@ -1,0 +1,55 @@
+name: Daily fare scan
+
+on:
+  schedule:
+    - cron: "17 10 * * *"   # 10:17 UTC daily (~5:17am Central)
+  workflow_dispatch:
+    inputs:
+      trip:
+        description: "Trip id from trips.json, or 'all'"
+        required: false
+        default: "all"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: fare-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        # typing_extensions: fast-flights 3.0.2 imports it but omits it from its deps
+        run: pip install fast-flights typing_extensions
+
+      - name: Run scanner
+        run: python scanner.py --trip "${{ github.event.inputs.trip || 'all' }}"
+
+      - name: Commit updated data
+        run: |
+          git config user.name "fare-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase || true
+          git add docs/data
+          git diff --cached --quiet || git commit -m "Fare scan $(date -u +%F)"
+          git push
+
+      - name: Open deal alert issue (emails you automatically)
+        if: ${{ hashFiles('deals_found.txt') != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Fare alert: First class in range ($(date -u +%F))" \
+            --body-file deals_found.txt || true
