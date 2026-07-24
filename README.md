@@ -48,6 +48,15 @@ Dashboard → **Manage trips** (or Actions → Manage trips → Run workflow):
 Adding a trip scans it immediately, so results appear without waiting
 for the morning run.
 
+### Admin page (nicer forms)
+
+Dashboard → **Admin** gives real forms for the same actions plus a
+bookings editor, with client-side validation. One-time setup: create a
+GitHub **fine-grained personal access token** scoped to only this repo
+(Contents: read/write, Actions: read/write) and paste it into the page.
+The token stays in your browser's localStorage and is sent only to
+`api.github.com` — it is never stored in the repo.
+
 ## Reading the dashboard
 
 - Open trips show the weekly combo matrix; **click a combo row** to

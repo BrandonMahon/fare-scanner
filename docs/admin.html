@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fare Board · Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F5F8; --card:#fff; --ink:#16294A; --soft:#5A6B85; --line:#D8DEE8;
+  --blue:#2456C8; --blue-soft:#E7EDFB;
+  --green:#1E7A46; --green-fill:#DFF3E6;
+  --amber:#9A6B08; --amber-fill:#FBF0D3;
+  --red:#A33B2E; --red-fill:#F9E4E1;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--paper);color:var(--ink);padding:20px 22px 60px;max-width:860px}
+.eyebrow{font-family:'Barlow Condensed';font-weight:600;letter-spacing:.22em;font-size:12px;color:var(--blue)}
+h1{font-family:'Barlow Condensed';font-weight:700;font-size:44px;line-height:1;margin:2px 0 4px}
+.sub{font-size:13px;color:var(--soft);margin-bottom:14px}
+.topbar{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+.actions a{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:8px;
+  padding:8px 14px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;margin-left:8px}
+.actions a:hover{border-color:var(--blue)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.panel h2{font-family:'Barlow Condensed';font-size:18px;letter-spacing:.08em;margin:0 0 10px;text-transform:uppercase}
+.panel p.note{font-size:12.5px;color:var(--soft);margin:6px 0 12px;line-height:1.5}
+label{display:block;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--soft);margin:10px 0 4px}
+input[type=text],input[type=password],input[type=number],select{
+  width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-family:'IBM Plex Mono',monospace;
+  font-size:13px;color:var(--ink);background:var(--paper)}
+input:focus,select:focus{outline:none;border-color:var(--blue)}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.row>div{flex:1;min-width:140px}
+button{border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:8px;padding:9px 16px;
+  font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;margin-top:14px}
+button:hover{opacity:.88}
+button.ghost{background:var(--card);color:var(--ink);border-color:var(--line)}
+button.ghost:hover{border-color:var(--blue)}
+button:disabled{opacity:.45;cursor:default}
+.msg{margin-top:12px;font-size:13px;border-radius:8px;padding:9px 12px;display:none}
+.msg.ok{display:block;background:var(--green-fill);color:var(--green)}
+.msg.err{display:block;background:var(--red-fill);color:var(--red)}
+.msg a{color:inherit}
+.seg{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.seg button{margin-top:0;background:var(--card);color:var(--soft);border-color:var(--line)}
+.seg button.on{border-color:var(--blue);color:var(--blue);box-shadow:inset 0 0 0 1px var(--blue)}
+table{border-collapse:collapse;width:100%;font-size:13px;margin-top:6px}
+th{font-family:'Barlow Condensed';font-weight:600;letter-spacing:.07em;font-size:12px;text-transform:uppercase;
+  color:var(--soft);text-align:left;padding:7px 8px;border-bottom:2px solid var(--ink)}
+td{padding:6px 8px;border-bottom:1px solid var(--line)}
+td input[type=text],td input[type=number]{background:#fff}
+td input.amt{width:90px}
+td input.bdate{width:130px}
+.del{color:var(--red);cursor:pointer;font-weight:600;background:none;border:none;padding:2px 6px;margin:0;font-size:15px}
+.tokrow{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap}
+.tokrow>div{flex:1;min-width:220px}
+.tokstate{font-size:12.5px;margin-top:8px;color:var(--soft)}
+.tokstate .on{color:var(--green);font-weight:600}
+.tokstate .off{color:var(--red);font-weight:600}
+code{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--paper);padding:1px 5px;border-radius:4px}
+@media(max-width:640px){body{padding:14px 12px 40px}h1{font-size:32px}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div>
+    <div class="eyebrow">FARE BOARD</div>
+    <h1>ADMIN</h1>
+    <div class="sub">Trip and booking management — changes go through the same workflows as the GitHub UI.</div>
+  </div>
+  <div class="actions">
+    <a href="index.html">← Dashboard</a>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>Access token</h2>
+  <p class="note">
+    Needs a GitHub <strong>fine-grained personal access token</strong> scoped to only this repository with
+    <strong>Contents: Read and write</strong> and <strong>Actions: Read and write</strong>.
+    It is stored only in this browser (localStorage) and sent only to <code>api.github.com</code>.
+  </p>
+  <div class="tokrow">
+    <div>
+      <label>Token</label>
+      <input type="password" id="tok" placeholder="github_pat_…" autocomplete="off">
+    </div>
+    <button id="tokSave">Save</button>
+    <button class="ghost" id="tokClear">Forget</button>
+  </div>
+  <div class="tokstate" id="tokState"></div>
+</div>
+
+<div class="panel">
+  <h2>Trips</h2>
+  <div class="seg" id="seg">
+    <button data-mode="add_open" class="on">Add open trip</button>
+    <button data-mode="add_anchored">Add anchored trip</button>
+    <button data-mode="retire">Retire trip</button>
+  </div>
+
+  <div id="fAdd">
+    <div class="row">
+      <div><label>Destination (3-letter code)</label><input type="text" id="dest" maxlength="3" placeholder="LIT"></div>
+      <div><label>Label</label><input type="text" id="label" placeholder="Little Rock (Gurdon)"></div>
+      <div><label>Airlines</label><input type="text" id="airlines" value="UA,DL,AA"></div>
+    </div>
+    <div id="fOpen">
+      <div class="row">
+        <div><label>Weeks ahead (1–12)</label><input type="number" id="weeks" min="1" max="12" value="8"></div>
+      </div>
+    </div>
+    <div id="fAnch" style="display:none">
+      <div class="row">
+        <div><label>Outbound dates (comma-sep)</label><input type="text" id="outbound" placeholder="2026-08-23,2026-08-24"></div>
+        <div><label>Return dates (comma-sep)</label><input type="text" id="returns" placeholder="2026-08-27,2026-08-28"></div>
+      </div>
+      <div class="row">
+        <div><label>Arrive by (optional)</label><input type="text" id="arriveby" placeholder="2026-08-24=12:00"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="fRet" style="display:none">
+    <label>Active trip</label>
+    <select id="retSel"><option value="">Loading trips…</option></select>
+  </div>
+
+  <button id="tripGo">Run it</button>
+  <div class="msg" id="tripMsg"></div>
+</div>
+
+<div class="panel">
+  <h2>Bookings</h2>
+  <p class="note">Edits commit straight to <code>docs/data/bookings.json</code>; the dashboard card tracker updates on next load.</p>
+  <table id="bkTable">
+    <thead><tr><th>Label</th><th>Amount</th><th>Booked</th><th>Expensed</th><th></th></tr></thead>
+    <tbody id="bkBody"></tbody>
+  </table>
+  <button class="ghost" id="bkAdd">+ Add booking</button>
+  <button id="bkSave">Save bookings</button>
+  <div class="msg" id="bkMsg"></div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const owner = location.hostname.split(".")[0];
+const repo = location.pathname.split("/").filter(Boolean)[0] || "fare-scanner";
+const API = `https://api.github.com/repos/${owner}/${repo}`;
+const TOKKEY = "fs_admin_token";
+
+// ---------------------------------------------------------------- token ----
+function token(){ return localStorage.getItem(TOKKEY) || ""; }
+function showTokState(){
+  $("tokState").innerHTML = token()
+    ? `Token: <span class="on">saved in this browser</span> (…${token().slice(-4)})`
+    : `Token: <span class="off">not set</span> — forms will not submit without one.`;
+}
+$("tokSave").onclick = () => {
+  const v = $("tok").value.trim();
+  if(!v) return;
+  localStorage.setItem(TOKKEY, v);
+  $("tok").value = "";
+  showTokState();
+};
+$("tokClear").onclick = () => { localStorage.removeItem(TOKKEY); showTokState(); };
+showTokState();
+
+function hdrs(){
+  return { "Accept": "application/vnd.github+json",
+           "Authorization": `Bearer ${token()}`,
+           "X-GitHub-Api-Version": "2022-11-28" };
+}
+function msg(el, kind, html){ el.className = "msg " + kind; el.innerHTML = html; }
+function needToken(el){
+  if(token()) return false;
+  msg(el, "err", "Save your access token first (top of page).");
+  return true;
+}
+function apiErr(el, r, what){
+  const why = r.status === 401 ? "token rejected — is it valid?"
+    : r.status === 403 || r.status === 404 ? "token lacks permission for this repo (needs Contents + Actions read/write)"
+    : `HTTP ${r.status}`;
+  msg(el, "err", `${what} failed: ${why}`);
+}
+
+// ---------------------------------------------------------------- trips ----
+let mode = "add_open";
+$("seg").onclick = e => {
+  const b = e.target.closest("button"); if(!b) return;
+  mode = b.dataset.mode;
+  [...$("seg").children].forEach(x => x.classList.toggle("on", x === b));
+  $("fAdd").style.display = mode === "retire" ? "none" : "";
+  $("fOpen").style.display = mode === "add_open" ? "" : "none";
+  $("fAnch").style.display = mode === "add_anchored" ? "" : "none";
+  $("fRet").style.display = mode === "retire" ? "" : "none";
+  $("tripGo").textContent = mode === "retire" ? "Retire trip" : "Add + scan now";
+};
+$("seg").children[0].click();
+
+async function loadTrips(){
+  try{
+    const r = await fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/trips.json?t=${Date.now()}`);
+    const data = await r.json();
+    const act = data.trips.filter(t => t.active !== false);
+    $("retSel").innerHTML = act.length
+      ? act.map(t => `<option value="${t.id}">${t.label} (${t.id})</option>`).join("")
+      : `<option value="">No active trips</option>`;
+  }catch{ $("retSel").innerHTML = `<option value="">Could not load trips.json</option>`; }
+}
+loadTrips();
+
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+function splitDates(raw){ return raw.split(/[,\s]+/).map(s => s.trim()).filter(Boolean); }
+
+function validate(){
+  if(mode === "retire"){
+    if(!$("retSel").value) return "Pick a trip to retire.";
+    return null;
+  }
+  const dest = $("dest").value.trim().toUpperCase();
+  if(!/^[A-Z]{3}$/.test(dest)) return "Destination must be exactly 3 letters (e.g. LIT).";
+  if(mode === "add_anchored"){
+    const ob = splitDates($("outbound").value), rt = splitDates($("returns").value);
+    if(!ob.length || !rt.length) return "Anchored trips need outbound and return dates.";
+    for(const d of [...ob, ...rt]) if(!DATE_RE.test(d)) return `Bad date "${d}" — use YYYY-MM-DD.`;
+    for(const pair of $("arriveby").value.split(",").map(s => s.trim()).filter(Boolean)){
+      const m = pair.match(/^(\d{4}-\d{2}-\d{2})=(\d{2}:\d{2})$/);
+      if(!m) return `Arrive-by "${pair}" must look like 2026-08-24=12:00.`;
+      if(!ob.includes(m[1])) return `Arrive-by date ${m[1]} is not one of the outbound dates.`;
+    }
+  }
+  return null;
+}
+
+$("tripGo").onclick = async () => {
+  const el = $("tripMsg");
+  if(needToken(el)) return;
+  const bad = validate();
+  if(bad) return msg(el, "err", bad);
+
+  const inputs = { action: mode };
+  if(mode === "retire"){
+    inputs.trip_id = $("retSel").value;
+  }else{
+    inputs.dest = $("dest").value.trim().toUpperCase();
+    if($("label").value.trim()) inputs.label = $("label").value.trim();
+    inputs.airlines = $("airlines").value.trim() || "UA,DL,AA";
+    if(mode === "add_open") inputs.weeks = String($("weeks").value || "8");
+    else{
+      inputs.outbound_dates = splitDates($("outbound").value).join(",");
+      inputs.return_dates = splitDates($("returns").value).join(",");
+      if($("arriveby").value.trim()) inputs.arrive_by = $("arriveby").value.trim();
+    }
+  }
+  $("tripGo").disabled = true;
+  try{
+    const r = await fetch(`${API}/actions/workflows/trips.yml/dispatches`, {
+      method: "POST", headers: hdrs(),
+      body: JSON.stringify({ ref: "main", inputs })
+    });
+    if(r.status === 204){
+      msg(el, "ok", `Workflow started. Anchored trips scan in a few minutes; open trips take longer. ` +
+        `<a target="_blank" href="https://github.com/${owner}/${repo}/actions/workflows/trips.yml">Watch the run →</a>`);
+      if(mode === "retire") setTimeout(loadTrips, 4000);
+    }else apiErr(el, r, "Dispatch");
+  }catch(e){ msg(el, "err", "Network error: " + e.message); }
+  $("tripGo").disabled = false;
+};
+
+// -------------------------------------------------------------- bookings ----
+const b64enc = s => btoa(String.fromCharCode(...new TextEncoder().encode(s)));
+const b64dec = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\n/g, "")), c => c.charCodeAt(0)));
+let bkSha = null;
+
+function bkRow(b = {}){
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+    <td><input type="text" class="lbl" value="${(b.label || "").replace(/"/g, "&quot;")}" placeholder="GSP-LIT Aug trip"></td>
+    <td><input type="number" class="amt" value="${b.amount ?? ""}" placeholder="812"></td>
+    <td><input type="text" class="bdate" value="${b.booked || ""}" placeholder="2026-07-20"></td>
+    <td><input type="checkbox" class="exp" ${b.expensed ? "checked" : ""}></td>
+    <td><button class="del" title="Remove">×</button></td>`;
+  tr.querySelector(".del").onclick = () => tr.remove();
+  $("bkBody").appendChild(tr);
+}
+$("bkAdd").onclick = () => bkRow();
+
+async function loadBookings(){
+  const el = $("bkMsg");
+  try{
+    const r = await fetch(`${API}/contents/docs/data/bookings.json?ref=main`,
+      token() ? { headers: hdrs() } : { headers: { "Accept": "application/vnd.github+json" } });
+    if(!r.ok) throw new Error("HTTP " + r.status);
+    const j = await r.json();
+    bkSha = j.sha;
+    const list = JSON.parse(b64dec(j.content));
+    $("bkBody").innerHTML = "";
+    list.forEach(bkRow);
+  }catch(e){ msg(el, "err", "Could not load bookings.json: " + e.message); }
+}
+loadBookings();
+
+$("bkSave").onclick = async () => {
+  const el = $("bkMsg");
+  if(needToken(el)) return;
+  const rows = [...$("bkBody").children];
+  const list = [];
+  for(const tr of rows){
+    const label = tr.querySelector(".lbl").value.trim();
+    const amount = Number(tr.querySelector(".amt").value);
+    const booked = tr.querySelector(".bdate").value.trim();
+    if(!label && !amount) continue;
+    if(!label) return msg(el, "err", "Every booking needs a label.");
+    if(!amount || amount <= 0) return msg(el, "err", `"${label}" needs a positive amount.`);
+    if(booked && !DATE_RE.test(booked)) return msg(el, "err", `"${label}" booked date must be YYYY-MM-DD.`);
+    list.push({ label, amount, booked, expensed: tr.querySelector(".exp").checked });
+  }
+  $("bkSave").disabled = true;
+  try{
+    const r = await fetch(`${API}/contents/docs/data/bookings.json`, {
+      method: "PUT", headers: hdrs(),
+      body: JSON.stringify({
+        message: "Update bookings via admin page",
+        content: b64enc(JSON.stringify(list, null, 2) + "\n"),
+        sha: bkSha, branch: "main"
+      })
+    });
+    if(r.ok){
+      const j = await r.json();
+      bkSha = j.content.sha;
+      msg(el, "ok", "Bookings saved — dashboard reflects it on next load.");
+    }else if(r.status === 409){
+      msg(el, "err", "Conflict: the file changed elsewhere. Reloading — re-apply your edit.");
+      loadBookings();
+    }else apiErr(el, r, "Save");
+  }catch(e){ msg(el, "err", "Network error: " + e.message); }
+  $("bkSave").disabled = false;
+};
+</script>
+</body>
+</html>
