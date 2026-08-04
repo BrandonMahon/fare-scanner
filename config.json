@@ -17,7 +17,7 @@
   "sleep_max": 4.5,
   "options_per_query": 8,
   "watch": [
-    { "trip": "englehart-aug", "threshold": 800 },
-    { "trip": "lit-aug16", "threshold": 800 }
+    { "trip": "englehart-aug", "threshold": 800, "prefer": "UA" },
+    { "trip": "lit-aug16", "threshold": 800, "min_nights": 2, "prefer": "UA" }
   ]
 }

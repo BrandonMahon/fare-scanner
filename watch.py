@@ -4,9 +4,14 @@
 is at or under that trip's threshold. Keeps its own state in
 docs/data/watch_state.json; never touches the daily board data.
 
-Alert rule: notify when best First <= threshold and the price differs
-from the last alerted price. When the fare climbs back above the
-threshold the state resets, so a later re-drop alerts again.
+Alert rule: notify when best First <= threshold and the best (or the
+preferred airline's best) price differs from the last alerted prices.
+When the fare climbs back above the threshold the state resets, so a
+later re-drop alerts again.
+
+Per-watch options in config.json: "threshold" (dollars), "min_nights"
+(skip shorter pairings), "prefer" (airline code always shown in the
+alert even when it is not the cheapest).
 """
 
 import json
@@ -51,12 +56,14 @@ def describe(opt, dep, ret):
             f"  ({opt['stops']} stop, layover {lays})")
 
 
-def best_first(trip):
+def best_first(trip, min_nights=0, prefer=None):
     pairs = anchored_pairs(trip) if trip["type"] == "anchored" else open_pairs(trip)
+    if min_nights:
+        pairs = [(d, r, ab) for d, r, ab in pairs if (r - d).days >= min_nights]
     if len(pairs) > MAX_PAIRS:
         print(f"  capping {trip['id']} watch to first {MAX_PAIRS} of {len(pairs)} pairs")
         pairs = pairs[:MAX_PAIRS]
-    best = None
+    best, best_pref = None, None
     for dep, ret, arrive_by in pairs:
         opts = fetch_options(trip["dest"], dep, ret, "first", trip["airlines"])
         time.sleep(random.uniform(CONFIG["sleep_min"], CONFIG["sleep_max"]))
@@ -64,9 +71,13 @@ def best_first(trip):
             cutoff = datetime.fromisoformat(f"{dep.isoformat()}T{arrive_by}")
             opts = [o for o in opts
                     if datetime.fromisoformat(o["arr_iso"]) <= cutoff]
-        if opts and (best is None or opts[0]["price"] < best[0]["price"]):
-            best = (opts[0], dep, ret)
-    return best
+        for o in opts:
+            if best is None or o["price"] < best[0]["price"]:
+                best = (o, dep, ret)
+            if prefer and prefer in o["airlines"]:
+                if best_pref is None or o["price"] < best_pref[0]["price"]:
+                    best_pref = (o, dep, ret)
+    return best, best_pref
 
 
 def main():
@@ -82,28 +93,37 @@ def main():
             print(f"watch target '{w['trip']}' missing or inactive; skipping")
             continue
         thr = w.get("threshold", CONFIG["deal_ceiling"])
+        prefer = w.get("prefer")
         print(f"== watching {trip['label']} ({trip['id']}), threshold ${thr}")
-        best = best_first(trip)
+        best, best_pref = best_first(trip, w.get("min_nights", 0), prefer)
         if best is None:
             print("  no First data this pass (throttled or none published)")
             continue
         opt, dep, ret = best
         price, airline = opt["price"], opt["airlines"][0]
+        pref_price = best_pref[0]["price"] if best_pref else None
         last = state.get(trip["id"])
-        print(f"  best: {airline} ${price} {dep} -> {ret} (last alerted: {last})")
+        if isinstance(last, int):          # legacy single-price state
+            last = {"best": last, "pref": None}
+        print(f"  best: {airline} ${price} {dep} -> {ret}"
+              f" | {prefer or 'pref'}: {pref_price} | last alerted: {last}")
 
-        if price <= thr and price != last:
+        if price <= thr and (last is None or price != last.get("best")
+                             or pref_price != last.get("pref")):
             title = f"{trip['label']}: {airline} First ${price}"
             body = describe(opt, dep, ret)
+            if best_pref and best_pref[0] is not opt:
+                po, pd, pr = best_pref
+                body += f"\n\n{prefer} option: ${po['price']}\n" + describe(po, pd, pr)
             if last is not None:
-                body += f"\n(was ${last})"
-            body += "\nBook it or watch it -- threshold ${}".format(thr)
+                body += f"\n(was ${last.get('best')})"
+            body += f"\nThreshold ${thr}"
             if topic:
                 notify(topic, title, body)
                 print(f"  ALERT sent: {title}")
             else:
                 print(f"  ALERT (not sent, no topic): {title}")
-            state[trip["id"]] = price
+            state[trip["id"]] = {"best": price, "pref": pref_price}
             changed = True
         elif price > thr and last is not None:
             print("  climbed above threshold; resetting so the next dip re-alerts")
