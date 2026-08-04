@@ -79,7 +79,7 @@ jobs:
         run: |
           git config user.name "fare-bot"
           git config user.email "actions@users.noreply.github.com"
-          git pull --rebase || true
           git add trips.json docs/data
           git diff --cached --quiet || git commit -m "Trips: ${{ github.event.inputs.action }} ${{ github.event.inputs.dest }}"
-          git push
+          git pull --rebase || true
+          git push || (git pull --rebase && git push)
