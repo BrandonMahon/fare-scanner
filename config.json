@@ -15,5 +15,9 @@
   "card_limit": 5000,
   "sleep_min": 2.0,
   "sleep_max": 4.5,
-  "options_per_query": 8
+  "options_per_query": 8,
+  "watch": [
+    { "trip": "englehart-aug", "threshold": 800 },
+    { "trip": "lit-aug16", "threshold": 800 }
+  ]
 }
