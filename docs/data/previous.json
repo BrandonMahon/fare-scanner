@@ -20161,7 +20161,7 @@
     "AA",
     "AC"
    ],
-   "scanned_at": "2026-08-03",
+   "scanned_at": "2026-08-04",
    "entries": [
     {
      "dep": "2026-08-23",
@@ -20171,20 +20171,23 @@
      "cabins": {
       "economy": {
        "best": {
-        "AA": 613,
-        "DL": 642
+        "AA": 625,
+        "DL": 642,
+        "UA": 672
        },
        "low": {
         "AA": 492,
-        "DL": 492
+        "DL": 492,
+        "UA": 492
        },
        "at_low": {
         "AA": false,
-        "DL": false
+        "DL": false,
+        "UA": false
        },
        "options": [
         {
-         "price": 613,
+         "price": 625,
          "airlines": [
           "AA"
          ],
@@ -20193,8 +20196,8 @@
           {
            "from": "GSP",
            "to": "PHL",
-           "dep": "11:04",
-           "arr": "12:59"
+           "dep": "07:57",
+           "arr": "09:49"
           },
           {
            "from": "PHL",
@@ -20204,37 +20207,12 @@
           }
          ],
          "layovers": [
-          54
+          244
          ],
          "arr_iso": "2026-08-23T15:41"
         },
         {
-         "price": 613,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "18:08",
-           "arr": "19:24"
-          },
-          {
-           "from": "CLT",
-           "to": "YYZ",
-           "dep": "20:40",
-           "arr": "22:35"
-          }
-         ],
-         "layovers": [
-          76
-         ],
-         "arr_iso": "2026-08-23T22:35"
-        },
-        {
-         "price": 613,
+         "price": 625,
          "airlines": [
           "AA"
          ],
@@ -20284,7 +20262,57 @@
          "arr_iso": "2026-08-23T10:25"
         },
         {
-         "price": 642,
+         "price": 672,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "EWR",
+           "dep": "07:00",
+           "arr": "08:59"
+          },
+          {
+           "from": "EWR",
+           "to": "YYZ",
+           "dep": "09:59",
+           "arr": "11:43"
+          }
+         ],
+         "layovers": [
+          60
+         ],
+         "arr_iso": "2026-08-23T11:43"
+        },
+        {
+         "price": 672,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "IAD",
+           "dep": "19:47",
+           "arr": "21:25"
+          },
+          {
+           "from": "IAD",
+           "to": "YYZ",
+           "dep": "22:19",
+           "arr": "23:54"
+          }
+         ],
+         "layovers": [
+          54
+         ],
+         "arr_iso": "2026-08-23T23:54"
+        },
+        {
+         "price": 717,
          "airlines": [
           "DL"
          ],
@@ -20309,32 +20337,7 @@
          "arr_iso": "2026-08-23T15:20"
         },
         {
-         "price": 642,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "11:25",
-           "arr": "12:25"
-          },
-          {
-           "from": "ATL",
-           "to": "YYZ",
-           "dep": "14:59",
-           "arr": "17:19"
-          }
-         ],
-         "layovers": [
-          154
-         ],
-         "arr_iso": "2026-08-23T17:19"
-        },
-        {
-         "price": 642,
+         "price": 717,
          "airlines": [
           "DL"
          ],
@@ -20359,29 +20362,29 @@
          "arr_iso": "2026-08-23T21:59"
         },
         {
-         "price": 642,
+         "price": 754,
          "airlines": [
-          "DL"
+          "AA"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "DTW",
-           "dep": "18:58",
-           "arr": "20:49"
+           "to": "CLT",
+           "dep": "14:36",
+           "arr": "15:52"
           },
           {
-           "from": "DTW",
+           "from": "CLT",
            "to": "YYZ",
-           "dep": "21:39",
-           "arr": "23:03"
+           "dep": "16:31",
+           "arr": "18:44"
           }
          ],
          "layovers": [
-          50
+          39
          ],
-         "arr_iso": "2026-08-23T23:03"
+         "arr_iso": "2026-08-23T18:44"
         }
        ]
       },
@@ -20528,7 +20531,7 @@
          "arr_iso": "2026-08-23T21:59"
         },
         {
-         "price": 1099,
+         "price": 1059,
          "airlines": [
           "UA"
          ],
@@ -20553,7 +20556,7 @@
          "arr_iso": "2026-08-23T19:37"
         },
         {
-         "price": 1157,
+         "price": 1173,
          "airlines": [
           "UA"
          ],
@@ -20576,31 +20579,6 @@
           44
          ],
          "arr_iso": "2026-08-23T19:02"
-        },
-        {
-         "price": 1215,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "LGA",
-           "dep": "18:00",
-           "arr": "20:05"
-          },
-          {
-           "from": "LGA",
-           "to": "YYZ",
-           "dep": "21:18",
-           "arr": "23:00"
-          }
-         ],
-         "layovers": [
-          73
-         ],
-         "arr_iso": "2026-08-23T23:00"
         }
        ]
       }
@@ -20614,71 +20592,21 @@
      "cabins": {
       "economy": {
        "best": {
+        "AA": 642,
         "DL": 642,
-        "UA": 642,
-        "AA": 642
+        "UA": 642
        },
        "low": {
+        "AA": 492,
         "DL": 492,
-        "UA": 492,
-        "AA": 492
+        "UA": 492
        },
        "at_low": {
+        "AA": false,
         "DL": false,
-        "UA": false,
-        "AA": false
+        "UA": false
        },
        "options": [
-        {
-         "price": 642,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "05:46",
-           "arr": "06:45"
-          },
-          {
-           "from": "ATL",
-           "to": "YYZ",
-           "dep": "08:05",
-           "arr": "10:25"
-          }
-         ],
-         "layovers": [
-          80
-         ],
-         "arr_iso": "2026-08-23T10:25"
-        },
-        {
-         "price": 642,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "IAH",
-           "dep": "07:00",
-           "arr": "08:44"
-          },
-          {
-           "from": "IAH",
-           "to": "YYZ",
-           "dep": "10:04",
-           "arr": "14:24"
-          }
-         ],
-         "layovers": [
-          80
-         ],
-         "arr_iso": "2026-08-23T14:24"
-        },
         {
          "price": 642,
          "airlines": [
@@ -20689,8 +20617,8 @@
           {
            "from": "GSP",
            "to": "PHL",
-           "dep": "11:04",
-           "arr": "12:59"
+           "dep": "07:57",
+           "arr": "09:49"
           },
           {
            "from": "PHL",
@@ -20700,12 +20628,137 @@
           }
          ],
          "layovers": [
-          54
+          244
          ],
          "arr_iso": "2026-08-23T15:41"
         },
         {
          "price": 642,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "14:51",
+           "arr": "15:58"
+          },
+          {
+           "from": "ATL",
+           "to": "YYZ",
+           "dep": "19:35",
+           "arr": "21:59"
+          }
+         ],
+         "layovers": [
+          217
+         ],
+         "arr_iso": "2026-08-23T21:59"
+        },
+        {
+         "price": 642,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "17:43",
+           "arr": "19:03"
+          },
+          {
+           "from": "ORD",
+           "to": "YYZ",
+           "dep": "21:15",
+           "arr": "23:59"
+          }
+         ],
+         "layovers": [
+          132
+         ],
+         "arr_iso": "2026-08-23T23:59"
+        },
+        {
+         "price": 642,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "CLT",
+           "dep": "20:20",
+           "arr": "21:23"
+          },
+          {
+           "from": "CLT",
+           "to": "YYZ",
+           "dep": "09:01",
+           "arr": "11:10"
+          }
+         ],
+         "layovers": [
+          698
+         ],
+         "arr_iso": "2026-08-24T11:10"
+        },
+        {
+         "price": 672,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "EWR",
+           "dep": "07:00",
+           "arr": "08:59"
+          },
+          {
+           "from": "EWR",
+           "to": "YYZ",
+           "dep": "09:59",
+           "arr": "11:43"
+          }
+         ],
+         "layovers": [
+          60
+         ],
+         "arr_iso": "2026-08-23T11:43"
+        },
+        {
+         "price": 672,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "IAD",
+           "dep": "19:47",
+           "arr": "21:25"
+          },
+          {
+           "from": "IAD",
+           "to": "YYZ",
+           "dep": "22:19",
+           "arr": "23:54"
+          }
+         ],
+         "layovers": [
+          54
+         ],
+         "arr_iso": "2026-08-23T23:54"
+        },
+        {
+         "price": 717,
          "airlines": [
           "DL"
          ],
@@ -20730,32 +20783,7 @@
          "arr_iso": "2026-08-23T15:20"
         },
         {
-         "price": 642,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "11:25",
-           "arr": "12:25"
-          },
-          {
-           "from": "ATL",
-           "to": "YYZ",
-           "dep": "14:59",
-           "arr": "17:19"
-          }
-         ],
-         "layovers": [
-          154
-         ],
-         "arr_iso": "2026-08-23T17:19"
-        },
-        {
-         "price": 642,
+         "price": 717,
          "airlines": [
           "DL"
          ],
@@ -20778,56 +20806,6 @@
           70
          ],
          "arr_iso": "2026-08-23T21:59"
-        },
-        {
-         "price": 642,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "18:08",
-           "arr": "19:24"
-          },
-          {
-           "from": "CLT",
-           "to": "YYZ",
-           "dep": "20:40",
-           "arr": "22:35"
-          }
-         ],
-         "layovers": [
-          76
-         ],
-         "arr_iso": "2026-08-23T22:35"
-        },
-        {
-         "price": 642,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DTW",
-           "dep": "18:58",
-           "arr": "20:49"
-          },
-          {
-           "from": "DTW",
-           "to": "YYZ",
-           "dep": "21:39",
-           "arr": "23:03"
-          }
-         ],
-         "layovers": [
-          50
-         ],
-         "arr_iso": "2026-08-23T23:03"
         }
        ]
       },
@@ -20974,7 +20952,7 @@
          "arr_iso": "2026-08-23T21:59"
         },
         {
-         "price": 1099,
+         "price": 1059,
          "airlines": [
           "UA"
          ],
@@ -20999,7 +20977,7 @@
          "arr_iso": "2026-08-23T19:37"
         },
         {
-         "price": 1157,
+         "price": 1173,
          "airlines": [
           "UA"
          ],
@@ -21022,31 +21000,6 @@
           44
          ],
          "arr_iso": "2026-08-23T19:02"
-        },
-        {
-         "price": 1215,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "LGA",
-           "dep": "18:00",
-           "arr": "20:05"
-          },
-          {
-           "from": "LGA",
-           "to": "YYZ",
-           "dep": "21:18",
-           "arr": "23:00"
-          }
-         ],
-         "layovers": [
-          73
-         ],
-         "arr_iso": "2026-08-23T23:00"
         }
        ]
       }
@@ -21059,24 +21012,56 @@
      "nights": 3,
      "cabins": {
       "economy": {
-       "best": {},
-       "low": {},
-       "at_low": {},
-       "options": []
+       "best": {
+        "AA": 625
+       },
+       "low": {
+        "AA": 591
+       },
+       "at_low": {
+        "AA": false
+       },
+       "options": [
+        {
+         "price": 625,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DCA",
+           "dep": "06:27",
+           "arr": "08:14"
+          },
+          {
+           "from": "DCA",
+           "to": "YYZ",
+           "dep": "10:15",
+           "arr": "11:59"
+          }
+         ],
+         "layovers": [
+          121
+         ],
+         "arr_iso": "2026-08-24T11:59"
+        }
+       ]
       },
       "first": {
        "best": {
-        "UA": 1050
+        "UA": 1132
        },
        "low": {
         "UA": 1050
        },
        "at_low": {
-        "UA": true
+        "UA": false
        },
        "options": [
         {
-         "price": 1050,
+         "price": 1132,
          "airlines": [
           "UA"
          ],
@@ -21119,17 +21104,17 @@
       },
       "first": {
        "best": {
-        "UA": 1050
+        "UA": 1132
        },
        "low": {
         "UA": 1050
        },
        "at_low": {
-        "UA": true
+        "UA": false
        },
        "options": [
         {
-         "price": 1050,
+         "price": 1132,
          "airlines": [
           "UA"
          ],
@@ -21169,7 +21154,7 @@
     "DL",
     "AA"
    ],
-   "scanned_at": "2026-08-03",
+   "scanned_at": "2026-08-04",
    "entries": [
     {
      "dep": "2026-08-09",
@@ -21291,6 +21276,56 @@
          ],
          "layovers": [
           146
+         ],
+         "arr_iso": "2026-08-09T12:51"
+        },
+        {
+         "price": 928,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:10",
+           "arr": "07:30"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "08:40",
+           "arr": "10:38"
+          }
+         ],
+         "layovers": [
+          70
+         ],
+         "arr_iso": "2026-08-09T10:38"
+        },
+        {
+         "price": 947,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "10:04",
+           "arr": "11:05"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "12:21",
+           "arr": "12:51"
+          }
+         ],
+         "layovers": [
+          76
          ],
          "arr_iso": "2026-08-09T12:51"
         },
@@ -21666,6 +21701,56 @@
          "arr_iso": "2026-08-09T12:51"
         },
         {
+         "price": 928,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:10",
+           "arr": "07:30"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "08:40",
+           "arr": "10:38"
+          }
+         ],
+         "layovers": [
+          70
+         ],
+         "arr_iso": "2026-08-09T10:38"
+        },
+        {
+         "price": 947,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "10:04",
+           "arr": "11:05"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "12:21",
+           "arr": "12:51"
+          }
+         ],
+         "layovers": [
+          76
+         ],
+         "arr_iso": "2026-08-09T12:51"
+        },
+        {
          "price": 1207,
          "airlines": [
           "DL"
@@ -22033,6 +22118,56 @@
          ],
          "layovers": [
           146
+         ],
+         "arr_iso": "2026-08-09T12:51"
+        },
+        {
+         "price": 863,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:10",
+           "arr": "07:30"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "08:40",
+           "arr": "10:38"
+          }
+         ],
+         "layovers": [
+          70
+         ],
+         "arr_iso": "2026-08-09T10:38"
+        },
+        {
+         "price": 947,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "10:04",
+           "arr": "11:05"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "12:21",
+           "arr": "12:51"
+          }
+         ],
+         "layovers": [
+          76
          ],
          "arr_iso": "2026-08-09T12:51"
         },
@@ -22408,6 +22543,56 @@
          "arr_iso": "2026-08-09T12:51"
         },
         {
+         "price": 823,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "CLT",
+           "dep": "14:36",
+           "arr": "15:52"
+          },
+          {
+           "from": "CLT",
+           "to": "LIT",
+           "dep": "16:53",
+           "arr": "18:07"
+          }
+         ],
+         "layovers": [
+          61
+         ],
+         "arr_iso": "2026-08-09T18:07"
+        },
+        {
+         "price": 835,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:10",
+           "arr": "07:30"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "08:40",
+           "arr": "10:38"
+          }
+         ],
+         "layovers": [
+          70
+         ],
+         "arr_iso": "2026-08-09T10:38"
+        },
+        {
          "price": 1337,
          "airlines": [
           "DL"
@@ -22663,8 +22848,8 @@
      "cabins": {
       "economy": {
        "best": {
-        "AA": 667,
-        "UA": 667
+        "AA": 715,
+        "UA": 715
        },
        "low": {
         "AA": 563,
@@ -22676,7 +22861,7 @@
        },
        "options": [
         {
-         "price": 667,
+         "price": 715,
          "airlines": [
           "AA"
          ],
@@ -22701,7 +22886,7 @@
          "arr_iso": "2026-08-10T22:35"
         },
         {
-         "price": 667,
+         "price": 715,
          "airlines": [
           "UA"
          ],
@@ -22830,7 +23015,7 @@
       "first": {
        "best": {
         "AA": 1041,
-        "UA": 1047
+        "UA": 1095
        },
        "low": {
         "AA": 805,
@@ -22867,7 +23052,7 @@
          "arr_iso": "2026-08-10T22:35"
         },
         {
-         "price": 1047,
+         "price": 1095,
          "airlines": [
           "UA"
          ],
@@ -22892,7 +23077,7 @@
          "arr_iso": "2026-08-10T23:37"
         },
         {
-         "price": 1133,
+         "price": 1169,
          "airlines": [
           "AA"
          ],
@@ -22917,7 +23102,7 @@
          "arr_iso": "2026-08-10T09:35"
         },
         {
-         "price": 1211,
+         "price": 1251,
          "airlines": [
           "AA"
          ],
@@ -22965,6 +23150,31 @@
           70
          ],
          "arr_iso": "2026-08-10T10:38"
+        },
+        {
+         "price": 1420,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "07:39",
+           "arr": "09:00"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "10:05",
+           "arr": "12:02"
+          }
+         ],
+         "layovers": [
+          65
+         ],
+         "arr_iso": "2026-08-10T12:02"
         }
        ]
       }
@@ -22978,8 +23188,8 @@
      "cabins": {
       "economy": {
        "best": {
-        "AA": 823,
-        "UA": 1100
+        "AA": 715,
+        "UA": 715
        },
        "low": {
         "AA": 558,
@@ -22990,6 +23200,56 @@
         "UA": false
        },
        "options": [
+        {
+         "price": 715,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "21:10",
+           "arr": "22:35"
+          }
+         ],
+         "layovers": [
+          117
+         ],
+         "arr_iso": "2026-08-10T22:35"
+        },
+        {
+         "price": 715,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "17:43",
+           "arr": "19:00"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "21:30",
+           "arr": "23:37"
+          }
+         ],
+         "layovers": [
+          150
+         ],
+         "arr_iso": "2026-08-10T23:37"
+        },
         {
          "price": 823,
          "airlines": [
@@ -23094,43 +23354,21 @@
       },
       "first": {
        "best": {
-        "UA": 1047,
-        "AA": 1083
+        "AA": 1083,
+        "UA": 1095,
+        "DL": 1567
        },
        "low": {
+        "AA": 842,
         "UA": 1047,
-        "AA": 842
+        "DL": 927
        },
        "at_low": {
-        "UA": true,
-        "AA": false
+        "AA": false,
+        "UA": false,
+        "DL": false
        },
        "options": [
-        {
-         "price": 1047,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "17:43",
-           "arr": "19:00"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:37"
-          }
-         ],
-         "layovers": [
-          150
-         ],
-         "arr_iso": "2026-08-10T23:37"
-        },
         {
          "price": 1083,
          "airlines": [
@@ -23157,7 +23395,32 @@
          "arr_iso": "2026-08-10T22:35"
         },
         {
-         "price": 1175,
+         "price": 1095,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "17:43",
+           "arr": "19:00"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "21:30",
+           "arr": "23:37"
+          }
+         ],
+         "layovers": [
+          150
+         ],
+         "arr_iso": "2026-08-10T23:37"
+        },
+        {
+         "price": 1211,
          "airlines": [
           "AA"
          ],
@@ -23182,7 +23445,7 @@
          "arr_iso": "2026-08-10T09:35"
         },
         {
-         "price": 1253,
+         "price": 1293,
          "airlines": [
           "AA"
          ],
@@ -23205,6 +23468,31 @@
           47
          ],
          "arr_iso": "2026-08-10T21:25"
+        },
+        {
+         "price": 1567,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "05:46",
+           "arr": "06:45"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "08:05",
+           "arr": "08:37"
+          }
+         ],
+         "layovers": [
+          80
+         ],
+         "arr_iso": "2026-08-10T08:37"
         }
        ]
       }
@@ -23218,8 +23506,8 @@
      "cabins": {
       "economy": {
        "best": {
-        "AA": 667,
-        "UA": 667
+        "AA": 715,
+        "UA": 715
        },
        "low": {
         "AA": 520,
@@ -23231,7 +23519,7 @@
        },
        "options": [
         {
-         "price": 667,
+         "price": 715,
          "airlines": [
           "AA"
          ],
@@ -23256,7 +23544,7 @@
          "arr_iso": "2026-08-10T22:35"
         },
         {
-         "price": 667,
+         "price": 715,
          "airlines": [
           "UA"
          ],
@@ -23384,8 +23672,8 @@
       },
       "first": {
        "best": {
-        "AA": 980,
-        "UA": 1047
+        "AA": 1041,
+        "UA": 1095
        },
        "low": {
         "AA": 723,
@@ -23396,31 +23684,6 @@
         "UA": false
        },
        "options": [
-        {
-         "price": 980,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "10:12",
-           "arr": "11:28"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "12:44",
-           "arr": "13:53"
-          }
-         ],
-         "layovers": [
-          76
-         ],
-         "arr_iso": "2026-08-10T13:53"
-        },
         {
          "price": 1041,
          "airlines": [
@@ -23447,7 +23710,7 @@
          "arr_iso": "2026-08-10T22:35"
         },
         {
-         "price": 1047,
+         "price": 1095,
          "airlines": [
           "UA"
          ],
@@ -23472,7 +23735,7 @@
          "arr_iso": "2026-08-10T23:37"
         },
         {
-         "price": 1133,
+         "price": 1169,
          "airlines": [
           "AA"
          ],
@@ -23495,31 +23758,6 @@
           69
          ],
          "arr_iso": "2026-08-10T09:35"
-        },
-        {
-         "price": 1211,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "17:28",
-           "arr": "19:13"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "20:00",
-           "arr": "21:25"
-          }
-         ],
-         "layovers": [
-          47
-         ],
-         "arr_iso": "2026-08-10T21:25"
         },
         {
          "price": 1234,
@@ -23545,6 +23783,31 @@
           65
          ],
          "arr_iso": "2026-08-10T12:02"
+        },
+        {
+         "price": 1251,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-10T21:25"
         },
         {
          "price": 1413,
@@ -24352,7 +24615,7 @@
        "best": {
         "UA": 612,
         "AA": 612,
-        "DL": 718
+        "DL": 918
        },
        "low": {
         "UA": 458,
@@ -24466,31 +24729,6 @@
          "arr_iso": "2026-08-16T23:49"
         },
         {
-         "price": 718,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "08:49",
-           "arr": "09:55"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "12:21",
-           "arr": "12:51"
-          }
-         ],
-         "layovers": [
-          146
-         ],
-         "arr_iso": "2026-08-16T12:51"
-        },
-        {
          "price": 918,
          "airlines": [
           "DL"
@@ -24519,9 +24757,9 @@
       },
       "first": {
        "best": {
-        "AA": 775,
+        "AA": 763,
         "UA": 992,
-        "DL": 1570
+        "DL": 1016
        },
        "low": {
         "AA": 627,
@@ -24535,7 +24773,7 @@
        },
        "options": [
         {
-         "price": 775,
+         "price": 763,
          "airlines": [
           "AA"
          ],
@@ -24568,6 +24806,31 @@
          "legs": [
           {
            "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-16T21:25"
+        },
+        {
+         "price": 805,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
            "to": "CLT",
            "dep": "20:20",
            "arr": "21:23"
@@ -24583,56 +24846,6 @@
           77
          ],
          "arr_iso": "2026-08-16T23:49"
-        },
-        {
-         "price": 822,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "12:39",
-           "arr": "13:50"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "16:53",
-           "arr": "18:07"
-          }
-         ],
-         "layovers": [
-          183
-         ],
-         "arr_iso": "2026-08-16T18:07"
-        },
-        {
-         "price": 984,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "14:13",
-           "arr": "15:53"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "16:57",
-           "arr": "18:23"
-          }
-         ],
-         "layovers": [
-          64
-         ],
-         "arr_iso": "2026-08-16T18:23"
         },
         {
          "price": 992,
@@ -24660,7 +24873,57 @@
          "arr_iso": "2026-08-16T10:42"
         },
         {
-         "price": 1570,
+         "price": 1016,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "05:46",
+           "arr": "06:45"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "08:05",
+           "arr": "08:37"
+          }
+         ],
+         "layovers": [
+          80
+         ],
+         "arr_iso": "2026-08-16T08:37"
+        },
+        {
+         "price": 1016,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "08:49",
+           "arr": "09:55"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "12:21",
+           "arr": "12:51"
+          }
+         ],
+         "layovers": [
+          146
+         ],
+         "arr_iso": "2026-08-16T12:51"
+        },
+        {
+         "price": 1273,
          "airlines": [
           "DL"
          ],
@@ -24696,70 +24959,45 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 612,
         "AA": 612,
-        "DL": 718
+        "UA": 631,
+        "DL": 918
        },
        "low": {
-        "UA": 477,
         "AA": 381,
+        "UA": 477,
         "DL": 421
        },
        "at_low": {
-        "UA": false,
         "AA": false,
+        "UA": false,
         "DL": false
        },
        "options": [
         {
          "price": 612,
          "airlines": [
-          "UA"
+          "AA"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "ORD",
-           "dep": "06:30",
-           "arr": "07:47"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "08:40",
-           "arr": "10:42"
-          }
-         ],
-         "layovers": [
-          53
-         ],
-         "arr_iso": "2026-08-16T10:42"
-        },
-        {
-         "price": 612,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "IAH",
+           "to": "DFW",
            "dep": "07:00",
-           "arr": "08:44"
+           "arr": "08:43"
           },
           {
-           "from": "IAH",
+           "from": "DFW",
            "to": "LIT",
-           "dep": "09:45",
-           "arr": "11:12"
+           "dep": "09:59",
+           "arr": "11:23"
           }
          ],
          "layovers": [
-          61
+          76
          ],
-         "arr_iso": "2026-08-16T11:12"
+         "arr_iso": "2026-08-16T11:23"
         },
         {
          "price": 612,
@@ -24787,29 +25025,79 @@
          "arr_iso": "2026-08-16T21:25"
         },
         {
-         "price": 718,
+         "price": 612,
          "airlines": [
-          "DL"
+          "AA"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "ATL",
-           "dep": "08:49",
-           "arr": "09:55"
+           "to": "CLT",
+           "dep": "20:20",
+           "arr": "21:23"
           },
           {
-           "from": "ATL",
+           "from": "CLT",
            "to": "LIT",
-           "dep": "12:21",
-           "arr": "12:51"
+           "dep": "22:40",
+           "arr": "23:49"
           }
          ],
          "layovers": [
-          146
+          77
          ],
-         "arr_iso": "2026-08-16T12:51"
+         "arr_iso": "2026-08-16T23:49"
+        },
+        {
+         "price": 631,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:30",
+           "arr": "07:47"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "08:40",
+           "arr": "10:42"
+          }
+         ],
+         "layovers": [
+          53
+         ],
+         "arr_iso": "2026-08-16T10:42"
+        },
+        {
+         "price": 631,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "IAH",
+           "dep": "07:00",
+           "arr": "08:44"
+          },
+          {
+           "from": "IAH",
+           "to": "LIT",
+           "dep": "09:45",
+           "arr": "11:12"
+          }
+         ],
+         "layovers": [
+          61
+         ],
+         "arr_iso": "2026-08-16T11:12"
         },
         {
          "price": 918,
@@ -24841,47 +25129,22 @@
       "first": {
        "best": {
         "AA": 763,
-        "UA": 992,
-        "DL": 1570
+        "DL": 1016,
+        "UA": 1023
        },
        "low": {
         "AA": 627,
-        "UA": 937,
-        "DL": 784
+        "DL": 784,
+        "UA": 937
        },
        "at_low": {
         "AA": false,
-        "UA": false,
-        "DL": false
+        "DL": false,
+        "UA": false
        },
        "options": [
         {
          "price": 763,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "20:05",
-           "arr": "21:45"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "22:30",
-           "arr": "23:55"
-          }
-         ],
-         "layovers": [
-          45
-         ],
-         "arr_iso": "2026-08-16T23:55"
-        },
-        {
-         "price": 775,
          "airlines": [
           "AA"
          ],
@@ -24914,6 +25177,31 @@
          "legs": [
           {
            "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-16T21:25"
+        },
+        {
+         "price": 805,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
            "to": "CLT",
            "dep": "20:20",
            "arr": "21:23"
@@ -24931,57 +25219,57 @@
          "arr_iso": "2026-08-16T23:49"
         },
         {
-         "price": 822,
+         "price": 1016,
          "airlines": [
-          "AA"
+          "DL"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "CLT",
-           "dep": "12:39",
-           "arr": "13:50"
+           "to": "ATL",
+           "dep": "05:46",
+           "arr": "06:45"
           },
           {
-           "from": "CLT",
+           "from": "ATL",
            "to": "LIT",
-           "dep": "16:53",
-           "arr": "18:07"
+           "dep": "08:05",
+           "arr": "08:37"
           }
          ],
          "layovers": [
-          183
+          80
          ],
-         "arr_iso": "2026-08-16T18:07"
+         "arr_iso": "2026-08-16T08:37"
         },
         {
-         "price": 984,
+         "price": 1016,
          "airlines": [
-          "AA"
+          "DL"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "DFW",
-           "dep": "14:13",
-           "arr": "15:53"
+           "to": "ATL",
+           "dep": "08:49",
+           "arr": "09:55"
           },
           {
-           "from": "DFW",
+           "from": "ATL",
            "to": "LIT",
-           "dep": "16:57",
-           "arr": "18:23"
+           "dep": "12:21",
+           "arr": "12:51"
           }
          ],
          "layovers": [
-          64
+          146
          ],
-         "arr_iso": "2026-08-16T18:23"
+         "arr_iso": "2026-08-16T12:51"
         },
         {
-         "price": 992,
+         "price": 1023,
          "airlines": [
           "UA"
          ],
@@ -25006,7 +25294,7 @@
          "arr_iso": "2026-08-16T10:42"
         },
         {
-         "price": 1570,
+         "price": 1273,
          "airlines": [
           "DL"
          ],
@@ -25042,21 +25330,71 @@
      "cabins": {
       "economy": {
        "best": {
+        "DL": 596,
         "UA": 612,
-        "AA": 612,
-        "DL": 718
+        "AA": 612
        },
        "low": {
+        "DL": 460,
         "UA": 477,
-        "AA": 390,
-        "DL": 460
+        "AA": 390
        },
        "at_low": {
+        "DL": false,
         "UA": false,
-        "AA": false,
-        "DL": false
+        "AA": false
        },
        "options": [
+        {
+         "price": 596,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "06:55",
+           "arr": "07:58"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "10:31",
+           "arr": "11:03"
+          }
+         ],
+         "layovers": [
+          153
+         ],
+         "arr_iso": "2026-08-16T11:03"
+        },
+        {
+         "price": 596,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "08:49",
+           "arr": "09:55"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "12:21",
+           "arr": "12:51"
+          }
+         ],
+         "layovers": [
+          146
+         ],
+         "arr_iso": "2026-08-16T12:51"
+        },
         {
          "price": 612,
          "airlines": [
@@ -25158,32 +25496,7 @@
          "arr_iso": "2026-08-16T23:49"
         },
         {
-         "price": 718,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "08:49",
-           "arr": "09:55"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "12:21",
-           "arr": "12:51"
-          }
-         ],
-         "layovers": [
-          146
-         ],
-         "arr_iso": "2026-08-16T12:51"
-        },
-        {
-         "price": 880,
+         "price": 872,
          "airlines": [
           "UA"
          ],
@@ -25236,7 +25549,7 @@
       },
       "first": {
        "best": {
-        "AA": 775,
+        "AA": 800,
         "UA": 992,
         "DL": 1016
        },
@@ -25252,7 +25565,7 @@
        },
        "options": [
         {
-         "price": 775,
+         "price": 800,
          "airlines": [
           "AA"
          ],
@@ -25277,7 +25590,32 @@
          "arr_iso": "2026-08-16T12:19"
         },
         {
-         "price": 805,
+         "price": 842,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-16T21:25"
+        },
+        {
+         "price": 842,
          "airlines": [
           "AA"
          ],
@@ -25300,56 +25638,6 @@
           77
          ],
          "arr_iso": "2026-08-16T23:49"
-        },
-        {
-         "price": 822,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "12:39",
-           "arr": "13:50"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "16:53",
-           "arr": "18:07"
-          }
-         ],
-         "layovers": [
-          183
-         ],
-         "arr_iso": "2026-08-16T18:07"
-        },
-        {
-         "price": 984,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "14:13",
-           "arr": "15:53"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "16:57",
-           "arr": "18:23"
-          }
-         ],
-         "layovers": [
-          64
-         ],
-         "arr_iso": "2026-08-16T18:23"
         },
         {
          "price": 992,
@@ -25402,7 +25690,32 @@
          "arr_iso": "2026-08-16T08:37"
         },
         {
-         "price": 1570,
+         "price": 1016,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "08:49",
+           "arr": "09:55"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "12:21",
+           "arr": "12:51"
+          }
+         ],
+         "layovers": [
+          146
+         ],
+         "arr_iso": "2026-08-16T12:51"
+        },
+        {
+         "price": 1273,
          "airlines": [
           "DL"
          ],
@@ -25809,123 +26122,23 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 477,
-        "AA": 558,
-        "DL": 658
+        "AA": 612,
+        "UA": 631,
+        "DL": 678
        },
        "low": {
-        "UA": 427,
         "AA": 351,
+        "UA": 427,
         "DL": 379
        },
        "at_low": {
-        "UA": false,
         "AA": false,
+        "UA": false,
         "DL": false
        },
        "options": [
         {
-         "price": 477,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "17:43",
-           "arr": "19:03"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
-          }
-         ],
-         "layovers": [
-          147
-         ],
-         "arr_iso": "2026-08-17T23:31"
-        },
-        {
-         "price": 558,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "06:00",
-           "arr": "07:16"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "08:25",
-           "arr": "09:35"
-          }
-         ],
-         "layovers": [
-          69
-         ],
-         "arr_iso": "2026-08-17T09:35"
-        },
-        {
-         "price": 626,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:35"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
-          }
-         ],
-         "layovers": [
-          55
-         ],
-         "arr_iso": "2026-08-17T20:41"
-        },
-        {
-         "price": 658,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "17:20",
-           "arr": "18:25"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "19:11",
-           "arr": "19:45"
-          }
-         ],
-         "layovers": [
-          46
-         ],
-         "arr_iso": "2026-08-17T19:45"
-        },
-        {
-         "price": 678,
+         "price": 612,
          "airlines": [
           "AA"
          ],
@@ -25934,67 +26147,23 @@
           {
            "from": "GSP",
            "to": "DFW",
-           "dep": "07:00",
-           "arr": "08:43"
+           "dep": "17:28",
+           "arr": "19:13"
           },
           {
            "from": "DFW",
            "to": "LIT",
-           "dep": "09:59",
-           "arr": "11:23"
+           "dep": "20:00",
+           "arr": "21:25"
           }
          ],
          "layovers": [
-          76
+          47
          ],
-         "arr_iso": "2026-08-17T11:23"
-        }
-       ]
-      },
-      "first": {
-       "best": {
-        "AA": 930,
-        "UA": 937,
-        "DL": 1003
-       },
-       "low": {
-        "AA": 669,
-        "UA": 798,
-        "DL": 713
-       },
-       "at_low": {
-        "AA": false,
-        "UA": false,
-        "DL": false
-       },
-       "options": [
-        {
-         "price": 930,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "14:13",
-           "arr": "15:53"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "17:00",
-           "arr": "18:26"
-          }
-         ],
-         "layovers": [
-          67
-         ],
-         "arr_iso": "2026-08-17T18:26"
+         "arr_iso": "2026-08-17T21:25"
         },
         {
-         "price": 937,
+         "price": 631,
          "airlines": [
           "UA"
          ],
@@ -26019,7 +26188,7 @@
          "arr_iso": "2026-08-17T21:24"
         },
         {
-         "price": 991,
+         "price": 675,
          "airlines": [
           "AA"
          ],
@@ -26044,7 +26213,7 @@
          "arr_iso": "2026-08-17T11:23"
         },
         {
-         "price": 1003,
+         "price": 678,
          "airlines": [
           "DL"
          ],
@@ -26069,7 +26238,126 @@
          "arr_iso": "2026-08-17T19:45"
         },
         {
-         "price": 1083,
+         "price": 768,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "CLT",
+           "dep": "10:12",
+           "arr": "11:28"
+          },
+          {
+           "from": "CLT",
+           "to": "LIT",
+           "dep": "12:44",
+           "arr": "13:53"
+          }
+         ],
+         "layovers": [
+          76
+         ],
+         "arr_iso": "2026-08-17T13:53"
+        }
+       ]
+      },
+      "first": {
+       "best": {
+        "AA": 984,
+        "DL": 1023,
+        "UA": 1023
+       },
+       "low": {
+        "AA": 669,
+        "DL": 713,
+        "UA": 798
+       },
+       "at_low": {
+        "AA": false,
+        "DL": false,
+        "UA": false
+       },
+       "options": [
+        {
+         "price": 984,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "14:13",
+           "arr": "15:53"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "17:00",
+           "arr": "18:26"
+          }
+         ],
+         "layovers": [
+          67
+         ],
+         "arr_iso": "2026-08-17T18:26"
+        },
+        {
+         "price": 1023,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "17:20",
+           "arr": "18:25"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "19:11",
+           "arr": "19:45"
+          }
+         ],
+         "layovers": [
+          46
+         ],
+         "arr_iso": "2026-08-17T19:45"
+        },
+        {
+         "price": 1023,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "IAH",
+           "dep": "17:31",
+           "arr": "19:10"
+          },
+          {
+           "from": "IAH",
+           "to": "LIT",
+           "dep": "19:50",
+           "arr": "21:24"
+          }
+         ],
+         "layovers": [
+          40
+         ],
+         "arr_iso": "2026-08-17T21:24"
+        },
+        {
+         "price": 1110,
          "airlines": [
           "AA"
          ],
@@ -26105,23 +26393,48 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 477,
-        "AA": 626,
-        "DL": 658
+        "AA": 612,
+        "UA": 612,
+        "DL": 678
        },
        "low": {
-        "UA": 354,
         "AA": 324,
+        "UA": 354,
         "DL": 380
        },
        "at_low": {
-        "UA": false,
         "AA": false,
+        "UA": false,
         "DL": false
        },
        "options": [
         {
-         "price": 477,
+         "price": 612,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-17T21:25"
+        },
+        {
+         "price": 612,
          "airlines": [
           "UA"
          ],
@@ -26146,57 +26459,7 @@
          "arr_iso": "2026-08-17T23:31"
         },
         {
-         "price": 626,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:35"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
-          }
-         ],
-         "layovers": [
-          55
-         ],
-         "arr_iso": "2026-08-17T20:41"
-        },
-        {
-         "price": 658,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "17:20",
-           "arr": "18:25"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "19:11",
-           "arr": "19:45"
-          }
-         ],
-         "layovers": [
-          46
-         ],
-         "arr_iso": "2026-08-17T19:45"
-        },
-        {
-         "price": 678,
+         "price": 675,
          "airlines": [
           "AA"
          ],
@@ -26219,53 +26482,53 @@
           76
          ],
          "arr_iso": "2026-08-17T11:23"
-        }
-       ]
-      },
-      "first": {
-       "best": {
-        "AA": 930,
-        "UA": 937,
-        "DL": 1003
-       },
-       "low": {
-        "AA": 699,
-        "UA": 837,
-        "DL": 752
-       },
-       "at_low": {
-        "AA": false,
-        "UA": false,
-        "DL": false
-       },
-       "options": [
+        },
         {
-         "price": 930,
+         "price": 678,
          "airlines": [
-          "AA"
+          "DL"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "DFW",
-           "dep": "14:13",
-           "arr": "15:53"
+           "to": "ATL",
+           "dep": "17:20",
+           "arr": "18:25"
           },
           {
-           "from": "DFW",
+           "from": "ATL",
            "to": "LIT",
-           "dep": "17:00",
-           "arr": "18:26"
+           "dep": "19:11",
+           "arr": "19:45"
           }
          ],
          "layovers": [
-          67
+          46
          ],
-         "arr_iso": "2026-08-17T18:26"
-        },
+         "arr_iso": "2026-08-17T19:45"
+        }
+       ]
+      },
+      "first": {
+       "best": {
+        "UA": 992,
+        "AA": 1021,
+        "DL": 1023
+       },
+       "low": {
+        "UA": 837,
+        "AA": 699,
+        "DL": 752
+       },
+       "at_low": {
+        "UA": false,
+        "AA": false,
+        "DL": false
+       },
+       "options": [
         {
-         "price": 937,
+         "price": 992,
          "airlines": [
           "UA"
          ],
@@ -26290,7 +26553,7 @@
          "arr_iso": "2026-08-17T21:24"
         },
         {
-         "price": 992,
+         "price": 1021,
          "airlines": [
           "AA"
          ],
@@ -26299,23 +26562,23 @@
           {
            "from": "GSP",
            "to": "DFW",
-           "dep": "07:00",
-           "arr": "08:43"
+           "dep": "14:13",
+           "arr": "15:53"
           },
           {
            "from": "DFW",
            "to": "LIT",
-           "dep": "09:59",
-           "arr": "11:23"
+           "dep": "17:00",
+           "arr": "18:26"
           }
          ],
          "layovers": [
-          76
+          67
          ],
-         "arr_iso": "2026-08-17T11:23"
+         "arr_iso": "2026-08-17T18:26"
         },
         {
-         "price": 1003,
+         "price": 1023,
          "airlines": [
           "DL"
          ],
@@ -26340,7 +26603,7 @@
          "arr_iso": "2026-08-17T19:45"
         },
         {
-         "price": 1083,
+         "price": 1147,
          "airlines": [
           "AA"
          ],
@@ -26376,9 +26639,9 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 477,
-        "AA": 558,
-        "DL": 658
+        "UA": 582,
+        "AA": 612,
+        "DL": 678
        },
        "low": {
         "UA": 285,
@@ -26392,7 +26655,7 @@
        },
        "options": [
         {
-         "price": 477,
+         "price": 582,
          "airlines": [
           "UA"
          ],
@@ -26407,17 +26670,17 @@
           {
            "from": "ORD",
            "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
+           "dep": "08:40",
+           "arr": "10:42"
           }
          ],
          "layovers": [
-          147
+          817
          ],
-         "arr_iso": "2026-08-17T23:31"
+         "arr_iso": "2026-08-18T10:42"
         },
         {
-         "price": 558,
+         "price": 612,
          "airlines": [
           "AA"
          ],
@@ -26442,7 +26705,7 @@
          "arr_iso": "2026-08-17T09:35"
         },
         {
-         "price": 626,
+         "price": 612,
          "airlines": [
           "AA"
          ],
@@ -26450,49 +26713,49 @@
          "legs": [
           {
            "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:35"
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
           },
           {
-           "from": "CLT",
+           "from": "DFW",
            "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
+           "dep": "20:00",
+           "arr": "21:25"
           }
          ],
          "layovers": [
-          55
+          47
          ],
-         "arr_iso": "2026-08-17T20:41"
+         "arr_iso": "2026-08-17T21:25"
         },
         {
-         "price": 658,
+         "price": 612,
          "airlines": [
-          "DL"
+          "UA"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "ATL",
-           "dep": "17:20",
-           "arr": "18:25"
+           "to": "ORD",
+           "dep": "17:43",
+           "arr": "19:03"
           },
           {
-           "from": "ATL",
+           "from": "ORD",
            "to": "LIT",
-           "dep": "19:11",
-           "arr": "19:45"
+           "dep": "21:30",
+           "arr": "23:31"
           }
          ],
          "layovers": [
-          46
+          147
          ],
-         "arr_iso": "2026-08-17T19:45"
+         "arr_iso": "2026-08-17T23:31"
         },
         {
-         "price": 678,
+         "price": 675,
          "airlines": [
           "AA"
          ],
@@ -26515,14 +26778,39 @@
           76
          ],
          "arr_iso": "2026-08-17T11:23"
+        },
+        {
+         "price": 678,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "17:20",
+           "arr": "18:25"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "19:11",
+           "arr": "19:45"
+          }
+         ],
+         "layovers": [
+          46
+         ],
+         "arr_iso": "2026-08-17T19:45"
         }
        ]
       },
       "first": {
        "best": {
-        "AA": 930,
-        "UA": 937,
-        "DL": 1003
+        "AA": 805,
+        "UA": 992,
+        "DL": 1023
        },
        "low": {
         "AA": 605,
@@ -26536,7 +26824,57 @@
        },
        "options": [
         {
-         "price": 930,
+         "price": 805,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-17T21:25"
+        },
+        {
+         "price": 871,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "07:00",
+           "arr": "08:43"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "09:59",
+           "arr": "11:23"
+          }
+         ],
+         "layovers": [
+          76
+         ],
+         "arr_iso": "2026-08-17T11:23"
+        },
+        {
+         "price": 984,
          "airlines": [
           "AA"
          ],
@@ -26561,7 +26899,7 @@
          "arr_iso": "2026-08-17T18:26"
         },
         {
-         "price": 937,
+         "price": 992,
          "airlines": [
           "UA"
          ],
@@ -26586,32 +26924,7 @@
          "arr_iso": "2026-08-17T21:24"
         },
         {
-         "price": 991,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "07:00",
-           "arr": "08:43"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "09:59",
-           "arr": "11:23"
-          }
-         ],
-         "layovers": [
-          76
-         ],
-         "arr_iso": "2026-08-17T11:23"
-        },
-        {
-         "price": 1003,
+         "price": 1023,
          "airlines": [
           "DL"
          ],
@@ -26647,21 +26960,46 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 477,
         "AA": 477,
+        "UA": 477,
         "DL": 497
        },
        "low": {
-        "UA": 338,
         "AA": 324,
+        "UA": 338,
         "DL": 342
        },
        "at_low": {
-        "UA": false,
         "AA": false,
+        "UA": false,
         "DL": false
        },
        "options": [
+        {
+         "price": 477,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "CLT",
+           "dep": "06:00",
+           "arr": "07:16"
+          },
+          {
+           "from": "CLT",
+           "to": "LIT",
+           "dep": "08:25",
+           "arr": "09:35"
+          }
+         ],
+         "layovers": [
+          69
+         ],
+         "arr_iso": "2026-08-18T09:35"
+        },
         {
          "price": 477,
          "airlines": [
@@ -26747,8 +27085,8 @@
           {
            "from": "GSP",
            "to": "CLT",
-           "dep": "15:12",
-           "arr": "16:28"
+           "dep": "17:19",
+           "arr": "18:32"
           },
           {
            "from": "CLT",
@@ -26758,7 +27096,7 @@
           }
          ],
          "layovers": [
-          182
+          58
          ],
          "arr_iso": "2026-08-18T20:41"
         },
@@ -26813,31 +27151,6 @@
          "arr_iso": "2026-08-18T23:31"
         },
         {
-         "price": 487,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:32"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
-          }
-         ],
-         "layovers": [
-          58
-         ],
-         "arr_iso": "2026-08-18T20:41"
-        },
-        {
          "price": 497,
          "airlines": [
           "DL"
@@ -26866,7 +27179,7 @@
       },
       "first": {
        "best": {
-        "AA": 822,
+        "AA": 787,
         "DL": 917,
         "UA": 937
        },
@@ -26882,7 +27195,32 @@
        },
        "options": [
         {
-         "price": 822,
+         "price": 787,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "07:00",
+           "arr": "08:43"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "09:59",
+           "arr": "11:23"
+          }
+         ],
+         "layovers": [
+          76
+         ],
+         "arr_iso": "2026-08-18T11:23"
+        },
+        {
+         "price": 808,
          "airlines": [
           "AA"
          ],
@@ -26957,6 +27295,31 @@
          "arr_iso": "2026-08-18T12:51"
         },
         {
+         "price": 917,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "17:20",
+           "arr": "18:25"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "19:08",
+           "arr": "19:42"
+          }
+         ],
+         "layovers": [
+          43
+         ],
+         "arr_iso": "2026-08-18T19:42"
+        },
+        {
          "price": 937,
          "airlines": [
           "UA"
@@ -26980,56 +27343,6 @@
           53
          ],
          "arr_iso": "2026-08-18T10:42"
-        },
-        {
-         "price": 943,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "10:04",
-           "arr": "11:05"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "12:21",
-           "arr": "12:51"
-          }
-         ],
-         "layovers": [
-          76
-         ],
-         "arr_iso": "2026-08-18T12:51"
-        },
-        {
-         "price": 1138,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "17:20",
-           "arr": "18:25"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "19:08",
-           "arr": "19:42"
-          }
-         ],
-         "layovers": [
-          43
-         ],
-         "arr_iso": "2026-08-18T19:42"
         }
        ]
       }
@@ -27190,8 +27503,8 @@
           {
            "from": "GSP",
            "to": "CLT",
-           "dep": "15:12",
-           "arr": "16:28"
+           "dep": "17:19",
+           "arr": "18:32"
           },
           {
            "from": "CLT",
@@ -27201,7 +27514,7 @@
           }
          ],
          "layovers": [
-          182
+          58
          ],
          "arr_iso": "2026-08-18T20:41"
         },
@@ -27259,18 +27572,46 @@
       },
       "first": {
        "best": {
+        "AA": 771,
         "DL": 917,
         "UA": 937
        },
        "low": {
+        "AA": 626,
         "DL": 713,
         "UA": 745
        },
        "at_low": {
+        "AA": false,
         "DL": false,
         "UA": false
        },
        "options": [
+        {
+         "price": 771,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "14:13",
+           "arr": "15:53"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "17:00",
+           "arr": "18:26"
+          }
+         ],
+         "layovers": [
+          67
+         ],
+         "arr_iso": "2026-08-18T18:26"
+        },
         {
          "price": 917,
          "airlines": [
@@ -27281,20 +27622,20 @@
           {
            "from": "GSP",
            "to": "ATL",
-           "dep": "06:55",
-           "arr": "07:58"
+           "dep": "05:46",
+           "arr": "06:45"
           },
           {
            "from": "ATL",
            "to": "LIT",
-           "dep": "10:31",
-           "arr": "11:03"
+           "dep": "08:05",
+           "arr": "08:37"
           }
          ],
          "layovers": [
-          153
+          80
          ],
-         "arr_iso": "2026-08-18T11:03"
+         "arr_iso": "2026-08-18T08:37"
         },
         {
          "price": 917,
@@ -27345,56 +27686,6 @@
           53
          ],
          "arr_iso": "2026-08-18T10:42"
-        },
-        {
-         "price": 943,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "10:04",
-           "arr": "11:05"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "12:21",
-           "arr": "12:51"
-          }
-         ],
-         "layovers": [
-          76
-         ],
-         "arr_iso": "2026-08-18T12:51"
-        },
-        {
-         "price": 1138,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "17:20",
-           "arr": "18:25"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "19:08",
-           "arr": "19:42"
-          }
-         ],
-         "layovers": [
-          43
-         ],
-         "arr_iso": "2026-08-18T19:42"
         }
        ]
       }
@@ -27447,56 +27738,6 @@
           53
          ],
          "arr_iso": "2026-08-23T10:42"
-        },
-        {
-         "price": 403,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "IAH",
-           "dep": "07:00",
-           "arr": "08:44"
-          },
-          {
-           "from": "IAH",
-           "to": "LIT",
-           "dep": "09:45",
-           "arr": "11:12"
-          }
-         ],
-         "layovers": [
-          61
-         ],
-         "arr_iso": "2026-08-23T11:12"
-        },
-        {
-         "price": 403,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "07:00",
-           "arr": "08:43"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "09:59",
-           "arr": "11:23"
-          }
-         ],
-         "layovers": [
-          76
-         ],
-         "arr_iso": "2026-08-23T11:23"
         },
         {
          "price": 403,
@@ -27597,6 +27838,31 @@
           153
          ],
          "arr_iso": "2026-08-23T11:03"
+        },
+        {
+         "price": 422,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "08:49",
+           "arr": "09:55"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "12:21",
+           "arr": "12:51"
+          }
+         ],
+         "layovers": [
+          146
+         ],
+         "arr_iso": "2026-08-23T12:51"
         },
         {
          "price": 523,
@@ -27781,7 +28047,7 @@
        "best": {
         "UA": 403,
         "AA": 403,
-        "DL": 422
+        "DL": 523
        },
        "low": {
         "UA": 341,
@@ -27918,56 +28184,6 @@
           77
          ],
          "arr_iso": "2026-08-23T23:49"
-        },
-        {
-         "price": 422,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "06:55",
-           "arr": "07:58"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "10:31",
-           "arr": "11:03"
-          }
-         ],
-         "layovers": [
-          153
-         ],
-         "arr_iso": "2026-08-23T11:03"
-        },
-        {
-         "price": 422,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "08:49",
-           "arr": "09:55"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "12:21",
-           "arr": "12:51"
-          }
-         ],
-         "layovers": [
-          146
-         ],
-         "arr_iso": "2026-08-23T12:51"
         },
         {
          "price": 523,
@@ -28867,9 +29083,9 @@
      "cabins": {
       "economy": {
        "best": {
-        "AA": 413,
-        "UA": 506,
-        "DL": 643
+        "AA": 403,
+        "UA": 403,
+        "DL": 713
        },
        "low": {
         "AA": 322,
@@ -28883,7 +29099,7 @@
        },
        "options": [
         {
-         "price": 413,
+         "price": 403,
          "airlines": [
           "AA"
          ],
@@ -28892,48 +29108,48 @@
           {
            "from": "GSP",
            "to": "DFW",
-           "dep": "07:00",
-           "arr": "08:43"
+           "dep": "17:28",
+           "arr": "19:13"
           },
           {
            "from": "DFW",
            "to": "LIT",
-           "dep": "09:59",
-           "arr": "11:23"
+           "dep": "20:00",
+           "arr": "21:25"
           }
          ],
          "layovers": [
-          76
+          47
          ],
-         "arr_iso": "2026-08-24T11:23"
+         "arr_iso": "2026-08-24T21:25"
         },
         {
-         "price": 413,
+         "price": 403,
          "airlines": [
-          "AA"
+          "UA"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:35"
+           "to": "ORD",
+           "dep": "17:43",
+           "arr": "19:03"
           },
           {
-           "from": "CLT",
+           "from": "ORD",
            "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
+           "dep": "21:30",
+           "arr": "23:31"
           }
          ],
          "layovers": [
-          55
+          147
          ],
-         "arr_iso": "2026-08-24T20:41"
+         "arr_iso": "2026-08-24T23:31"
         },
         {
-         "price": 506,
+         "price": 533,
          "airlines": [
           "UA"
          ],
@@ -28983,7 +29199,7 @@
          "arr_iso": "2026-08-24T18:26"
         },
         {
-         "price": 643,
+         "price": 713,
          "airlines": [
           "DL"
          ],
@@ -29011,73 +29227,23 @@
       },
       "first": {
        "best": {
-        "AA": 738,
-        "UA": 789,
-        "DL": 983
+        "UA": 863,
+        "AA": 893,
+        "DL": 1058
        },
        "low": {
-        "AA": 674,
         "UA": 745,
+        "AA": 674,
         "DL": 961
        },
        "at_low": {
-        "AA": false,
         "UA": false,
+        "AA": false,
         "DL": false
        },
        "options": [
         {
-         "price": 738,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:35"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
-          }
-         ],
-         "layovers": [
-          55
-         ],
-         "arr_iso": "2026-08-24T20:41"
-        },
-        {
-         "price": 782,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "07:00",
-           "arr": "08:43"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "09:59",
-           "arr": "11:23"
-          }
-         ],
-         "layovers": [
-          76
-         ],
-         "arr_iso": "2026-08-24T11:23"
-        },
-        {
-         "price": 789,
+         "price": 863,
          "airlines": [
           "UA"
          ],
@@ -29177,7 +29343,7 @@
          "arr_iso": "2026-08-24T21:24"
         },
         {
-         "price": 983,
+         "price": 1058,
          "airlines": [
           "DL"
          ],
@@ -29213,9 +29379,9 @@
      "cabins": {
       "economy": {
        "best": {
-        "AA": 430,
-        "UA": 523,
-        "DL": 660
+        "AA": 420,
+        "UA": 550,
+        "DL": 730
        },
        "low": {
         "AA": 375,
@@ -29228,6 +29394,31 @@
         "DL": false
        },
        "options": [
+        {
+         "price": 420,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-24T21:25"
+        },
         {
          "price": 430,
          "airlines": [
@@ -29279,7 +29470,7 @@
          "arr_iso": "2026-08-24T20:41"
         },
         {
-         "price": 523,
+         "price": 550,
          "airlines": [
           "UA"
          ],
@@ -29304,7 +29495,32 @@
          "arr_iso": "2026-08-24T21:24"
         },
         {
-         "price": 660,
+         "price": 569,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "14:13",
+           "arr": "15:53"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "17:00",
+           "arr": "18:26"
+          }
+         ],
+         "layovers": [
+          67
+         ],
+         "arr_iso": "2026-08-24T18:26"
+        },
+        {
+         "price": 730,
          "airlines": [
           "DL"
          ],
@@ -29332,73 +29548,23 @@
       },
       "first": {
        "best": {
-        "AA": 755,
-        "UA": 806,
-        "DL": 1000
+        "UA": 880,
+        "AA": 910,
+        "DL": 1075
        },
        "low": {
-        "AA": 707,
         "UA": 784,
+        "AA": 707,
         "DL": 1000
        },
        "at_low": {
-        "AA": false,
         "UA": false,
-        "DL": true
+        "AA": false,
+        "DL": false
        },
        "options": [
         {
-         "price": 755,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:35"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
-          }
-         ],
-         "layovers": [
-          55
-         ],
-         "arr_iso": "2026-08-24T20:41"
-        },
-        {
-         "price": 799,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "07:00",
-           "arr": "08:43"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "09:59",
-           "arr": "11:23"
-          }
-         ],
-         "layovers": [
-          76
-         ],
-         "arr_iso": "2026-08-24T11:23"
-        },
-        {
-         "price": 806,
+         "price": 880,
          "airlines": [
           "UA"
          ],
@@ -29498,7 +29664,7 @@
          "arr_iso": "2026-08-24T21:24"
         },
         {
-         "price": 1000,
+         "price": 1075,
          "airlines": [
           "DL"
          ],
@@ -29534,73 +29700,48 @@
      "cabins": {
       "economy": {
        "best": {
-        "AA": 413,
-        "UA": 506,
-        "DL": 643
+        "UA": 403,
+        "AA": 552,
+        "DL": 713
        },
        "low": {
-        "AA": 322,
         "UA": 285,
+        "AA": 322,
         "DL": 317
        },
        "at_low": {
-        "AA": false,
         "UA": false,
+        "AA": false,
         "DL": false
        },
        "options": [
         {
-         "price": 413,
+         "price": 403,
          "airlines": [
-          "AA"
+          "UA"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "DFW",
-           "dep": "07:00",
-           "arr": "08:43"
+           "to": "ORD",
+           "dep": "17:43",
+           "arr": "19:03"
           },
           {
-           "from": "DFW",
+           "from": "ORD",
            "to": "LIT",
-           "dep": "09:59",
-           "arr": "11:23"
+           "dep": "21:30",
+           "arr": "23:31"
           }
          ],
          "layovers": [
-          76
+          147
          ],
-         "arr_iso": "2026-08-24T11:23"
+         "arr_iso": "2026-08-24T23:31"
         },
         {
-         "price": 413,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:35"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
-          }
-         ],
-         "layovers": [
-          55
-         ],
-         "arr_iso": "2026-08-24T20:41"
-        },
-        {
-         "price": 506,
+         "price": 533,
          "airlines": [
           "UA"
          ],
@@ -29625,7 +29766,32 @@
          "arr_iso": "2026-08-24T21:24"
         },
         {
-         "price": 643,
+         "price": 552,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "14:13",
+           "arr": "15:53"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "17:00",
+           "arr": "18:26"
+          }
+         ],
+         "layovers": [
+          67
+         ],
+         "arr_iso": "2026-08-24T18:26"
+        },
+        {
+         "price": 713,
          "airlines": [
           "DL"
          ],
@@ -29653,73 +29819,23 @@
       },
       "first": {
        "best": {
-        "AA": 709,
-        "UA": 789,
-        "DL": 983
+        "UA": 863,
+        "AA": 864,
+        "DL": 1058
        },
        "low": {
-        "AA": 665,
         "UA": 745,
+        "AA": 665,
         "DL": 961
        },
        "at_low": {
-        "AA": false,
         "UA": false,
+        "AA": false,
         "DL": false
        },
        "options": [
         {
-         "price": 709,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:35"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
-          }
-         ],
-         "layovers": [
-          55
-         ],
-         "arr_iso": "2026-08-24T20:41"
-        },
-        {
-         "price": 752,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "07:00",
-           "arr": "08:43"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "09:59",
-           "arr": "11:23"
-          }
-         ],
-         "layovers": [
-          76
-         ],
-         "arr_iso": "2026-08-24T11:23"
-        },
-        {
-         "price": 789,
+         "price": 863,
          "airlines": [
           "UA"
          ],
@@ -29819,7 +29935,7 @@
          "arr_iso": "2026-08-24T21:24"
         },
         {
-         "price": 983,
+         "price": 1058,
          "airlines": [
           "DL"
          ],
@@ -29995,6 +30111,31 @@
         {
          "price": 346,
          "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "10:33",
+           "arr": "11:53"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "12:50",
+           "arr": "14:51"
+          }
+         ],
+         "layovers": [
+          57
+         ],
+         "arr_iso": "2026-08-25T14:51"
+        },
+        {
+         "price": 346,
+         "airlines": [
           "AA"
          ],
          "stops": 1,
@@ -30041,31 +30182,6 @@
           47
          ],
          "arr_iso": "2026-08-25T21:25"
-        },
-        {
-         "price": 346,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "17:43",
-           "arr": "19:03"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
-          }
-         ],
-         "layovers": [
-          147
-         ],
-         "arr_iso": "2026-08-25T23:31"
         }
        ]
       },
@@ -31065,9 +31181,9 @@
      "cabins": {
       "economy": {
        "best": {
-        "AA": 596,
+        "AA": 591,
         "DL": 599,
-        "UA": 666
+        "UA": 710
        },
        "low": {
         "AA": 351,
@@ -31081,7 +31197,7 @@
        },
        "options": [
         {
-         "price": 596,
+         "price": 591,
          "airlines": [
           "AA"
          ],
@@ -31106,7 +31222,7 @@
          "arr_iso": "2026-08-30T11:23"
         },
         {
-         "price": 596,
+         "price": 591,
          "airlines": [
           "AA"
          ],
@@ -31131,7 +31247,7 @@
          "arr_iso": "2026-08-30T21:25"
         },
         {
-         "price": 596,
+         "price": 591,
          "airlines": [
           "AA"
          ],
@@ -31181,7 +31297,7 @@
          "arr_iso": "2026-08-30T12:51"
         },
         {
-         "price": 666,
+         "price": 710,
          "airlines": [
           "UA"
          ],
@@ -31206,7 +31322,7 @@
          "arr_iso": "2026-08-30T10:42"
         },
         {
-         "price": 666,
+         "price": 710,
          "airlines": [
           "UA"
          ],
@@ -32125,43 +32241,18 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 622,
-        "AA": 626
+        "AA": 626,
+        "UA": 666
        },
        "low": {
-        "UA": 339,
-        "AA": 332
+        "AA": 332,
+        "UA": 339
        },
        "at_low": {
-        "UA": false,
-        "AA": false
+        "AA": false,
+        "UA": false
        },
        "options": [
-        {
-         "price": 622,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "IAH",
-           "dep": "17:31",
-           "arr": "19:10"
-          },
-          {
-           "from": "IAH",
-           "to": "LIT",
-           "dep": "19:50",
-           "arr": "21:24"
-          }
-         ],
-         "layovers": [
-          40
-         ],
-         "arr_iso": "2026-08-31T21:24"
-        },
         {
          "price": 626,
          "airlines": [
@@ -32211,6 +32302,31 @@
           55
          ],
          "arr_iso": "2026-08-31T20:41"
+        },
+        {
+         "price": 666,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "IAH",
+           "dep": "17:31",
+           "arr": "19:10"
+          },
+          {
+           "from": "IAH",
+           "to": "LIT",
+           "dep": "19:50",
+           "arr": "21:24"
+          }
+         ],
+         "layovers": [
+          40
+         ],
+         "arr_iso": "2026-08-31T21:24"
         },
         {
          "price": 695,
@@ -34120,7 +34236,7 @@
       "economy": {
        "best": {
         "AA": 538,
-        "UA": 627
+        "UA": 624
        },
        "low": {
         "AA": 310,
@@ -34182,6 +34298,31 @@
          "arr_iso": "2026-09-06T18:23"
         },
         {
+         "price": 624,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "10:00",
+           "arr": "11:20"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "12:50",
+           "arr": "14:51"
+          }
+         ],
+         "layovers": [
+          90
+         ],
+         "arr_iso": "2026-09-06T14:51"
+        },
+        {
          "price": 626,
          "airlines": [
           "AA"
@@ -34205,31 +34346,6 @@
           61
          ],
          "arr_iso": "2026-09-06T18:03"
-        },
-        {
-         "price": 627,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "10:00",
-           "arr": "11:20"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "12:50",
-           "arr": "14:51"
-          }
-         ],
-         "layovers": [
-          90
-         ],
-         "arr_iso": "2026-09-06T14:51"
         },
         {
          "price": 695,
@@ -34658,8 +34774,8 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 637,
-        "AA": 678,
+        "UA": 688,
+        "AA": 768,
         "DL": 779
        },
        "low": {
@@ -34674,7 +34790,7 @@
        },
        "options": [
         {
-         "price": 637,
+         "price": 688,
          "airlines": [
           "UA"
          ],
@@ -34699,32 +34815,7 @@
          "arr_iso": "2026-09-07T23:31"
         },
         {
-         "price": 678,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:35"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
-          }
-         ],
-         "layovers": [
-          55
-         ],
-         "arr_iso": "2026-09-07T20:41"
-        },
-        {
-         "price": 680,
+         "price": 760,
          "airlines": [
           "UA"
          ],
@@ -34797,6 +34888,31 @@
           62
          ],
          "arr_iso": "2026-09-07T08:37"
+        },
+        {
+         "price": 779,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "15:25",
+           "arr": "16:32"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "17:30",
+           "arr": "18:05"
+          }
+         ],
+         "layovers": [
+          58
+         ],
+         "arr_iso": "2026-09-07T18:05"
         }
        ]
       },
@@ -34980,18 +35096,18 @@
       "economy": {
        "best": {
         "AA": 679,
-        "UA": 695,
-        "DL": 699
+        "DL": 699,
+        "UA": 740
        },
        "low": {
         "AA": 444,
-        "UA": 594,
-        "DL": 462
+        "DL": 462,
+        "UA": 594
        },
        "at_low": {
         "AA": false,
-        "UA": false,
-        "DL": false
+        "DL": false,
+        "UA": false
        },
        "options": [
         {
@@ -35045,31 +35161,6 @@
          "arr_iso": "2026-09-08T20:41"
         },
         {
-         "price": 695,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "18:10",
-           "arr": "19:32"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:20",
-           "arr": "23:21"
-          }
-         ],
-         "layovers": [
-          108
-         ],
-         "arr_iso": "2026-09-08T23:21"
-        },
-        {
          "price": 699,
          "airlines": [
           "DL"
@@ -35093,6 +35184,31 @@
           101
          ],
          "arr_iso": "2026-09-08T20:18"
+        },
+        {
+         "price": 740,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "18:10",
+           "arr": "19:32"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "21:20",
+           "arr": "23:21"
+          }
+         ],
+         "layovers": [
+          108
+         ],
+         "arr_iso": "2026-09-08T23:21"
         },
         {
          "price": 769,
@@ -35327,7 +35443,7 @@
        "best": {
         "AA": 768,
         "DL": 973,
-        "UA": 1145
+        "UA": 1135
        },
        "low": {
         "AA": 617,
@@ -35441,7 +35557,7 @@
          "arr_iso": "2026-09-14T14:14"
         },
         {
-         "price": 1145,
+         "price": 1135,
          "airlines": [
           "UA"
          ],
@@ -35623,7 +35739,7 @@
        "best": {
         "AA": 979,
         "DL": 1102,
-        "UA": 1284
+        "UA": 1274
        },
        "low": {
         "AA": 813,
@@ -35712,7 +35828,7 @@
          "arr_iso": "2026-09-14T14:14"
         },
         {
-         "price": 1284,
+         "price": 1274,
          "airlines": [
           "UA"
          ],
@@ -35942,9 +36058,9 @@
      "cabins": {
       "economy": {
        "best": {
-        "DL": 692,
-        "AA": 694,
-        "UA": 951
+        "DL": 647,
+        "AA": 768,
+        "UA": 954
        },
        "low": {
         "DL": 342,
@@ -35957,6 +36073,31 @@
         "UA": false
        },
        "options": [
+        {
+         "price": 647,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "17:00",
+           "arr": "18:04"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "19:45",
+           "arr": "20:18"
+          }
+         ],
+         "layovers": [
+          101
+         ],
+         "arr_iso": "2026-09-15T20:18"
+        },
         {
          "price": 692,
          "airlines": [
@@ -35981,31 +36122,6 @@
           44
          ],
          "arr_iso": "2026-09-15T14:14"
-        },
-        {
-         "price": 694,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "19:41",
-           "arr": "20:44"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "21:50",
-           "arr": "22:57"
-          }
-         ],
-         "layovers": [
-          66
-         ],
-         "arr_iso": "2026-09-15T22:57"
         },
         {
          "price": 768,
@@ -36033,7 +36149,32 @@
          "arr_iso": "2026-09-15T09:34"
         },
         {
-         "price": 951,
+         "price": 954,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:30",
+           "arr": "07:37"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "08:40",
+           "arr": "10:42"
+          }
+         ],
+         "layovers": [
+          63
+         ],
+         "arr_iso": "2026-09-15T10:42"
+        },
+        {
+         "price": 993,
          "airlines": [
           "UA"
          ],
@@ -36659,21 +36800,71 @@
      "cabins": {
       "economy": {
        "best": {
-        "AA": 747,
-        "DL": 760,
-        "UA": 874
+        "UA": 655,
+        "AA": 676,
+        "DL": 760
        },
        "low": {
+        "UA": 627,
         "AA": 622,
-        "DL": 670,
-        "UA": 627
+        "DL": 670
        },
        "at_low": {
+        "UA": false,
         "AA": false,
-        "DL": false,
-        "UA": false
+        "DL": false
        },
        "options": [
+        {
+         "price": 655,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "18:10",
+           "arr": "19:32"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "21:20",
+           "arr": "23:21"
+          }
+         ],
+         "layovers": [
+          108
+         ],
+         "arr_iso": "2026-09-21T23:21"
+        },
+        {
+         "price": 676,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "17:24",
+           "arr": "19:15"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:08",
+           "arr": "21:32"
+          }
+         ],
+         "layovers": [
+          53
+         ],
+         "arr_iso": "2026-09-21T21:32"
+        },
         {
          "price": 747,
          "airlines": [
@@ -37327,8 +37518,8 @@
       "economy": {
        "best": {
         "DL": 490,
-        "AA": 552,
-        "UA": 559
+        "AA": 557,
+        "UA": 586
        },
        "low": {
         "DL": 490,
@@ -37338,59 +37529,9 @@
        "at_low": {
         "DL": true,
         "AA": false,
-        "UA": true
+        "UA": false
        },
        "options": [
-        {
-         "price": 490,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "12:00",
-           "arr": "13:01"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "13:45",
-           "arr": "14:14"
-          }
-         ],
-         "layovers": [
-          44
-         ],
-         "arr_iso": "2026-09-22T14:14"
-        },
-        {
-         "price": 490,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "14:00",
-           "arr": "15:04"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "15:56",
-           "arr": "16:31"
-          }
-         ],
-         "layovers": [
-          52
-         ],
-         "arr_iso": "2026-09-22T16:31"
-        },
         {
          "price": 490,
          "airlines": [
@@ -37417,7 +37558,7 @@
          "arr_iso": "2026-09-22T20:18"
         },
         {
-         "price": 552,
+         "price": 557,
          "airlines": [
           "AA"
          ],
@@ -37442,7 +37583,7 @@
          "arr_iso": "2026-09-22T21:09"
         },
         {
-         "price": 552,
+         "price": 557,
          "airlines": [
           "AA"
          ],
@@ -37467,7 +37608,7 @@
          "arr_iso": "2026-09-22T22:57"
         },
         {
-         "price": 559,
+         "price": 586,
          "airlines": [
           "UA"
          ],
@@ -37697,21 +37838,46 @@
      "cabins": {
       "economy": {
        "best": {
+        "UA": 382,
         "DL": 403,
-        "UA": 473,
         "AA": 552
        },
        "low": {
-        "DL": 303,
         "UA": 341,
+        "DL": 303,
         "AA": 285
        },
        "at_low": {
-        "DL": false,
         "UA": false,
+        "DL": false,
         "AA": false
        },
        "options": [
+        {
+         "price": 382,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:30",
+           "arr": "07:37"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "08:40",
+           "arr": "10:42"
+          }
+         ],
+         "layovers": [
+          63
+         ],
+         "arr_iso": "2026-09-22T10:42"
+        },
         {
          "price": 403,
          "airlines": [
@@ -37994,18 +38160,18 @@
       "economy": {
        "best": {
         "DL": 406,
-        "UA": 407,
-        "AA": 484
+        "AA": 484,
+        "UA": 572
        },
        "low": {
         "DL": 358,
-        "UA": 394,
-        "AA": 433
+        "AA": 433,
+        "UA": 394
        },
        "at_low": {
         "DL": false,
-        "UA": false,
-        "AA": false
+        "AA": false,
+        "UA": false
        },
        "options": [
         {
@@ -38032,31 +38198,6 @@
           209
          ],
          "arr_iso": "2026-09-27T23:33"
-        },
-        {
-         "price": 407,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "17:46",
-           "arr": "19:05"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
-          }
-         ],
-         "layovers": [
-          145
-         ],
-         "arr_iso": "2026-09-27T23:31"
         },
         {
          "price": 484,
@@ -38132,6 +38273,31 @@
           71
          ],
          "arr_iso": "2026-09-27T10:37"
+        },
+        {
+         "price": 604,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "08:01",
+           "arr": "09:50"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "11:39",
+           "arr": "13:00"
+          }
+         ],
+         "layovers": [
+          109
+         ],
+         "arr_iso": "2026-09-27T13:00"
         },
         {
          "price": 694,
@@ -38365,7 +38531,7 @@
       "economy": {
        "best": {
         "AA": 627,
-        "UA": 734
+        "UA": 789
        },
        "low": {
         "AA": 581,
@@ -38373,7 +38539,7 @@
        },
        "at_low": {
         "AA": false,
-        "UA": true
+        "UA": false
        },
        "options": [
         {
@@ -38427,31 +38593,6 @@
          "arr_iso": "2026-09-27T18:05"
         },
         {
-         "price": 734,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "17:46",
-           "arr": "19:05"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
-          }
-         ],
-         "layovers": [
-          145
-         ],
-         "arr_iso": "2026-09-27T23:31"
-        },
-        {
          "price": 747,
          "airlines": [
           "AA"
@@ -38475,6 +38616,31 @@
           109
          ],
          "arr_iso": "2026-09-27T13:00"
+        },
+        {
+         "price": 789,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "17:46",
+           "arr": "19:05"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "21:30",
+           "arr": "23:31"
+          }
+         ],
+         "layovers": [
+          145
+         ],
+         "arr_iso": "2026-09-27T23:31"
         },
         {
          "price": 837,
@@ -38733,7 +38899,7 @@
       "economy": {
        "best": {
         "AA": 558,
-        "UA": 630
+        "UA": 657
        },
        "low": {
         "AA": 557,
@@ -38795,7 +38961,7 @@
          "arr_iso": "2026-09-27T18:05"
         },
         {
-         "price": 630,
+         "price": 657,
          "airlines": [
           "UA"
          ],
@@ -38818,6 +38984,31 @@
           71
          ],
          "arr_iso": "2026-09-27T10:37"
+        },
+        {
+         "price": 678,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "08:01",
+           "arr": "09:50"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "11:39",
+           "arr": "13:00"
+          }
+         ],
+         "layovers": [
+          109
+         ],
+         "arr_iso": "2026-09-27T13:00"
         },
         {
          "price": 768,
@@ -39072,46 +39263,21 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 392,
         "DL": 406,
+        "UA": 433,
         "AA": 484
        },
        "low": {
-        "UA": 392,
         "DL": 359,
+        "UA": 392,
         "AA": 391
        },
        "at_low": {
-        "UA": true,
         "DL": false,
+        "UA": false,
         "AA": false
        },
        "options": [
-        {
-         "price": 392,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "17:46",
-           "arr": "19:05"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
-          }
-         ],
-         "layovers": [
-          145
-         ],
-         "arr_iso": "2026-09-27T23:31"
-        },
         {
          "price": 406,
          "airlines": [
@@ -39136,6 +39302,31 @@
           209
          ],
          "arr_iso": "2026-09-27T23:33"
+        },
+        {
+         "price": 433,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:20",
+           "arr": "07:29"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "21:30",
+           "arr": "23:31"
+          }
+         ],
+         "layovers": [
+          841
+         ],
+         "arr_iso": "2026-09-27T23:31"
         },
         {
          "price": 484,
@@ -39211,6 +39402,31 @@
           183
          ],
          "arr_iso": "2026-09-27T18:05"
+        },
+        {
+         "price": 604,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "08:01",
+           "arr": "09:50"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "11:39",
+           "arr": "13:00"
+          }
+         ],
+         "layovers": [
+          109
+         ],
+         "arr_iso": "2026-09-27T13:00"
         },
         {
          "price": 694,
@@ -39788,7 +40004,7 @@
        "best": {
         "AA": 497,
         "DL": 580,
-        "UA": 686
+        "UA": 713
        },
        "low": {
         "AA": 391,
@@ -39902,7 +40118,7 @@
          "arr_iso": "2026-09-28T10:35"
         },
         {
-         "price": 686,
+         "price": 713,
          "airlines": [
           "UA"
          ],
@@ -40132,7 +40348,7 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 433,
+        "UA": 473,
         "AA": 552,
         "DL": 563
        },
@@ -40148,7 +40364,7 @@
        },
        "options": [
         {
-         "price": 433,
+         "price": 473,
          "airlines": [
           "UA"
          ],
@@ -40864,31 +41080,6 @@
         {
          "price": 329,
          "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "17:46",
-           "arr": "19:05"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
-          }
-         ],
-         "layovers": [
-          145
-         ],
-         "arr_iso": "2026-09-29T23:31"
-        },
-        {
-         "price": 329,
-         "airlines": [
           "AA"
          ],
          "stops": 1,
@@ -41590,7 +41781,7 @@
        "best": {
         "AA": 626,
         "DL": 743,
-        "UA": 765
+        "UA": 776
        },
        "low": {
         "AA": 582,
@@ -41654,31 +41845,6 @@
          "arr_iso": "2026-10-04T18:24"
         },
         {
-         "price": 765,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "17:46",
-           "arr": "19:05"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
-          }
-         ],
-         "layovers": [
-          145
-         ],
-         "arr_iso": "2026-10-04T23:31"
-        },
-        {
          "price": 768,
          "airlines": [
           "AA"
@@ -41727,6 +41893,31 @@
           78
          ],
          "arr_iso": "2026-10-04T18:05"
+        },
+        {
+         "price": 776,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "17:46",
+           "arr": "19:05"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "21:30",
+           "arr": "23:31"
+          }
+         ],
+         "layovers": [
+          145
+         ],
+         "arr_iso": "2026-10-04T23:31"
         },
         {
          "price": 821,
@@ -41961,7 +42152,7 @@
        "best": {
         "AA": 627,
         "DL": 760,
-        "UA": 765
+        "UA": 776
        },
        "low": {
         "AA": 615,
@@ -42025,31 +42216,6 @@
          "arr_iso": "2026-10-04T18:24"
         },
         {
-         "price": 765,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "17:46",
-           "arr": "19:05"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
-          }
-         ],
-         "layovers": [
-          145
-         ],
-         "arr_iso": "2026-10-04T23:31"
-        },
-        {
          "price": 769,
          "airlines": [
           "AA"
@@ -42098,6 +42264,31 @@
           78
          ],
          "arr_iso": "2026-10-04T18:05"
+        },
+        {
+         "price": 776,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "17:46",
+           "arr": "19:05"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "21:30",
+           "arr": "23:31"
+          }
+         ],
+         "layovers": [
+          145
+         ],
+         "arr_iso": "2026-10-04T23:31"
         },
         {
          "price": 793,
@@ -42328,18 +42519,18 @@
       "economy": {
        "best": {
         "DL": 459,
-        "UA": 542,
-        "AA": 581
+        "AA": 581,
+        "UA": 582
        },
        "low": {
         "DL": 358,
-        "UA": 542,
-        "AA": 542
+        "AA": 542,
+        "UA": 542
        },
        "at_low": {
         "DL": false,
-        "UA": true,
-        "AA": false
+        "AA": false,
+        "UA": false
        },
        "options": [
         {
@@ -42393,31 +42584,6 @@
          "arr_iso": "2026-10-04T18:24"
         },
         {
-         "price": 542,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "06:20",
-           "arr": "07:29"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
-          }
-         ],
-         "layovers": [
-          841
-         ],
-         "arr_iso": "2026-10-04T23:31"
-        },
-        {
          "price": 581,
          "airlines": [
           "AA"
@@ -42441,6 +42607,31 @@
           58
          ],
          "arr_iso": "2026-10-04T23:52"
+        },
+        {
+         "price": 582,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:20",
+           "arr": "07:29"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "21:30",
+           "arr": "23:31"
+          }
+         ],
+         "layovers": [
+          841
+         ],
+         "arr_iso": "2026-10-04T23:31"
         },
         {
          "price": 616,
@@ -42725,7 +42916,7 @@
        "best": {
         "DL": 473,
         "AA": 497,
-        "UA": 868
+        "UA": 861
        },
        "low": {
         "DL": 473,
@@ -42789,31 +42980,6 @@
          "arr_iso": "2026-10-05T22:31"
         },
         {
-         "price": 497,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "19:46",
-           "arr": "21:36"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "22:30",
-           "arr": "23:49"
-          }
-         ],
-         "layovers": [
-          54
-         ],
-         "arr_iso": "2026-10-05T23:49"
-        },
-        {
          "price": 643,
          "airlines": [
           "DL"
@@ -42864,7 +43030,7 @@
          "arr_iso": "2026-10-05T17:57"
         },
         {
-         "price": 868,
+         "price": 861,
          "airlines": [
           "UA"
          ],
@@ -43121,7 +43287,7 @@
        "best": {
         "DL": 490,
         "AA": 558,
-        "UA": 840
+        "UA": 833
        },
        "low": {
         "DL": 364,
@@ -43185,31 +43351,6 @@
          "arr_iso": "2026-10-05T22:31"
         },
         {
-         "price": 558,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "19:46",
-           "arr": "21:36"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "22:30",
-           "arr": "23:49"
-          }
-         ],
-         "layovers": [
-          54
-         ],
-         "arr_iso": "2026-10-05T23:49"
-        },
-        {
          "price": 660,
          "airlines": [
           "DL"
@@ -43260,7 +43401,7 @@
          "arr_iso": "2026-10-05T17:57"
         },
         {
-         "price": 840,
+         "price": 833,
          "airlines": [
           "UA"
          ],
@@ -44298,7 +44439,7 @@
          "arr_iso": "2026-10-06T10:37"
         },
         {
-         "price": 353,
+         "price": 368,
          "airlines": [
           "UA"
          ],
@@ -46640,7 +46781,7 @@
        "best": {
         "DL": 347,
         "AA": 413,
-        "UA": 653
+        "UA": 672
        },
        "low": {
         "DL": 300,
@@ -46779,7 +46920,7 @@
          "arr_iso": "2026-10-12T12:42"
         },
         {
-         "price": 653,
+         "price": 672,
          "airlines": [
           "UA"
          ],
@@ -47725,7 +47866,7 @@
        "best": {
         "DL": 380,
         "AA": 463,
-        "UA": 506
+        "UA": 533
        },
        "low": {
         "DL": 368,
@@ -47735,7 +47876,7 @@
        "at_low": {
         "DL": false,
         "AA": true,
-        "UA": true
+        "UA": false
        },
        "options": [
         {
@@ -47789,7 +47930,7 @@
          "arr_iso": "2026-10-18T23:49"
         },
         {
-         "price": 506,
+         "price": 533,
          "airlines": [
           "UA"
          ],
@@ -48044,9 +48185,9 @@
      "cabins": {
       "economy": {
        "best": {
-        "AA": 677,
+        "AA": 671,
         "DL": 853,
-        "UA": 879
+        "UA": 899
        },
        "low": {
         "AA": 577,
@@ -48059,6 +48200,31 @@
         "UA": false
        },
        "options": [
+        {
+         "price": 671,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "19:46",
+           "arr": "21:36"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "22:30",
+           "arr": "23:49"
+          }
+         ],
+         "layovers": [
+          54
+         ],
+         "arr_iso": "2026-10-18T23:49"
+        },
         {
          "price": 677,
          "airlines": [
@@ -48135,31 +48301,6 @@
          "arr_iso": "2026-10-18T18:31"
         },
         {
-         "price": 879,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "06:20",
-           "arr": "07:29"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "08:40",
-           "arr": "10:37"
-          }
-         ],
-         "layovers": [
-          71
-         ],
-         "arr_iso": "2026-10-18T10:37"
-        },
-        {
          "price": 887,
          "airlines": [
           "AA"
@@ -48183,6 +48324,31 @@
           62
          ],
          "arr_iso": "2026-10-18T17:57"
+        },
+        {
+         "price": 899,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:20",
+           "arr": "07:29"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "08:40",
+           "arr": "10:37"
+          }
+         ],
+         "layovers": [
+          71
+         ],
+         "arr_iso": "2026-10-18T10:37"
         }
        ]
       },
@@ -48367,7 +48533,7 @@
        "best": {
         "AA": 609,
         "DL": 870,
-        "UA": 879
+        "UA": 899
        },
        "low": {
         "AA": 547,
@@ -48377,7 +48543,7 @@
        "at_low": {
         "AA": false,
         "DL": false,
-        "UA": true
+        "UA": false
        },
        "options": [
         {
@@ -48506,7 +48672,7 @@
          "arr_iso": "2026-10-18T18:31"
         },
         {
-         "price": 879,
+         "price": 899,
          "airlines": [
           "UA"
          ],
@@ -48661,7 +48827,7 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 506,
+        "UA": 533,
         "AA": 534
        },
        "low": {
@@ -48669,12 +48835,12 @@
         "AA": 441
        },
        "at_low": {
-        "UA": true,
+        "UA": false,
         "AA": false
        },
        "options": [
         {
-         "price": 506,
+         "price": 533,
          "airlines": [
           "UA"
          ],
@@ -50336,7 +50502,7 @@
       "economy": {
        "best": {
         "AA": 329,
-        "UA": 344,
+        "UA": 345,
         "DL": 473
        },
        "low": {
@@ -50376,7 +50542,7 @@
          "arr_iso": "2026-10-20T23:49"
         },
         {
-         "price": 344,
+         "price": 345,
          "airlines": [
           "UA"
          ],
@@ -50628,7 +50794,7 @@
      "cabins": {
       "economy": {
        "best": {
-        "AA": 552,
+        "AA": 547,
         "UA": 560,
         "DL": 643
        },
@@ -50644,7 +50810,7 @@
        },
        "options": [
         {
-         "price": 552,
+         "price": 547,
          "airlines": [
           "AA"
          ],
@@ -50669,7 +50835,7 @@
          "arr_iso": "2026-10-25T13:20"
         },
         {
-         "price": 552,
+         "price": 547,
          "airlines": [
           "AA"
          ],
@@ -51000,8 +51166,8 @@
       "economy": {
        "best": {
         "DL": 563,
-        "AA": 695,
-        "UA": 703
+        "AA": 685,
+        "UA": 706
        },
        "low": {
         "DL": 563,
@@ -51011,7 +51177,7 @@
        "at_low": {
         "DL": true,
         "AA": false,
-        "UA": true
+        "UA": false
        },
        "options": [
         {
@@ -51065,7 +51231,32 @@
          "arr_iso": "2026-10-25T17:07"
         },
         {
-         "price": 695,
+         "price": 685,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "08:00",
+           "arr": "09:52"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "11:55",
+           "arr": "13:20"
+          }
+         ],
+         "layovers": [
+          123
+         ],
+         "arr_iso": "2026-10-25T13:20"
+        },
+        {
+         "price": 685,
          "airlines": [
           "AA"
          ],
@@ -51090,7 +51281,7 @@
          "arr_iso": "2026-10-25T23:49"
         },
         {
-         "price": 703,
+         "price": 706,
          "airlines": [
           "UA"
          ],
@@ -51322,7 +51513,7 @@
        "best": {
         "DL": 546,
         "UA": 614,
-        "AA": 627
+        "AA": 622
        },
        "low": {
         "DL": 546,
@@ -51386,6 +51577,56 @@
          "arr_iso": "2026-10-25T10:44"
         },
         {
+         "price": 622,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "08:00",
+           "arr": "09:52"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "11:55",
+           "arr": "13:20"
+          }
+         ],
+         "layovers": [
+          123
+         ],
+         "arr_iso": "2026-10-25T13:20"
+        },
+        {
+         "price": 622,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "19:46",
+           "arr": "21:36"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "22:30",
+           "arr": "23:49"
+          }
+         ],
+         "layovers": [
+          54
+         ],
+         "arr_iso": "2026-10-25T23:49"
+        },
+        {
          "price": 626,
          "airlines": [
           "DL"
@@ -51409,31 +51650,6 @@
           95
          ],
          "arr_iso": "2026-10-25T17:07"
-        },
-        {
-         "price": 627,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "19:46",
-           "arr": "21:36"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "22:30",
-           "arr": "23:49"
-          }
-         ],
-         "layovers": [
-          54
-         ],
-         "arr_iso": "2026-10-25T23:49"
         },
         {
          "price": 679,
@@ -51667,7 +51883,7 @@
       "economy": {
        "best": {
         "UA": 473,
-        "AA": 552,
+        "AA": 547,
         "DL": 563
        },
        "low": {
@@ -51707,7 +51923,7 @@
          "arr_iso": "2026-10-25T23:39"
         },
         {
-         "price": 552,
+         "price": 547,
          "airlines": [
           "AA"
          ],
@@ -51732,7 +51948,7 @@
          "arr_iso": "2026-10-25T13:20"
         },
         {
-         "price": 552,
+         "price": 547,
          "airlines": [
           "AA"
          ],
@@ -51938,8 +52154,8 @@
       "economy": {
        "best": {
         "DL": 473,
-        "AA": 626,
-        "UA": 841
+        "AA": 621,
+        "UA": 835
        },
        "low": {
         "DL": 317,
@@ -52028,7 +52244,7 @@
          "arr_iso": "2026-10-26T20:31"
         },
         {
-         "price": 626,
+         "price": 621,
          "airlines": [
           "AA"
          ],
@@ -52078,7 +52294,7 @@
          "arr_iso": "2026-10-26T17:57"
         },
         {
-         "price": 841,
+         "price": 835,
          "airlines": [
           "UA"
          ],
@@ -53025,42 +53241,95 @@
      "cabins": {
       "economy": {
        "best": {
-        "AA": 448,
-        "DL": 546
+        "DL": 330,
+        "UA": 382,
+        "AA": 448
        },
        "low": {
-        "AA": 337,
-        "DL": 330
+        "DL": 330,
+        "UA": 382,
+        "AA": 337
        },
        "at_low": {
-        "AA": false,
-        "DL": false
+        "DL": true,
+        "UA": true,
+        "AA": false
        },
        "options": [
         {
-         "price": 448,
+         "price": 330,
          "airlines": [
-          "AA"
+          "DL"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "DFW",
-           "dep": "08:00",
-           "arr": "09:52"
+           "to": "ATL",
+           "dep": "11:45",
+           "arr": "12:51"
           },
           {
-           "from": "DFW",
+           "from": "ATL",
            "to": "LIT",
-           "dep": "11:55",
-           "arr": "13:20"
+           "dep": "16:30",
+           "arr": "17:07"
           }
          ],
          "layovers": [
-          123
+          219
          ],
-         "arr_iso": "2026-10-27T13:20"
+         "arr_iso": "2026-10-27T17:07"
+        },
+        {
+         "price": 363,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "14:00",
+           "arr": "15:02"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "16:30",
+           "arr": "17:07"
+          }
+         ],
+         "layovers": [
+          88
+         ],
+         "arr_iso": "2026-10-27T17:07"
+        },
+        {
+         "price": 382,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:30",
+           "arr": "07:36"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "08:45",
+           "arr": "10:44"
+          }
+         ],
+         "layovers": [
+          69
+         ],
+         "arr_iso": "2026-10-27T10:44"
         },
         {
          "price": 448,
@@ -53365,23 +53634,23 @@
           {
            "from": "GSP",
            "to": "ATL",
-           "dep": "05:40",
-           "arr": "06:42"
+           "dep": "11:45",
+           "arr": "12:51"
           },
           {
            "from": "ATL",
            "to": "LIT",
-           "dep": "08:10",
-           "arr": "08:48"
+           "dep": "16:30",
+           "arr": "17:07"
           }
          ],
          "layovers": [
-          88
+          219
          ],
-         "arr_iso": "2026-10-27T08:48"
+         "arr_iso": "2026-10-27T17:07"
         },
         {
-         "price": 347,
+         "price": 403,
          "airlines": [
           "DL"
          ],
@@ -53404,56 +53673,6 @@
           88
          ],
          "arr_iso": "2026-10-27T17:07"
-        },
-        {
-         "price": 347,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "17:00",
-           "arr": "18:08"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "19:54",
-           "arr": "20:31"
-          }
-         ],
-         "layovers": [
-          106
-         ],
-         "arr_iso": "2026-10-27T20:31"
-        },
-        {
-         "price": 413,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "17:15",
-           "arr": "18:36"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "19:50",
-           "arr": "21:07"
-          }
-         ],
-         "layovers": [
-          74
-         ],
-         "arr_iso": "2026-10-27T21:07"
         },
         {
          "price": 484,
@@ -53701,7 +53920,7 @@
        "best": {
         "UA": 612,
         "AA": 612,
-        "DL": 718
+        "DL": 918
        },
        "low": {
         "UA": 612,
@@ -53711,7 +53930,7 @@
        "at_low": {
         "UA": true,
         "AA": true,
-        "DL": true
+        "DL": false
        },
        "options": [
         {
@@ -53815,31 +54034,6 @@
          "arr_iso": "2026-08-16T23:49"
         },
         {
-         "price": 718,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "08:49",
-           "arr": "09:55"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "12:21",
-           "arr": "12:51"
-          }
-         ],
-         "layovers": [
-          146
-         ],
-         "arr_iso": "2026-08-16T12:51"
-        },
-        {
          "price": 918,
          "airlines": [
           "DL"
@@ -53868,14 +54062,14 @@
       },
       "first": {
        "best": {
-        "AA": 775,
+        "AA": 763,
         "UA": 992,
-        "DL": 1570
+        "DL": 1016
        },
        "low": {
-        "AA": 775,
+        "AA": 763,
         "UA": 992,
-        "DL": 1570
+        "DL": 1016
        },
        "at_low": {
         "AA": true,
@@ -53884,7 +54078,7 @@
        },
        "options": [
         {
-         "price": 775,
+         "price": 763,
          "airlines": [
           "AA"
          ],
@@ -53917,6 +54111,31 @@
          "legs": [
           {
            "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-16T21:25"
+        },
+        {
+         "price": 805,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
            "to": "CLT",
            "dep": "20:20",
            "arr": "21:23"
@@ -53932,56 +54151,6 @@
           77
          ],
          "arr_iso": "2026-08-16T23:49"
-        },
-        {
-         "price": 822,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "12:39",
-           "arr": "13:50"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "16:53",
-           "arr": "18:07"
-          }
-         ],
-         "layovers": [
-          183
-         ],
-         "arr_iso": "2026-08-16T18:07"
-        },
-        {
-         "price": 984,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "14:13",
-           "arr": "15:53"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "16:57",
-           "arr": "18:23"
-          }
-         ],
-         "layovers": [
-          64
-         ],
-         "arr_iso": "2026-08-16T18:23"
         },
         {
          "price": 992,
@@ -54009,7 +54178,57 @@
          "arr_iso": "2026-08-16T10:42"
         },
         {
-         "price": 1570,
+         "price": 1016,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "05:46",
+           "arr": "06:45"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "08:05",
+           "arr": "08:37"
+          }
+         ],
+         "layovers": [
+          80
+         ],
+         "arr_iso": "2026-08-16T08:37"
+        },
+        {
+         "price": 1016,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "08:49",
+           "arr": "09:55"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "12:21",
+           "arr": "12:51"
+          }
+         ],
+         "layovers": [
+          146
+         ],
+         "arr_iso": "2026-08-16T12:51"
+        },
+        {
+         "price": 1273,
          "airlines": [
           "DL"
          ],
@@ -54047,7 +54266,7 @@
        "best": {
         "AA": 612,
         "UA": 631,
-        "DL": 718
+        "DL": 918
        },
        "low": {
         "AA": 612,
@@ -54057,9 +54276,34 @@
        "at_low": {
         "AA": true,
         "UA": true,
-        "DL": true
+        "DL": false
        },
        "options": [
+        {
+         "price": 612,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "07:00",
+           "arr": "08:43"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "09:59",
+           "arr": "11:23"
+          }
+         ],
+         "layovers": [
+          76
+         ],
+         "arr_iso": "2026-08-16T11:23"
+        },
         {
          "price": 612,
          "airlines": [
@@ -54084,6 +54328,31 @@
           47
          ],
          "arr_iso": "2026-08-16T21:25"
+        },
+        {
+         "price": 612,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "CLT",
+           "dep": "20:20",
+           "arr": "21:23"
+          },
+          {
+           "from": "CLT",
+           "to": "LIT",
+           "dep": "22:40",
+           "arr": "23:49"
+          }
+         ],
+         "layovers": [
+          77
+         ],
+         "arr_iso": "2026-08-16T23:49"
         },
         {
          "price": 631,
@@ -54136,31 +54405,6 @@
          "arr_iso": "2026-08-16T11:12"
         },
         {
-         "price": 718,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "08:49",
-           "arr": "09:55"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "12:21",
-           "arr": "12:51"
-          }
-         ],
-         "layovers": [
-          146
-         ],
-         "arr_iso": "2026-08-16T12:51"
-        },
-        {
          "price": 918,
          "airlines": [
           "DL"
@@ -54190,47 +54434,22 @@
       "first": {
        "best": {
         "AA": 763,
-        "UA": 992,
-        "DL": 1570
+        "DL": 1016,
+        "UA": 1023
        },
        "low": {
         "AA": 763,
-        "UA": 992,
-        "DL": 1570
+        "DL": 1016,
+        "UA": 992
        },
        "at_low": {
         "AA": true,
-        "UA": true,
-        "DL": true
+        "DL": true,
+        "UA": false
        },
        "options": [
         {
          "price": 763,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "20:05",
-           "arr": "21:45"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "22:30",
-           "arr": "23:55"
-          }
-         ],
-         "layovers": [
-          45
-         ],
-         "arr_iso": "2026-08-16T23:55"
-        },
-        {
-         "price": 775,
          "airlines": [
           "AA"
          ],
@@ -54263,6 +54482,31 @@
          "legs": [
           {
            "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-16T21:25"
+        },
+        {
+         "price": 805,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
            "to": "CLT",
            "dep": "20:20",
            "arr": "21:23"
@@ -54280,57 +54524,57 @@
          "arr_iso": "2026-08-16T23:49"
         },
         {
-         "price": 822,
+         "price": 1016,
          "airlines": [
-          "AA"
+          "DL"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "CLT",
-           "dep": "12:39",
-           "arr": "13:50"
+           "to": "ATL",
+           "dep": "05:46",
+           "arr": "06:45"
           },
           {
-           "from": "CLT",
+           "from": "ATL",
            "to": "LIT",
-           "dep": "16:53",
-           "arr": "18:07"
+           "dep": "08:05",
+           "arr": "08:37"
           }
          ],
          "layovers": [
-          183
+          80
          ],
-         "arr_iso": "2026-08-16T18:07"
+         "arr_iso": "2026-08-16T08:37"
         },
         {
-         "price": 984,
+         "price": 1016,
          "airlines": [
-          "AA"
+          "DL"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "DFW",
-           "dep": "14:13",
-           "arr": "15:53"
+           "to": "ATL",
+           "dep": "08:49",
+           "arr": "09:55"
           },
           {
-           "from": "DFW",
+           "from": "ATL",
            "to": "LIT",
-           "dep": "16:57",
-           "arr": "18:23"
+           "dep": "12:21",
+           "arr": "12:51"
           }
          ],
          "layovers": [
-          64
+          146
          ],
-         "arr_iso": "2026-08-16T18:23"
+         "arr_iso": "2026-08-16T12:51"
         },
         {
-         "price": 992,
+         "price": 1023,
          "airlines": [
           "UA"
          ],
@@ -54355,7 +54599,7 @@
          "arr_iso": "2026-08-16T10:42"
         },
         {
-         "price": 1570,
+         "price": 1273,
          "airlines": [
           "DL"
          ],
@@ -54391,12 +54635,433 @@
      "cabins": {
       "economy": {
        "best": {
+        "DL": 596,
         "UA": 612,
+        "AA": 612
+       },
+       "low": {
+        "DL": 596,
+        "UA": 612,
+        "AA": 612
+       },
+       "at_low": {
+        "DL": true,
+        "UA": true,
+        "AA": true
+       },
+       "options": [
+        {
+         "price": 596,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "06:55",
+           "arr": "07:58"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "10:31",
+           "arr": "11:03"
+          }
+         ],
+         "layovers": [
+          153
+         ],
+         "arr_iso": "2026-08-16T11:03"
+        },
+        {
+         "price": 596,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "08:49",
+           "arr": "09:55"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "12:21",
+           "arr": "12:51"
+          }
+         ],
+         "layovers": [
+          146
+         ],
+         "arr_iso": "2026-08-16T12:51"
+        },
+        {
+         "price": 612,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:30",
+           "arr": "07:47"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "08:40",
+           "arr": "10:42"
+          }
+         ],
+         "layovers": [
+          53
+         ],
+         "arr_iso": "2026-08-16T10:42"
+        },
+        {
+         "price": 612,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "07:00",
+           "arr": "08:43"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "09:59",
+           "arr": "11:23"
+          }
+         ],
+         "layovers": [
+          76
+         ],
+         "arr_iso": "2026-08-16T11:23"
+        },
+        {
+         "price": 612,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-16T21:25"
+        },
+        {
+         "price": 612,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "CLT",
+           "dep": "20:20",
+           "arr": "21:23"
+          },
+          {
+           "from": "CLT",
+           "to": "LIT",
+           "dep": "22:40",
+           "arr": "23:49"
+          }
+         ],
+         "layovers": [
+          77
+         ],
+         "arr_iso": "2026-08-16T23:49"
+        },
+        {
+         "price": 872,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "IAH",
+           "dep": "17:31",
+           "arr": "19:10"
+          },
+          {
+           "from": "IAH",
+           "to": "LIT",
+           "dep": "19:50",
+           "arr": "21:24"
+          }
+         ],
+         "layovers": [
+          40
+         ],
+         "arr_iso": "2026-08-16T21:24"
+        },
+        {
+         "price": 918,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "17:20",
+           "arr": "18:25"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "19:11",
+           "arr": "19:45"
+          }
+         ],
+         "layovers": [
+          46
+         ],
+         "arr_iso": "2026-08-16T19:45"
+        }
+       ]
+      },
+      "first": {
+       "best": {
+        "AA": 800,
+        "UA": 992,
+        "DL": 1016
+       },
+       "low": {
+        "AA": 800,
+        "UA": 992,
+        "DL": 1016
+       },
+       "at_low": {
+        "AA": true,
+        "UA": true,
+        "DL": true
+       },
+       "options": [
+        {
+         "price": 800,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "CLT",
+           "dep": "06:35",
+           "arr": "07:51"
+          },
+          {
+           "from": "CLT",
+           "to": "LIT",
+           "dep": "11:05",
+           "arr": "12:19"
+          }
+         ],
+         "layovers": [
+          194
+         ],
+         "arr_iso": "2026-08-16T12:19"
+        },
+        {
+         "price": 842,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-16T21:25"
+        },
+        {
+         "price": 842,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "CLT",
+           "dep": "20:20",
+           "arr": "21:23"
+          },
+          {
+           "from": "CLT",
+           "to": "LIT",
+           "dep": "22:40",
+           "arr": "23:49"
+          }
+         ],
+         "layovers": [
+          77
+         ],
+         "arr_iso": "2026-08-16T23:49"
+        },
+        {
+         "price": 992,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:30",
+           "arr": "07:47"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "08:40",
+           "arr": "10:42"
+          }
+         ],
+         "layovers": [
+          53
+         ],
+         "arr_iso": "2026-08-16T10:42"
+        },
+        {
+         "price": 1016,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "05:46",
+           "arr": "06:45"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "08:05",
+           "arr": "08:37"
+          }
+         ],
+         "layovers": [
+          80
+         ],
+         "arr_iso": "2026-08-16T08:37"
+        },
+        {
+         "price": 1016,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "08:49",
+           "arr": "09:55"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "12:21",
+           "arr": "12:51"
+          }
+         ],
+         "layovers": [
+          146
+         ],
+         "arr_iso": "2026-08-16T12:51"
+        },
+        {
+         "price": 1273,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "17:20",
+           "arr": "18:25"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "19:11",
+           "arr": "19:45"
+          }
+         ],
+         "layovers": [
+          46
+         ],
+         "arr_iso": "2026-08-16T19:45"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "dep": "2026-08-16",
+     "ret": "2026-08-22",
+     "label": "Sun-Sat",
+     "nights": 6,
+     "cabins": {
+      "economy": {
+       "best": {
+        "UA": 597,
         "AA": 612,
         "DL": 718
        },
        "low": {
-        "UA": 612,
+        "UA": 597,
         "AA": 612,
         "DL": 718
        },
@@ -54406,6 +55071,31 @@
         "DL": true
        },
        "options": [
+        {
+         "price": 597,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "IAH",
+           "dep": "07:00",
+           "arr": "08:44"
+          },
+          {
+           "from": "IAH",
+           "to": "LIT",
+           "dep": "14:29",
+           "arr": "16:04"
+          }
+         ],
+         "layovers": [
+          345
+         ],
+         "arr_iso": "2026-08-16T16:04"
+        },
         {
          "price": 612,
          "airlines": [
@@ -54532,31 +55222,6 @@
          "arr_iso": "2026-08-16T12:51"
         },
         {
-         "price": 880,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "IAH",
-           "dep": "17:31",
-           "arr": "19:10"
-          },
-          {
-           "from": "IAH",
-           "to": "LIT",
-           "dep": "19:50",
-           "arr": "21:24"
-          }
-         ],
-         "layovers": [
-          40
-         ],
-         "arr_iso": "2026-08-16T21:24"
-        },
-        {
          "price": 918,
          "airlines": [
           "DL"
@@ -54582,26 +55247,6 @@
          "arr_iso": "2026-08-16T19:45"
         }
        ]
-      },
-      "first": {
-       "best": {},
-       "low": {},
-       "at_low": {},
-       "options": []
-      }
-     }
-    },
-    {
-     "dep": "2026-08-16",
-     "ret": "2026-08-22",
-     "label": "Sun-Sat",
-     "nights": 6,
-     "cabins": {
-      "economy": {
-       "best": {},
-       "low": {},
-       "at_low": {},
-       "options": []
       },
       "first": {
        "best": {
@@ -54782,23 +55427,73 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 477,
-        "AA": 621,
-        "DL": 658
+        "AA": 612,
+        "UA": 612,
+        "DL": 678
        },
        "low": {
+        "AA": 612,
         "UA": 477,
-        "AA": 621,
         "DL": 658
        },
        "at_low": {
-        "UA": true,
         "AA": true,
-        "DL": true
+        "UA": false,
+        "DL": false
        },
        "options": [
         {
-         "price": 477,
+         "price": 612,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-17T21:25"
+        },
+        {
+         "price": 612,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "IAH",
+           "dep": "17:31",
+           "arr": "19:10"
+          },
+          {
+           "from": "IAH",
+           "to": "LIT",
+           "dep": "19:50",
+           "arr": "21:24"
+          }
+         ],
+         "layovers": [
+          40
+         ],
+         "arr_iso": "2026-08-17T21:24"
+        },
+        {
+         "price": 612,
          "airlines": [
           "UA"
          ],
@@ -54821,81 +55516,6 @@
           147
          ],
          "arr_iso": "2026-08-17T23:31"
-        },
-        {
-         "price": 621,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "06:00",
-           "arr": "07:16"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "08:25",
-           "arr": "09:35"
-          }
-         ],
-         "layovers": [
-          69
-         ],
-         "arr_iso": "2026-08-17T09:35"
-        },
-        {
-         "price": 621,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:35"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
-          }
-         ],
-         "layovers": [
-          55
-         ],
-         "arr_iso": "2026-08-17T20:41"
-        },
-        {
-         "price": 658,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "17:20",
-           "arr": "18:25"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "19:11",
-           "arr": "19:45"
-          }
-         ],
-         "layovers": [
-          46
-         ],
-         "arr_iso": "2026-08-17T19:45"
         },
         {
          "price": 675,
@@ -54921,14 +55541,39 @@
           76
          ],
          "arr_iso": "2026-08-17T11:23"
+        },
+        {
+         "price": 678,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "17:20",
+           "arr": "18:25"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "19:11",
+           "arr": "19:45"
+          }
+         ],
+         "layovers": [
+          46
+         ],
+         "arr_iso": "2026-08-17T19:45"
         }
        ]
       },
       "first": {
        "best": {
-        "AA": 871,
-        "UA": 937,
-        "DL": 1003
+        "AA": 984,
+        "UA": 992,
+        "DL": 1023
        },
        "low": {
         "AA": 871,
@@ -54936,86 +55581,11 @@
         "DL": 1003
        },
        "at_low": {
-        "AA": true,
-        "UA": true,
-        "DL": true
+        "AA": false,
+        "UA": false,
+        "DL": false
        },
        "options": [
-        {
-         "price": 871,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "07:00",
-           "arr": "08:43"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "09:59",
-           "arr": "11:23"
-          }
-         ],
-         "layovers": [
-          76
-         ],
-         "arr_iso": "2026-08-17T11:23"
-        },
-        {
-         "price": 937,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "17:43",
-           "arr": "19:03"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
-          }
-         ],
-         "layovers": [
-          147
-         ],
-         "arr_iso": "2026-08-17T23:31"
-        },
-        {
-         "price": 968,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "IAH",
-           "dep": "17:31",
-           "arr": "19:10"
-          },
-          {
-           "from": "IAH",
-           "to": "LIT",
-           "dep": "19:50",
-           "arr": "21:24"
-          }
-         ],
-         "layovers": [
-          40
-         ],
-         "arr_iso": "2026-08-17T21:24"
-        },
         {
          "price": 984,
          "airlines": [
@@ -55042,7 +55612,32 @@
          "arr_iso": "2026-08-17T18:26"
         },
         {
-         "price": 1003,
+         "price": 992,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "IAH",
+           "dep": "17:31",
+           "arr": "19:10"
+          },
+          {
+           "from": "IAH",
+           "to": "LIT",
+           "dep": "19:50",
+           "arr": "21:24"
+          }
+         ],
+         "layovers": [
+          40
+         ],
+         "arr_iso": "2026-08-17T21:24"
+        },
+        {
+         "price": 1023,
          "airlines": [
           "DL"
          ],
@@ -55103,23 +55698,48 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 496,
-        "AA": 621,
-        "DL": 658
+        "AA": 612,
+        "UA": 631,
+        "DL": 678
        },
        "low": {
+        "AA": 612,
         "UA": 496,
-        "AA": 621,
         "DL": 658
        },
        "at_low": {
-        "UA": true,
         "AA": true,
-        "DL": true
+        "UA": false,
+        "DL": false
        },
        "options": [
         {
-         "price": 496,
+         "price": 612,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-17T21:25"
+        },
+        {
+         "price": 631,
          "airlines": [
           "UA"
          ],
@@ -55127,96 +55747,21 @@
          "legs": [
           {
            "from": "GSP",
-           "to": "ORD",
-           "dep": "17:43",
-           "arr": "19:03"
+           "to": "IAH",
+           "dep": "17:31",
+           "arr": "19:10"
           },
           {
-           "from": "ORD",
+           "from": "IAH",
            "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
+           "dep": "19:50",
+           "arr": "21:24"
           }
          ],
          "layovers": [
-          147
+          40
          ],
-         "arr_iso": "2026-08-17T23:31"
-        },
-        {
-         "price": 621,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "06:00",
-           "arr": "07:16"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "08:25",
-           "arr": "09:35"
-          }
-         ],
-         "layovers": [
-          69
-         ],
-         "arr_iso": "2026-08-17T09:35"
-        },
-        {
-         "price": 621,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:35"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
-          }
-         ],
-         "layovers": [
-          55
-         ],
-         "arr_iso": "2026-08-17T20:41"
-        },
-        {
-         "price": 658,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "17:20",
-           "arr": "18:25"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "19:11",
-           "arr": "19:45"
-          }
-         ],
-         "layovers": [
-          46
-         ],
-         "arr_iso": "2026-08-17T19:45"
+         "arr_iso": "2026-08-17T21:24"
         },
         {
          "price": 675,
@@ -55242,28 +55787,34 @@
           76
          ],
          "arr_iso": "2026-08-17T11:23"
-        }
-       ]
-      },
-      "first": {
-       "best": {
-        "AA": 871,
-        "UA": 968,
-        "DL": 1003
-       },
-       "low": {
-        "AA": 871,
-        "UA": 968,
-        "DL": 1003
-       },
-       "at_low": {
-        "AA": true,
-        "UA": true,
-        "DL": true
-       },
-       "options": [
+        },
         {
-         "price": 871,
+         "price": 678,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "17:20",
+           "arr": "18:25"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "19:11",
+           "arr": "19:45"
+          }
+         ],
+         "layovers": [
+          46
+         ],
+         "arr_iso": "2026-08-17T19:45"
+        },
+        {
+         "price": 768,
          "airlines": [
           "AA"
          ],
@@ -55271,47 +55822,41 @@
          "legs": [
           {
            "from": "GSP",
-           "to": "DFW",
-           "dep": "07:00",
-           "arr": "08:43"
+           "to": "CLT",
+           "dep": "10:12",
+           "arr": "11:28"
           },
           {
-           "from": "DFW",
+           "from": "CLT",
            "to": "LIT",
-           "dep": "09:59",
-           "arr": "11:23"
+           "dep": "12:44",
+           "arr": "13:53"
           }
          ],
          "layovers": [
           76
          ],
-         "arr_iso": "2026-08-17T11:23"
-        },
-        {
-         "price": 968,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "17:43",
-           "arr": "19:03"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
-          }
-         ],
-         "layovers": [
-          147
-         ],
-         "arr_iso": "2026-08-17T23:31"
-        },
+         "arr_iso": "2026-08-17T13:53"
+        }
+       ]
+      },
+      "first": {
+       "best": {
+        "AA": 984,
+        "DL": 1023,
+        "UA": 1023
+       },
+       "low": {
+        "AA": 871,
+        "DL": 1003,
+        "UA": 968
+       },
+       "at_low": {
+        "AA": false,
+        "DL": false,
+        "UA": false
+       },
+       "options": [
         {
          "price": 984,
          "airlines": [
@@ -55338,32 +55883,7 @@
          "arr_iso": "2026-08-17T18:26"
         },
         {
-         "price": 999,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "IAH",
-           "dep": "17:31",
-           "arr": "19:10"
-          },
-          {
-           "from": "IAH",
-           "to": "LIT",
-           "dep": "19:50",
-           "arr": "21:24"
-          }
-         ],
-         "layovers": [
-          40
-         ],
-         "arr_iso": "2026-08-17T21:24"
-        },
-        {
-         "price": 1003,
+         "price": 1023,
          "airlines": [
           "DL"
          ],
@@ -55386,6 +55906,31 @@
           46
          ],
          "arr_iso": "2026-08-17T19:45"
+        },
+        {
+         "price": 1023,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "IAH",
+           "dep": "17:31",
+           "arr": "19:10"
+          },
+          {
+           "from": "IAH",
+           "to": "LIT",
+           "dep": "19:50",
+           "arr": "21:24"
+          }
+         ],
+         "layovers": [
+          40
+         ],
+         "arr_iso": "2026-08-17T21:24"
         },
         {
          "price": 1110,
@@ -55424,23 +55969,48 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 477,
-        "AA": 621,
-        "DL": 658
+        "AA": 612,
+        "UA": 612,
+        "DL": 678
        },
        "low": {
+        "AA": 612,
         "UA": 477,
-        "AA": 621,
         "DL": 658
        },
        "at_low": {
-        "UA": true,
         "AA": true,
-        "DL": true
+        "UA": false,
+        "DL": false
        },
        "options": [
         {
-         "price": 477,
+         "price": 612,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-17T21:25"
+        },
+        {
+         "price": 612,
          "airlines": [
           "UA"
          ],
@@ -55463,81 +56033,6 @@
           147
          ],
          "arr_iso": "2026-08-17T23:31"
-        },
-        {
-         "price": 621,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "06:00",
-           "arr": "07:16"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "08:25",
-           "arr": "09:35"
-          }
-         ],
-         "layovers": [
-          69
-         ],
-         "arr_iso": "2026-08-17T09:35"
-        },
-        {
-         "price": 621,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:35"
-          },
-          {
-           "from": "CLT",
-           "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
-          }
-         ],
-         "layovers": [
-          55
-         ],
-         "arr_iso": "2026-08-17T20:41"
-        },
-        {
-         "price": 658,
-         "airlines": [
-          "DL"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ATL",
-           "dep": "17:20",
-           "arr": "18:25"
-          },
-          {
-           "from": "ATL",
-           "to": "LIT",
-           "dep": "19:11",
-           "arr": "19:45"
-          }
-         ],
-         "layovers": [
-          46
-         ],
-         "arr_iso": "2026-08-17T19:45"
         },
         {
          "price": 675,
@@ -55563,103 +56058,9 @@
           76
          ],
          "arr_iso": "2026-08-17T11:23"
-        }
-       ]
-      },
-      "first": {
-       "best": {
-        "AA": 908,
-        "UA": 937,
-        "DL": 1003
-       },
-       "low": {
-        "AA": 908,
-        "UA": 937,
-        "DL": 1003
-       },
-       "at_low": {
-        "AA": true,
-        "UA": true,
-        "DL": true
-       },
-       "options": [
-        {
-         "price": 908,
-         "airlines": [
-          "AA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "DFW",
-           "dep": "07:00",
-           "arr": "08:43"
-          },
-          {
-           "from": "DFW",
-           "to": "LIT",
-           "dep": "09:59",
-           "arr": "11:23"
-          }
-         ],
-         "layovers": [
-          76
-         ],
-         "arr_iso": "2026-08-17T11:23"
         },
         {
-         "price": 937,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "17:43",
-           "arr": "19:03"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
-          }
-         ],
-         "layovers": [
-          147
-         ],
-         "arr_iso": "2026-08-17T23:31"
-        },
-        {
-         "price": 968,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "IAH",
-           "dep": "17:31",
-           "arr": "19:10"
-          },
-          {
-           "from": "IAH",
-           "to": "LIT",
-           "dep": "19:50",
-           "arr": "21:24"
-          }
-         ],
-         "layovers": [
-          40
-         ],
-         "arr_iso": "2026-08-17T21:24"
-        },
-        {
-         "price": 1003,
+         "price": 678,
          "airlines": [
           "DL"
          ],
@@ -55682,6 +56083,50 @@
           46
          ],
          "arr_iso": "2026-08-17T19:45"
+        }
+       ]
+      },
+      "first": {
+       "best": {
+        "UA": 992,
+        "AA": 1021,
+        "DL": 1023
+       },
+       "low": {
+        "UA": 937,
+        "AA": 908,
+        "DL": 1003
+       },
+       "at_low": {
+        "UA": false,
+        "AA": false,
+        "DL": false
+       },
+       "options": [
+        {
+         "price": 992,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "IAH",
+           "dep": "17:31",
+           "arr": "19:10"
+          },
+          {
+           "from": "IAH",
+           "to": "LIT",
+           "dep": "19:50",
+           "arr": "21:24"
+          }
+         ],
+         "layovers": [
+          40
+         ],
+         "arr_iso": "2026-08-17T21:24"
         },
         {
          "price": 1021,
@@ -55707,6 +56152,56 @@
           67
          ],
          "arr_iso": "2026-08-17T18:26"
+        },
+        {
+         "price": 1023,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "17:20",
+           "arr": "18:25"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "19:11",
+           "arr": "19:45"
+          }
+         ],
+         "layovers": [
+          46
+         ],
+         "arr_iso": "2026-08-17T19:45"
+        },
+        {
+         "price": 1147,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "CLT",
+           "dep": "10:12",
+           "arr": "11:28"
+          },
+          {
+           "from": "CLT",
+           "to": "LIT",
+           "dep": "12:44",
+           "arr": "13:53"
+          }
+         ],
+         "layovers": [
+          76
+         ],
+         "arr_iso": "2026-08-17T13:53"
         }
        ]
       }
@@ -55720,23 +56215,23 @@
      "cabins": {
       "economy": {
        "best": {
-        "UA": 477,
-        "AA": 621,
-        "DL": 658
+        "UA": 582,
+        "AA": 612,
+        "DL": 678
        },
        "low": {
         "UA": 477,
-        "AA": 621,
+        "AA": 612,
         "DL": 658
        },
        "at_low": {
-        "UA": true,
+        "UA": false,
         "AA": true,
-        "DL": true
+        "DL": false
        },
        "options": [
         {
-         "price": 477,
+         "price": 582,
          "airlines": [
           "UA"
          ],
@@ -55751,17 +56246,17 @@
           {
            "from": "ORD",
            "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
+           "dep": "08:40",
+           "arr": "10:42"
           }
          ],
          "layovers": [
-          147
+          817
          ],
-         "arr_iso": "2026-08-17T23:31"
+         "arr_iso": "2026-08-18T10:42"
         },
         {
-         "price": 621,
+         "price": 612,
          "airlines": [
           "AA"
          ],
@@ -55786,7 +56281,7 @@
          "arr_iso": "2026-08-17T09:35"
         },
         {
-         "price": 621,
+         "price": 612,
          "airlines": [
           "AA"
          ],
@@ -55794,46 +56289,46 @@
          "legs": [
           {
            "from": "GSP",
-           "to": "CLT",
-           "dep": "17:19",
-           "arr": "18:35"
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
           },
           {
-           "from": "CLT",
+           "from": "DFW",
            "to": "LIT",
-           "dep": "19:30",
-           "arr": "20:41"
+           "dep": "20:00",
+           "arr": "21:25"
           }
          ],
          "layovers": [
-          55
+          47
          ],
-         "arr_iso": "2026-08-17T20:41"
+         "arr_iso": "2026-08-17T21:25"
         },
         {
-         "price": 658,
+         "price": 612,
          "airlines": [
-          "DL"
+          "UA"
          ],
          "stops": 1,
          "legs": [
           {
            "from": "GSP",
-           "to": "ATL",
-           "dep": "17:20",
-           "arr": "18:25"
+           "to": "ORD",
+           "dep": "17:43",
+           "arr": "19:03"
           },
           {
-           "from": "ATL",
+           "from": "ORD",
            "to": "LIT",
-           "dep": "19:11",
-           "arr": "19:45"
+           "dep": "21:30",
+           "arr": "23:31"
           }
          ],
          "layovers": [
-          46
+          147
          ],
-         "arr_iso": "2026-08-17T19:45"
+         "arr_iso": "2026-08-17T23:31"
         },
         {
          "price": 675,
@@ -55859,26 +56354,76 @@
           76
          ],
          "arr_iso": "2026-08-17T11:23"
+        },
+        {
+         "price": 678,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "17:20",
+           "arr": "18:25"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "19:11",
+           "arr": "19:45"
+          }
+         ],
+         "layovers": [
+          46
+         ],
+         "arr_iso": "2026-08-17T19:45"
         }
        ]
       },
       "first": {
        "best": {
-        "AA": 871,
-        "UA": 937,
-        "DL": 1003
+        "AA": 805,
+        "UA": 992,
+        "DL": 1023
        },
        "low": {
-        "AA": 871,
+        "AA": 805,
         "UA": 937,
         "DL": 1003
        },
        "at_low": {
         "AA": true,
-        "UA": true,
-        "DL": true
+        "UA": false,
+        "DL": false
        },
        "options": [
+        {
+         "price": 805,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "17:28",
+           "arr": "19:13"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "20:00",
+           "arr": "21:25"
+          }
+         ],
+         "layovers": [
+          47
+         ],
+         "arr_iso": "2026-08-17T21:25"
+        },
         {
          "price": 871,
          "airlines": [
@@ -55903,56 +56448,6 @@
           76
          ],
          "arr_iso": "2026-08-17T11:23"
-        },
-        {
-         "price": 937,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "17:43",
-           "arr": "19:03"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "21:30",
-           "arr": "23:31"
-          }
-         ],
-         "layovers": [
-          147
-         ],
-         "arr_iso": "2026-08-17T23:31"
-        },
-        {
-         "price": 968,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "IAH",
-           "dep": "17:31",
-           "arr": "19:10"
-          },
-          {
-           "from": "IAH",
-           "to": "LIT",
-           "dep": "19:50",
-           "arr": "21:24"
-          }
-         ],
-         "layovers": [
-          40
-         ],
-         "arr_iso": "2026-08-17T21:24"
         },
         {
          "price": 984,
@@ -55980,7 +56475,32 @@
          "arr_iso": "2026-08-17T18:26"
         },
         {
-         "price": 1003,
+         "price": 992,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "IAH",
+           "dep": "17:31",
+           "arr": "19:10"
+          },
+          {
+           "from": "IAH",
+           "to": "LIT",
+           "dep": "19:50",
+           "arr": "21:24"
+          }
+         ],
+         "layovers": [
+          40
+         ],
+         "arr_iso": "2026-08-17T21:24"
+        },
+        {
+         "price": 1023,
          "airlines": [
           "DL"
          ],
@@ -56234,10 +56754,173 @@
        ]
       },
       "first": {
-       "best": {},
-       "low": {},
-       "at_low": {},
-       "options": []
+       "best": {
+        "AA": 750,
+        "DL": 917,
+        "UA": 937
+       },
+       "low": {
+        "AA": 750,
+        "DL": 917,
+        "UA": 937
+       },
+       "at_low": {
+        "AA": true,
+        "DL": true,
+        "UA": true
+       },
+       "options": [
+        {
+         "price": 750,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "07:00",
+           "arr": "08:43"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "09:59",
+           "arr": "11:23"
+          }
+         ],
+         "layovers": [
+          76
+         ],
+         "arr_iso": "2026-08-18T11:23"
+        },
+        {
+         "price": 775,
+         "airlines": [
+          "AA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "DFW",
+           "dep": "14:13",
+           "arr": "15:53"
+          },
+          {
+           "from": "DFW",
+           "to": "LIT",
+           "dep": "17:00",
+           "arr": "18:26"
+          }
+         ],
+         "layovers": [
+          67
+         ],
+         "arr_iso": "2026-08-18T18:26"
+        },
+        {
+         "price": 917,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "05:46",
+           "arr": "06:45"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "08:05",
+           "arr": "08:37"
+          }
+         ],
+         "layovers": [
+          80
+         ],
+         "arr_iso": "2026-08-18T08:37"
+        },
+        {
+         "price": 917,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "08:49",
+           "arr": "09:55"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "12:21",
+           "arr": "12:51"
+          }
+         ],
+         "layovers": [
+          146
+         ],
+         "arr_iso": "2026-08-18T12:51"
+        },
+        {
+         "price": 917,
+         "airlines": [
+          "DL"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ATL",
+           "dep": "17:20",
+           "arr": "18:25"
+          },
+          {
+           "from": "ATL",
+           "to": "LIT",
+           "dep": "19:08",
+           "arr": "19:42"
+          }
+         ],
+         "layovers": [
+          43
+         ],
+         "arr_iso": "2026-08-18T19:42"
+        },
+        {
+         "price": 937,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:30",
+           "arr": "07:47"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "08:40",
+           "arr": "10:42"
+          }
+         ],
+         "layovers": [
+          53
+         ],
+         "arr_iso": "2026-08-18T10:42"
+        }
+       ]
       }
      }
     },
@@ -56250,18 +56933,18 @@
       "economy": {
        "best": {
         "AA": 477,
-        "UA": 496,
-        "DL": 497
+        "DL": 497,
+        "UA": 499
        },
        "low": {
         "AA": 477,
-        "UA": 496,
-        "DL": 497
+        "DL": 497,
+        "UA": 496
        },
        "at_low": {
         "AA": true,
-        "UA": true,
-        "DL": true
+        "DL": true,
+        "UA": false
        },
        "options": [
         {
@@ -56365,56 +57048,6 @@
          "arr_iso": "2026-08-18T21:25"
         },
         {
-         "price": 496,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "ORD",
-           "dep": "06:30",
-           "arr": "07:47"
-          },
-          {
-           "from": "ORD",
-           "to": "LIT",
-           "dep": "08:40",
-           "arr": "10:42"
-          }
-         ],
-         "layovers": [
-          53
-         ],
-         "arr_iso": "2026-08-18T10:42"
-        },
-        {
-         "price": 496,
-         "airlines": [
-          "UA"
-         ],
-         "stops": 1,
-         "legs": [
-          {
-           "from": "GSP",
-           "to": "IAH",
-           "dep": "07:00",
-           "arr": "08:44"
-          },
-          {
-           "from": "IAH",
-           "to": "LIT",
-           "dep": "09:45",
-           "arr": "11:12"
-          }
-         ],
-         "layovers": [
-          61
-         ],
-         "arr_iso": "2026-08-18T11:12"
-        },
-        {
          "price": 497,
          "airlines": [
           "DL"
@@ -56463,6 +57096,56 @@
           146
          ],
          "arr_iso": "2026-08-18T12:51"
+        },
+        {
+         "price": 499,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "ORD",
+           "dep": "06:30",
+           "arr": "07:47"
+          },
+          {
+           "from": "ORD",
+           "to": "LIT",
+           "dep": "08:40",
+           "arr": "10:42"
+          }
+         ],
+         "layovers": [
+          53
+         ],
+         "arr_iso": "2026-08-18T10:42"
+        },
+        {
+         "price": 499,
+         "airlines": [
+          "UA"
+         ],
+         "stops": 1,
+         "legs": [
+          {
+           "from": "GSP",
+           "to": "IAH",
+           "dep": "07:00",
+           "arr": "08:44"
+          },
+          {
+           "from": "IAH",
+           "to": "LIT",
+           "dep": "09:45",
+           "arr": "11:12"
+          }
+         ],
+         "layovers": [
+          61
+         ],
+         "arr_iso": "2026-08-18T11:12"
         }
        ]
       },
