@@ -64,8 +64,9 @@ def best_first(trip, min_nights=0, prefer=None):
         print(f"  capping {trip['id']} watch to first {MAX_PAIRS} of {len(pairs)} pairs")
         pairs = pairs[:MAX_PAIRS]
     best, best_pref = None, None
+    origin = trip.get("origin", CONFIG["origin"])
     for dep, ret, arrive_by in pairs:
-        opts = fetch_options(trip["dest"], dep, ret, "first", trip["airlines"])
+        opts = fetch_options(origin, trip["dest"], dep, ret, "first", trip["airlines"])
         time.sleep(random.uniform(CONFIG["sleep_min"], CONFIG["sleep_max"]))
         if arrive_by:
             cutoff = datetime.fromisoformat(f"{dep.isoformat()}T{arrive_by}")

@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fare Board</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#16294A">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -273,7 +279,7 @@ async function main(){
   let active = ids[0];
   const draw = () => {
     const t = latest.trips[active];
-    $("title").textContent = `${latest.origin} ⇄ ${t.dest}`;
+    $("title").textContent = `${t.origin || latest.origin} ⇄ ${t.dest}`;
     $("sub").textContent = `${t.label} · ${t.type === "open" ? "rolling scan" : "anchored dates"} · last scanned ${t.scanned_at}`;
     $("tabs").querySelectorAll(".tab").forEach(x=>x.classList.toggle("on", x.dataset.id===active));
     $("content").innerHTML = t.type === "open"
@@ -288,8 +294,11 @@ async function main(){
       };
     });
   };
-  $("tabs").innerHTML = ids.map(id =>
-    `<button class="tab" data-id="${id}">${latest.trips[id].label}<span class="d">${latest.trips[id].dest} · ${latest.trips[id].type}</span></button>`).join("");
+  $("tabs").innerHTML = ids.map(id => {
+    const tt = latest.trips[id];
+    const route = tt.origin && tt.origin !== latest.origin ? `${tt.origin}→${tt.dest}` : tt.dest;
+    return `<button class="tab" data-id="${id}">${tt.label}<span class="d">${route} · ${tt.type}</span></button>`;
+  }).join("");
   $("tabs").querySelectorAll(".tab").forEach(b => b.onclick = () => { active = b.dataset.id; draw(); });
   draw();
 }

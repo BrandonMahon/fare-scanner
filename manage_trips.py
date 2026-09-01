@@ -39,6 +39,7 @@ def parse_dates(raw, field):
 
 action = env("ACTION")
 dest = env("DEST").upper()
+origin = env("ORIGIN").upper()
 label = env("LABEL")
 airlines = [a.strip().upper() for a in env("AIRLINES", "UA,DL,AA").split(",") if a.strip()]
 
@@ -56,6 +57,8 @@ if action == "retire":
 elif action in ("add_open", "add_anchored"):
     if not re.fullmatch(r"[A-Z]{3}", dest):
         sys.exit("Destination must be a 3-letter airport code")
+    if origin and not re.fullmatch(r"[A-Z]{3}", origin):
+        sys.exit("Origin must be a 3-letter airport code (or blank for default)")
     trip = {
         "id": f"{slug(label or dest)}-{date.today().strftime('%m%d')}",
         "type": "open" if action == "add_open" else "anchored",
@@ -64,6 +67,8 @@ elif action in ("add_open", "add_anchored"):
         "airlines": airlines,
         "active": True,
     }
+    if origin:
+        trip["origin"] = origin
     if action == "add_open":
         try:
             trip["weeks_ahead"] = max(1, min(12, int(env("WEEKS", "8"))))

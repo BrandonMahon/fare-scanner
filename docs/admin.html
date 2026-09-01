@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fare Board · Admin</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#16294A">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -31,13 +36,16 @@ input[type=text],input[type=password],input[type=number],select{
   width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-family:'IBM Plex Mono',monospace;
   font-size:13px;color:var(--ink);background:var(--paper)}
 input:focus,select:focus{outline:none;border-color:var(--blue)}
+input[type=checkbox]{width:17px;height:17px;accent-color:var(--blue)}
 .row{display:flex;gap:12px;flex-wrap:wrap}
-.row>div{flex:1;min-width:140px}
+.row>div{flex:1;min-width:130px}
 button{border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:8px;padding:9px 16px;
   font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;margin-top:14px}
 button:hover{opacity:.88}
 button.ghost{background:var(--card);color:var(--ink);border-color:var(--line)}
 button.ghost:hover{border-color:var(--blue)}
+button.danger{background:var(--card);color:var(--red);border-color:var(--line)}
+button.danger:hover{border-color:var(--red)}
 button:disabled{opacity:.45;cursor:default}
 .msg{margin-top:12px;font-size:13px;border-radius:8px;padding:9px 12px;display:none}
 .msg.ok{display:block;background:var(--green-fill);color:var(--green)}
@@ -49,9 +57,9 @@ button:disabled{opacity:.45;cursor:default}
 table{border-collapse:collapse;width:100%;font-size:13px;margin-top:6px}
 th{font-family:'Barlow Condensed';font-weight:600;letter-spacing:.07em;font-size:12px;text-transform:uppercase;
   color:var(--soft);text-align:left;padding:7px 8px;border-bottom:2px solid var(--ink)}
-td{padding:6px 8px;border-bottom:1px solid var(--line)}
-td input[type=text],td input[type=number]{background:#fff}
-td input.amt{width:90px}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+td input[type=text],td input[type=number],td select{background:#fff}
+td input.amt,td input.thr,td input.mn{width:80px}
 td input.bdate{width:130px}
 .del{color:var(--red);cursor:pointer;font-weight:600;background:none;border:none;padding:2px 6px;margin:0;font-size:15px}
 .tokrow{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap}
@@ -60,7 +68,26 @@ td input.bdate{width:130px}
 .tokstate .on{color:var(--green);font-weight:600}
 .tokstate .off{color:var(--red);font-weight:600}
 code{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--paper);padding:1px 5px;border-radius:4px}
-@media(max-width:640px){body{padding:14px 12px 40px}h1{font-size:32px}}
+.trip{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0}
+.trip .head{display:flex;justify-content:space-between;align-items:center;gap:10px;cursor:pointer;flex-wrap:wrap}
+.trip .head .name{font-weight:600}
+.trip .head .meta{font-size:12px;color:var(--soft);font-family:'IBM Plex Mono',monospace}
+.trip .head .state{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  border-radius:5px;padding:2px 7px}
+.trip .head .state.live{background:var(--green-fill);color:var(--green)}
+.trip .head .state.off{background:var(--paper);color:var(--soft)}
+.trip .body{display:none;margin-top:8px;border-top:1px dashed var(--line);padding-top:4px}
+.trip.open .body{display:block}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap}
+.btnrow button{margin-top:14px}
+@media(max-width:640px){
+  body{padding:14px 12px 40px}
+  h1{font-size:32px}
+  .row>div{min-width:100%}
+  .actions a{padding:10px 14px}
+  button{width:100%;padding:12px 16px}
+  .btnrow button,.seg button,.tokrow button{width:auto}
+}
 </style>
 </head>
 <body>
@@ -68,7 +95,7 @@ code{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--paper
   <div>
     <div class="eyebrow">FARE BOARD</div>
     <h1>ADMIN</h1>
-    <div class="sub">Trip and booking management — changes go through the same workflows as the GitHub UI.</div>
+    <div class="sub">Trips, watch alerts, and bookings — edits commit straight to the repo.</div>
   </div>
   <div class="actions">
     <a href="index.html">← Dashboard</a>
@@ -78,9 +105,10 @@ code{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--paper
 <div class="panel">
   <h2>Access token</h2>
   <p class="note">
-    Needs a GitHub <strong>fine-grained personal access token</strong> scoped to only this repository with
-    <strong>Contents: Read and write</strong> and <strong>Actions: Read and write</strong>.
-    It is stored only in this browser (localStorage) and sent only to <code>api.github.com</code>.
+    Needs a GitHub token for this repository with <strong>Contents: Read and write</strong> and
+    <strong>Actions: Read and write</strong> (fine-grained), or classic <code>repo</code> +
+    <code>workflow</code> scope for invited collaborators. Stored only in this browser
+    (localStorage), sent only to <code>api.github.com</code>.
   </p>
   <div class="tokrow">
     <div>
@@ -94,48 +122,65 @@ code{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--paper
 </div>
 
 <div class="panel">
-  <h2>Trips</h2>
+  <h2>Add a trip</h2>
   <div class="seg" id="seg">
-    <button data-mode="add_open" class="on">Add open trip</button>
-    <button data-mode="add_anchored">Add anchored trip</button>
-    <button data-mode="retire">Retire trip</button>
+    <button data-mode="add_open" class="on">Open (rolling weeks)</button>
+    <button data-mode="add_anchored">Anchored (fixed dates)</button>
   </div>
-
-  <div id="fAdd">
+  <div class="row">
+    <div><label>From (blank = <span id="defOriginLbl">default</span>)</label><input type="text" id="origin" maxlength="3" placeholder="GSP"></div>
+    <div><label>To (3-letter code)</label><input type="text" id="dest" maxlength="3" placeholder="LIT"></div>
+    <div><label>Label</label><input type="text" id="label" placeholder="Little Rock (Gurdon)"></div>
+    <div><label>Airlines</label><input type="text" id="airlines" value="UA,DL,AA"></div>
+  </div>
+  <div id="fOpen">
     <div class="row">
-      <div><label>Destination (3-letter code)</label><input type="text" id="dest" maxlength="3" placeholder="LIT"></div>
-      <div><label>Label</label><input type="text" id="label" placeholder="Little Rock (Gurdon)"></div>
-      <div><label>Airlines</label><input type="text" id="airlines" value="UA,DL,AA"></div>
-    </div>
-    <div id="fOpen">
-      <div class="row">
-        <div><label>Weeks ahead (1–12)</label><input type="number" id="weeks" min="1" max="12" value="8"></div>
-      </div>
-    </div>
-    <div id="fAnch" style="display:none">
-      <div class="row">
-        <div><label>Outbound dates (comma-sep)</label><input type="text" id="outbound" placeholder="2026-08-23,2026-08-24"></div>
-        <div><label>Return dates (comma-sep)</label><input type="text" id="returns" placeholder="2026-08-27,2026-08-28"></div>
-      </div>
-      <div class="row">
-        <div><label>Arrive by (optional)</label><input type="text" id="arriveby" placeholder="2026-08-24=12:00"></div>
-      </div>
+      <div><label>Weeks ahead (1–12)</label><input type="number" id="weeks" min="1" max="12" value="8"></div>
     </div>
   </div>
-
-  <div id="fRet" style="display:none">
-    <label>Active trip</label>
-    <select id="retSel"><option value="">Loading trips…</option></select>
+  <div id="fAnch" style="display:none">
+    <div class="row">
+      <div><label>Outbound dates (comma-sep)</label><input type="text" id="outbound" placeholder="2026-08-23,2026-08-24"></div>
+      <div><label>Return dates (comma-sep)</label><input type="text" id="returns" placeholder="2026-08-27,2026-08-28"></div>
+    </div>
+    <div class="row">
+      <div><label>Arrive by (optional)</label><input type="text" id="arriveby" placeholder="2026-08-24=12:00"></div>
+    </div>
   </div>
-
-  <button id="tripGo">Run it</button>
+  <button id="tripGo">Add + scan now</button>
   <div class="msg" id="tripMsg"></div>
 </div>
 
 <div class="panel">
+  <h2>Existing trips</h2>
+  <p class="note">Tap a trip to edit dates, airports, airlines, or pause it. Saving commits
+    <code>trips.json</code>; <em>Rescan</em> runs the scanner for just that trip.</p>
+  <div id="tripList">Loading…</div>
+  <div class="msg" id="listMsg"></div>
+</div>
+
+<div class="panel">
+  <h2>Watch alerts</h2>
+  <p class="note">The hourly watch pings your phone when a trip's best First fare sits at or
+    under its threshold. <em>Min nights</em> ignores shorter pairings; <em>Prefer</em> always
+    shows that airline's best option in the alert.</p>
+  <div class="row" style="align-items:flex-end">
+    <div style="max-width:200px"><label>Default departure airport</label>
+      <input type="text" id="defOrigin" maxlength="3"></div>
+  </div>
+  <table>
+    <thead><tr><th>Trip</th><th>Threshold $</th><th>Min nights</th><th>Prefer</th><th></th></tr></thead>
+    <tbody id="watchBody"></tbody>
+  </table>
+  <button class="ghost" id="watchAdd">+ Watch a trip</button>
+  <button id="watchSave">Save watch settings</button>
+  <div class="msg" id="watchMsg"></div>
+</div>
+
+<div class="panel">
   <h2>Bookings</h2>
-  <p class="note">Edits commit straight to <code>docs/data/bookings.json</code>; the dashboard card tracker updates on next load.</p>
-  <table id="bkTable">
+  <p class="note">Edits commit straight to <code>bookings.json</code>; the dashboard card tracker updates on next load.</p>
+  <table>
     <thead><tr><th>Label</th><th>Amount</th><th>Booked</th><th>Expensed</th><th></th></tr></thead>
     <tbody id="bkBody"></tbody>
   </table>
@@ -150,13 +195,15 @@ const owner = location.hostname.split(".")[0];
 const repo = location.pathname.split("/").filter(Boolean)[0] || "fare-scanner";
 const API = `https://api.github.com/repos/${owner}/${repo}`;
 const TOKKEY = "fs_admin_token";
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+const esc = s => String(s ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
 
 // ---------------------------------------------------------------- token ----
 function token(){ return localStorage.getItem(TOKKEY) || ""; }
 function showTokState(){
   $("tokState").innerHTML = token()
     ? `Token: <span class="on">saved in this browser</span> (…${token().slice(-4)})`
-    : `Token: <span class="off">not set</span> — forms will not submit without one.`;
+    : `Token: <span class="off">not set</span> — viewing works, saving doesn't.`;
 }
 $("tokSave").onclick = () => {
   const v = $("tok").value.trim();
@@ -169,11 +216,13 @@ $("tokClear").onclick = () => { localStorage.removeItem(TOKKEY); showTokState();
 showTokState();
 
 function hdrs(){
-  return { "Accept": "application/vnd.github+json",
-           "Authorization": `Bearer ${token()}`,
-           "X-GitHub-Api-Version": "2022-11-28" };
+  const h = { "Accept": "application/vnd.github+json",
+              "X-GitHub-Api-Version": "2022-11-28" };
+  if(token()) h["Authorization"] = `Bearer ${token()}`;
+  return h;
 }
 function msg(el, kind, html){ el.className = "msg " + kind; el.innerHTML = html; }
+function clearMsg(el){ el.className = "msg"; }
 function needToken(el){
   if(token()) return false;
   msg(el, "err", "Save your access token first (top of page).");
@@ -181,134 +230,292 @@ function needToken(el){
 }
 function apiErr(el, r, what){
   const why = r.status === 401 ? "token rejected — is it valid?"
-    : r.status === 403 || r.status === 404 ? "token lacks permission for this repo (needs Contents + Actions read/write)"
+    : r.status === 403 || r.status === 404 ? "token lacks permission (needs Contents + Actions read/write)"
     : `HTTP ${r.status}`;
   msg(el, "err", `${what} failed: ${why}`);
 }
 
-// ---------------------------------------------------------------- trips ----
+const b64enc = s => btoa(String.fromCharCode(...new TextEncoder().encode(s)));
+const b64dec = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\n/g, "")), c => c.charCodeAt(0)));
+
+async function ghGet(path){
+  const r = await fetch(`${API}/contents/${path}?ref=main&t=${Date.now()}`, { headers: hdrs() });
+  if(!r.ok) throw new Error("HTTP " + r.status + " reading " + path);
+  const j = await r.json();
+  return { data: JSON.parse(b64dec(j.content)), sha: j.sha };
+}
+async function ghPut(path, obj, sha, message, el){
+  const r = await fetch(`${API}/contents/${path}`, {
+    method: "PUT", headers: hdrs(),
+    body: JSON.stringify({ message, branch: "main", sha,
+      content: b64enc(JSON.stringify(obj, null, 2) + "\n") })
+  });
+  if(r.ok) return (await r.json()).content.sha;
+  if(r.status === 409){
+    msg(el, "err", "Conflict: the file changed elsewhere (a scan may have just committed). Reloading — re-apply your edit.");
+    loadAll();
+  } else apiErr(el, r, "Save");
+  return null;
+}
+async function dispatch(workflow, inputs, el, okHtml){
+  const r = await fetch(`${API}/actions/workflows/${workflow}/dispatches`, {
+    method: "POST", headers: hdrs(),
+    body: JSON.stringify({ ref: "main", inputs })
+  });
+  if(r.status === 204) msg(el, "ok", okHtml);
+  else apiErr(el, r, "Workflow dispatch");
+  return r.status === 204;
+}
+
+// --------------------------------------------------------- shared validation ----
+function splitList(raw){ return raw.split(/[,\s]+/).map(s => s.trim()).filter(Boolean); }
+function checkTrip(t){
+  if(!/^[A-Z]{3}$/.test(t.dest)) return "Destination must be exactly 3 letters.";
+  if(t.origin && !/^[A-Z]{3}$/.test(t.origin)) return "Origin must be 3 letters (or blank for default).";
+  if(!t.airlines.length) return "At least one airline code is required.";
+  if(t.airlines.some(a => !/^[A-Z0-9]{2}$/.test(a))) return "Airlines must be 2-character codes (e.g. UA,DL,AA).";
+  if(t.type === "open"){
+    if(!(t.weeks_ahead >= 1 && t.weeks_ahead <= 12)) return "Weeks ahead must be 1-12.";
+  }else{
+    if(!t.outbound.length || !t.return_dates.length) return "Anchored trips need outbound and return dates.";
+    for(const d of [...t.outbound, ...t.return_dates])
+      if(!DATE_RE.test(d)) return `Bad date "${d}" — use YYYY-MM-DD.`;
+    for(const [d, hm] of Object.entries(t.arrive_by || {})){
+      if(!t.outbound.includes(d)) return `Arrive-by date ${d} is not an outbound date.`;
+      if(!/^\d{2}:\d{2}$/.test(hm)) return `Arrive-by time "${hm}" must be HH:MM.`;
+    }
+  }
+  return null;
+}
+function parseArriveBy(raw){
+  const out = {};
+  for(const pair of raw.split(",").map(s => s.trim()).filter(Boolean)){
+    const m = pair.match(/^(\d{4}-\d{2}-\d{2})=(\d{2}:\d{2})$/);
+    if(!m) return `Arrive-by "${pair}" must look like 2026-08-24=12:00.`;
+    out[m[1]] = m[2];
+  }
+  return out;
+}
+
+// -------------------------------------------------------------- add a trip ----
 let mode = "add_open";
 $("seg").onclick = e => {
   const b = e.target.closest("button"); if(!b) return;
   mode = b.dataset.mode;
   [...$("seg").children].forEach(x => x.classList.toggle("on", x === b));
-  $("fAdd").style.display = mode === "retire" ? "none" : "";
   $("fOpen").style.display = mode === "add_open" ? "" : "none";
   $("fAnch").style.display = mode === "add_anchored" ? "" : "none";
-  $("fRet").style.display = mode === "retire" ? "" : "none";
-  $("tripGo").textContent = mode === "retire" ? "Retire trip" : "Add + scan now";
 };
-$("seg").children[0].click();
-
-async function loadTrips(){
-  try{
-    const r = await fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/trips.json?t=${Date.now()}`);
-    const data = await r.json();
-    const act = data.trips.filter(t => t.active !== false);
-    $("retSel").innerHTML = act.length
-      ? act.map(t => `<option value="${t.id}">${t.label} (${t.id})</option>`).join("")
-      : `<option value="">No active trips</option>`;
-  }catch{ $("retSel").innerHTML = `<option value="">Could not load trips.json</option>`; }
-}
-loadTrips();
-
-const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
-function splitDates(raw){ return raw.split(/[,\s]+/).map(s => s.trim()).filter(Boolean); }
-
-function validate(){
-  if(mode === "retire"){
-    if(!$("retSel").value) return "Pick a trip to retire.";
-    return null;
-  }
-  const dest = $("dest").value.trim().toUpperCase();
-  if(!/^[A-Z]{3}$/.test(dest)) return "Destination must be exactly 3 letters (e.g. LIT).";
-  if(mode === "add_anchored"){
-    const ob = splitDates($("outbound").value), rt = splitDates($("returns").value);
-    if(!ob.length || !rt.length) return "Anchored trips need outbound and return dates.";
-    for(const d of [...ob, ...rt]) if(!DATE_RE.test(d)) return `Bad date "${d}" — use YYYY-MM-DD.`;
-    for(const pair of $("arriveby").value.split(",").map(s => s.trim()).filter(Boolean)){
-      const m = pair.match(/^(\d{4}-\d{2}-\d{2})=(\d{2}:\d{2})$/);
-      if(!m) return `Arrive-by "${pair}" must look like 2026-08-24=12:00.`;
-      if(!ob.includes(m[1])) return `Arrive-by date ${m[1]} is not one of the outbound dates.`;
-    }
-  }
-  return null;
-}
-
 $("tripGo").onclick = async () => {
   const el = $("tripMsg");
   if(needToken(el)) return;
-  const bad = validate();
+  const ab = parseArriveBy($("arriveby").value);
+  if(typeof ab === "string") return msg(el, "err", ab);
+  const t = {
+    type: mode === "add_open" ? "open" : "anchored",
+    origin: $("origin").value.trim().toUpperCase(),
+    dest: $("dest").value.trim().toUpperCase(),
+    airlines: splitList($("airlines").value).map(a => a.toUpperCase()),
+    weeks_ahead: Number($("weeks").value || 8),
+    outbound: splitList($("outbound").value),
+    return_dates: splitList($("returns").value),
+    arrive_by: ab,
+  };
+  const bad = checkTrip(t);
   if(bad) return msg(el, "err", bad);
-
-  const inputs = { action: mode };
-  if(mode === "retire"){
-    inputs.trip_id = $("retSel").value;
-  }else{
-    inputs.dest = $("dest").value.trim().toUpperCase();
-    if($("label").value.trim()) inputs.label = $("label").value.trim();
-    inputs.airlines = $("airlines").value.trim() || "UA,DL,AA";
-    if(mode === "add_open") inputs.weeks = String($("weeks").value || "8");
-    else{
-      inputs.outbound_dates = splitDates($("outbound").value).join(",");
-      inputs.return_dates = splitDates($("returns").value).join(",");
-      if($("arriveby").value.trim()) inputs.arrive_by = $("arriveby").value.trim();
-    }
+  const inputs = { action: mode, dest: t.dest, airlines: t.airlines.join(",") };
+  if(t.origin) inputs.origin = t.origin;
+  if($("label").value.trim()) inputs.label = $("label").value.trim();
+  if(mode === "add_open") inputs.weeks = String(t.weeks_ahead);
+  else {
+    inputs.outbound_dates = t.outbound.join(",");
+    inputs.return_dates = t.return_dates.join(",");
+    if($("arriveby").value.trim()) inputs.arrive_by = $("arriveby").value.trim();
   }
   $("tripGo").disabled = true;
-  try{
-    const r = await fetch(`${API}/actions/workflows/trips.yml/dispatches`, {
-      method: "POST", headers: hdrs(),
-      body: JSON.stringify({ ref: "main", inputs })
-    });
-    if(r.status === 204){
-      msg(el, "ok", `Workflow started. Anchored trips scan in a few minutes; open trips take longer. ` +
-        `<a target="_blank" href="https://github.com/${owner}/${repo}/actions/workflows/trips.yml">Watch the run →</a>`);
-      if(mode === "retire") setTimeout(loadTrips, 4000);
-    }else apiErr(el, r, "Dispatch");
-  }catch(e){ msg(el, "err", "Network error: " + e.message); }
+  await dispatch("trips.yml", inputs,
+    el, `Workflow started — the trip scans immediately and appears on the board when done. ` +
+        `<a target="_blank" href="https://github.com/${owner}/${repo}/actions">Watch →</a>`);
   $("tripGo").disabled = false;
+  setTimeout(loadAll, 8000);
+};
+
+// ---------------------------------------------------------- existing trips ----
+let tripsDoc = null, tripsSha = null;
+let configDoc = null, configSha = null;
+
+function tripCard(t, i){
+  const live = t.active !== false;
+  const routeDefault = configDoc ? configDoc.origin : "GSP";
+  const div = document.createElement("div");
+  div.className = "trip";
+  div.innerHTML = `
+    <div class="head">
+      <span class="name">${esc(t.label)}</span>
+      <span class="meta">${esc(t.origin || routeDefault)}→${esc(t.dest)} · ${t.type} · ${esc(t.id)}</span>
+      <span class="state ${live ? "live" : "off"}">${live ? "active" : "paused"}</span>
+    </div>
+    <div class="body">
+      <div class="row">
+        <div><label>Label</label><input type="text" class="f-label" value="${esc(t.label)}"></div>
+        <div><label>From (blank = ${esc(routeDefault)})</label><input type="text" class="f-origin" maxlength="3" value="${esc(t.origin || "")}"></div>
+        <div><label>To</label><input type="text" class="f-dest" maxlength="3" value="${esc(t.dest)}"></div>
+        <div><label>Airlines</label><input type="text" class="f-air" value="${esc(t.airlines.join(","))}"></div>
+      </div>
+      ${t.type === "open" ? `
+      <div class="row">
+        <div><label>Weeks ahead (1-12)</label><input type="number" class="f-weeks" min="1" max="12" value="${t.weeks_ahead || 8}"></div>
+      </div>` : `
+      <div class="row">
+        <div><label>Outbound dates</label><input type="text" class="f-out" value="${esc((t.outbound||[]).join(","))}"></div>
+        <div><label>Return dates</label><input type="text" class="f-ret" value="${esc((t.return_dates||[]).join(","))}"></div>
+        <div><label>Arrive by</label><input type="text" class="f-ab" value="${esc(Object.entries(t.arrive_by||{}).map(([d,h])=>d+"="+h).join(","))}"></div>
+      </div>`}
+      <div class="row" style="align-items:center;margin-top:8px">
+        <div style="flex:0 0 auto;min-width:0"><label style="margin-top:0">Active</label>
+          <input type="checkbox" class="f-active" ${live ? "checked" : ""}></div>
+      </div>
+      <div class="btnrow">
+        <button class="f-save">Save trip</button>
+        <button class="ghost f-rescan">Rescan now</button>
+        <button class="danger f-delete">Delete</button>
+      </div>
+    </div>`;
+  div.querySelector(".head").onclick = () => div.classList.toggle("open");
+
+  div.querySelector(".f-save").onclick = async () => {
+    const el = $("listMsg");
+    if(needToken(el)) return;
+    const upd = { ...t };
+    upd.label = div.querySelector(".f-label").value.trim() || t.dest;
+    const or = div.querySelector(".f-origin").value.trim().toUpperCase();
+    if(or) upd.origin = or; else delete upd.origin;
+    upd.dest = div.querySelector(".f-dest").value.trim().toUpperCase();
+    upd.airlines = splitList(div.querySelector(".f-air").value).map(a => a.toUpperCase());
+    upd.active = div.querySelector(".f-active").checked;
+    if(t.type === "open"){
+      upd.weeks_ahead = Number(div.querySelector(".f-weeks").value || 8);
+    }else{
+      upd.outbound = splitList(div.querySelector(".f-out").value).sort();
+      upd.return_dates = splitList(div.querySelector(".f-ret").value).sort();
+      const ab = parseArriveBy(div.querySelector(".f-ab").value);
+      if(typeof ab === "string") return msg(el, "err", ab);
+      if(Object.keys(ab).length) upd.arrive_by = ab; else delete upd.arrive_by;
+    }
+    const bad = checkTrip({ ...upd, origin: upd.origin || "", arrive_by: upd.arrive_by || {},
+                            outbound: upd.outbound || [], return_dates: upd.return_dates || [] });
+    if(bad) return msg(el, "err", bad);
+    tripsDoc.trips[i] = upd;
+    const sha = await ghPut("trips.json", tripsDoc, tripsSha,
+      `Edit trip ${t.id} via admin page`, el);
+    if(sha){ tripsSha = sha; msg(el, "ok",
+      `Saved ${esc(upd.label)}. Data refreshes on the next scan — or hit Rescan now.`); renderTrips(); }
+  };
+
+  div.querySelector(".f-rescan").onclick = async () => {
+    const el = $("listMsg");
+    if(needToken(el)) return;
+    await dispatch("scan.yml", { trip: t.id }, el,
+      `Rescanning ${esc(t.label)} — the board updates when the run finishes. ` +
+      `<a target="_blank" href="https://github.com/${owner}/${repo}/actions">Watch →</a>`);
+  };
+
+  div.querySelector(".f-delete").onclick = async () => {
+    const el = $("listMsg");
+    if(needToken(el)) return;
+    if(!confirm(`Delete "${t.label}" (${t.id})? Its scan history stays in history.csv, but it disappears from the board and trips.json.`)) return;
+    tripsDoc.trips.splice(i, 1);
+    const sha = await ghPut("trips.json", tripsDoc, tripsSha, `Delete trip ${t.id} via admin page`, el);
+    if(!sha) return;
+    tripsSha = sha;
+    const hadWatch = (configDoc.watch || []).some(w => w.trip === t.id);
+    if(hadWatch){
+      configDoc.watch = configDoc.watch.filter(w => w.trip !== t.id);
+      const csha = await ghPut("config.json", configDoc, configSha, `Remove watch for deleted trip ${t.id}`, el);
+      if(csha) configSha = csha;
+    }
+    msg(el, "ok", `Deleted ${esc(t.label)}.`); renderTrips(); renderWatch();
+  };
+  return div;
+}
+
+function renderTrips(){
+  const box = $("tripList");
+  box.innerHTML = "";
+  if(!tripsDoc || !tripsDoc.trips.length){ box.textContent = "No trips defined."; return; }
+  tripsDoc.trips.forEach((t, i) => box.appendChild(tripCard(t, i)));
+}
+
+// ------------------------------------------------------------ watch settings ----
+function watchRow(w = {}){
+  const tr = document.createElement("tr");
+  const opts = (tripsDoc?.trips || []).map(t =>
+    `<option value="${esc(t.id)}" ${t.id === w.trip ? "selected" : ""}>${esc(t.label)}${t.active === false ? " (paused)" : ""}</option>`).join("");
+  tr.innerHTML = `
+    <td><select class="w-trip">${opts}</select></td>
+    <td><input type="number" class="thr w-thr" value="${w.threshold ?? 800}"></td>
+    <td><input type="number" class="mn w-mn" min="0" value="${w.min_nights ?? 0}"></td>
+    <td><input type="text" class="w-pref" maxlength="2" style="width:60px" value="${esc(w.prefer || "")}"></td>
+    <td><button class="del" title="Remove">×</button></td>`;
+  tr.querySelector(".del").onclick = () => tr.remove();
+  $("watchBody").appendChild(tr);
+}
+function renderWatch(){
+  $("watchBody").innerHTML = "";
+  (configDoc?.watch || []).forEach(watchRow);
+  if(configDoc) $("defOrigin").value = configDoc.origin;
+  $("defOriginLbl").textContent = configDoc ? configDoc.origin : "default";
+}
+$("watchAdd").onclick = () => watchRow();
+$("watchSave").onclick = async () => {
+  const el = $("watchMsg");
+  if(needToken(el)) return;
+  const defO = $("defOrigin").value.trim().toUpperCase();
+  if(!/^[A-Z]{3}$/.test(defO)) return msg(el, "err", "Default departure airport must be 3 letters.");
+  const rows = [...$("watchBody").children];
+  const list = [];
+  for(const tr of rows){
+    const w = { trip: tr.querySelector(".w-trip").value,
+                threshold: Number(tr.querySelector(".w-thr").value) };
+    if(!w.trip) continue;
+    if(!(w.threshold > 0)) return msg(el, "err", "Every watch needs a positive threshold.");
+    const mn = Number(tr.querySelector(".w-mn").value);
+    if(mn > 0) w.min_nights = mn;
+    const pref = tr.querySelector(".w-pref").value.trim().toUpperCase();
+    if(pref){
+      if(!/^[A-Z0-9]{2}$/.test(pref)) return msg(el, "err", `Prefer "${pref}" must be a 2-character airline code.`);
+      w.prefer = pref;
+    }
+    if(list.some(x => x.trip === w.trip)) return msg(el, "err", "Each trip can only be watched once.");
+    list.push(w);
+  }
+  configDoc.origin = defO;
+  configDoc.watch = list;
+  $("watchSave").disabled = true;
+  const sha = await ghPut("config.json", configDoc, configSha, "Update watch settings via admin page", el);
+  if(sha){ configSha = sha; msg(el, "ok", "Watch settings saved — next hourly run uses them."); }
+  $("watchSave").disabled = false;
 };
 
 // -------------------------------------------------------------- bookings ----
-const b64enc = s => btoa(String.fromCharCode(...new TextEncoder().encode(s)));
-const b64dec = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\n/g, "")), c => c.charCodeAt(0)));
 let bkSha = null;
-
 function bkRow(b = {}){
   const tr = document.createElement("tr");
   tr.innerHTML = `
-    <td><input type="text" class="lbl" value="${(b.label || "").replace(/"/g, "&quot;")}" placeholder="GSP-LIT Aug trip"></td>
+    <td><input type="text" class="lbl" value="${esc(b.label)}" placeholder="GSP-LIT Aug trip"></td>
     <td><input type="number" class="amt" value="${b.amount ?? ""}" placeholder="812"></td>
-    <td><input type="text" class="bdate" value="${b.booked || ""}" placeholder="2026-07-20"></td>
+    <td><input type="text" class="bdate" value="${esc(b.booked)}" placeholder="2026-07-20"></td>
     <td><input type="checkbox" class="exp" ${b.expensed ? "checked" : ""}></td>
     <td><button class="del" title="Remove">×</button></td>`;
   tr.querySelector(".del").onclick = () => tr.remove();
   $("bkBody").appendChild(tr);
 }
 $("bkAdd").onclick = () => bkRow();
-
-async function loadBookings(){
-  const el = $("bkMsg");
-  try{
-    const r = await fetch(`${API}/contents/docs/data/bookings.json?ref=main`,
-      token() ? { headers: hdrs() } : { headers: { "Accept": "application/vnd.github+json" } });
-    if(!r.ok) throw new Error("HTTP " + r.status);
-    const j = await r.json();
-    bkSha = j.sha;
-    const list = JSON.parse(b64dec(j.content));
-    $("bkBody").innerHTML = "";
-    list.forEach(bkRow);
-  }catch(e){ msg(el, "err", "Could not load bookings.json: " + e.message); }
-}
-loadBookings();
-
 $("bkSave").onclick = async () => {
   const el = $("bkMsg");
   if(needToken(el)) return;
-  const rows = [...$("bkBody").children];
   const list = [];
-  for(const tr of rows){
+  for(const tr of [...$("bkBody").children]){
     const label = tr.querySelector(".lbl").value.trim();
     const amount = Number(tr.querySelector(".amt").value);
     const booked = tr.querySelector(".bdate").value.trim();
@@ -319,26 +526,31 @@ $("bkSave").onclick = async () => {
     list.push({ label, amount, booked, expensed: tr.querySelector(".exp").checked });
   }
   $("bkSave").disabled = true;
-  try{
-    const r = await fetch(`${API}/contents/docs/data/bookings.json`, {
-      method: "PUT", headers: hdrs(),
-      body: JSON.stringify({
-        message: "Update bookings via admin page",
-        content: b64enc(JSON.stringify(list, null, 2) + "\n"),
-        sha: bkSha, branch: "main"
-      })
-    });
-    if(r.ok){
-      const j = await r.json();
-      bkSha = j.content.sha;
-      msg(el, "ok", "Bookings saved — dashboard reflects it on next load.");
-    }else if(r.status === 409){
-      msg(el, "err", "Conflict: the file changed elsewhere. Reloading — re-apply your edit.");
-      loadBookings();
-    }else apiErr(el, r, "Save");
-  }catch(e){ msg(el, "err", "Network error: " + e.message); }
+  const sha = await ghPut("docs/data/bookings.json", list, bkSha, "Update bookings via admin page", el);
+  if(sha){ bkSha = sha; msg(el, "ok", "Bookings saved — dashboard reflects it on next load."); }
   $("bkSave").disabled = false;
 };
+
+// ------------------------------------------------------------------- load ----
+async function loadAll(){
+  try{
+    const [tr, cf, bk] = await Promise.all([
+      ghGet("trips.json"), ghGet("config.json"), ghGet("docs/data/bookings.json")
+    ]);
+    tripsDoc = tr.data; tripsSha = tr.sha;
+    configDoc = cf.data; configSha = cf.sha;
+    bkSha = bk.sha;
+    renderTrips();
+    renderWatch();
+    $("bkBody").innerHTML = "";
+    bk.data.forEach(bkRow);
+    clearMsg($("listMsg"));
+  }catch(e){
+    msg($("listMsg"), "err", "Could not load repo files: " + e.message +
+      " (unauthenticated reads are rate-limited — save your token and reload)");
+  }
+}
+loadAll();
 </script>
 </body>
 </html>

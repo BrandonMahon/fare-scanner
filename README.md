@@ -50,12 +50,19 @@ for the morning run.
 
 ### Admin page (nicer forms)
 
-Dashboard → **Admin** gives real forms for the same actions plus a
-bookings editor, with client-side validation. One-time setup: create a
-GitHub **fine-grained personal access token** scoped to only this repo
+Dashboard → **Admin** manages everything in-app: add trips, edit any
+existing trip in place (dates, airports, airlines, pause/resume,
+delete, rescan), tune watch alerts (thresholds, min nights, preferred
+airline, default departure airport), and edit bookings — all with
+client-side validation. One-time setup: create a GitHub
+**fine-grained personal access token** scoped to only this repo
 (Contents: read/write, Actions: read/write) and paste it into the page.
 The token stays in your browser's localStorage and is sent only to
 `api.github.com` — it is never stored in the repo.
+
+Trips can set their own departure airport (`origin`); blank means the
+default in `config.json`. The dashboard installs as an app: open it on
+your phone and use **Add to Home Screen**.
 
 ## Reading the dashboard
 

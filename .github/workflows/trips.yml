@@ -11,6 +11,9 @@ on:
       dest:
         description: "Airport code (e.g. LIT, IAH, YYZ)"
         required: false
+      origin:
+        description: "Departure airport (blank = default from config.json)"
+        required: false
       label:
         description: "Trip label (e.g. 'Crossett AR mill')"
         required: false
@@ -58,6 +61,7 @@ jobs:
         env:
           ACTION: ${{ github.event.inputs.action }}
           DEST: ${{ github.event.inputs.dest }}
+          ORIGIN: ${{ github.event.inputs.origin }}
           LABEL: ${{ github.event.inputs.label }}
           WEEKS: ${{ github.event.inputs.weeks }}
           OUTBOUND_DATES: ${{ github.event.inputs.outbound_dates }}

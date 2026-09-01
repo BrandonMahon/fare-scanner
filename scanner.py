@@ -70,14 +70,14 @@ def airline_code(name):
     return name
 
 
-def fetch_options(dest, dep, ret, cabin, airlines):
+def fetch_options(origin, dest, dep, ret, cabin, airlines):
     """One round-trip query -> sorted option list with outbound flight detail."""
     query = create_query(
         flights=[
-            FlightQuery(date=dep.isoformat(), from_airport=CONFIG["origin"],
+            FlightQuery(date=dep.isoformat(), from_airport=origin,
                         to_airport=dest, airlines=airlines),
             FlightQuery(date=ret.isoformat(), from_airport=dest,
-                        to_airport=CONFIG["origin"], airlines=airlines),
+                        to_airport=origin, airlines=airlines),
         ],
         trip="round-trip",
         seat=cabin,
@@ -145,7 +145,8 @@ def build_entry(trip, dep, ret, lows, arrive_by=None):
 
     got_data = False
     for cabin in CONFIG["cabins"]:
-        opts = fetch_options(trip["dest"], dep, ret, cabin, trip["airlines"])
+        opts = fetch_options(trip.get("origin", CONFIG["origin"]), trip["dest"],
+                             dep, ret, cabin, trip["airlines"])
         time.sleep(random.uniform(CONFIG["sleep_min"], CONFIG["sleep_max"]))
         if cutoff:
             opts = [o for o in opts
@@ -209,19 +210,19 @@ def scan_trip(trip, lows):
 
 
 # ------------------------------------------------------------------- output --
-def append_history(trip_id, dest, entries):
+def append_history(trip_id, origin, dest, entries):
     hist = DATA / "history.csv"
     new = not hist.exists()
     with hist.open("a", newline="") as f:
         w = csv.writer(f)
         if new:
-            w.writerow(["scan_date", "trip", "dest", "dep", "ret",
+            w.writerow(["scan_date", "trip", "origin", "dest", "dep", "ret",
                         "combo", "cabin", "airline", "price"])
         today = date.today().isoformat()
         for e in entries:
             for cabin, blk in e["cabins"].items():
                 for al, p in blk["best"].items():
-                    w.writerow([today, trip_id, dest, e["dep"], e["ret"],
+                    w.writerow([today, trip_id, origin, dest, e["dep"], e["ret"],
                                 e["label"], cabin, al, p])
 
 
@@ -271,11 +272,13 @@ def main():
             previous["trips"][trip["id"]] = latest["trips"][trip["id"]]
         latest["trips"][trip["id"]] = {
             "label": trip["label"], "type": trip["type"], "dest": trip["dest"],
+            "origin": trip.get("origin", CONFIG["origin"]),
             "airlines": trip["airlines"],
             "scanned_at": date.today().isoformat(),
             "entries": entries,
         }
-        append_history(trip["id"], trip["dest"], entries)
+        append_history(trip["id"], trip.get("origin", CONFIG["origin"]),
+                       trip["dest"], entries)
         all_deals += find_deals(trip, entries)
 
     # drop retired trips from the board
