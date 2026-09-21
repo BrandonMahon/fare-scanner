@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fare Board · Admin</title>
-<link rel="manifest" href="manifest.webmanifest">
+<link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials">
 <meta name="theme-color" content="#16294A">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -102,7 +102,7 @@ code{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--paper
   </div>
 </div>
 
-<div class="panel">
+<div class="panel" id="tokPanel">
   <h2>Access token</h2>
   <p class="note">
     Needs a GitHub token for this repository with <strong>Contents: Read and write</strong> and
@@ -191,6 +191,10 @@ code{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--paper
 
 <script>
 const $ = id => document.getElementById(id);
+// Two backends. On the Cloudflare site, the Worker at /api holds the GitHub
+// token and Cloudflare Access handles sign-in. On the legacy github.io site,
+// the browser calls GitHub directly with a token pasted below.
+const LEGACY = location.hostname.endsWith("github.io");
 const owner = location.hostname.split(".")[0];
 const repo = location.pathname.split("/").filter(Boolean)[0] || "fare-scanner";
 const API = `https://api.github.com/repos/${owner}/${repo}`;
@@ -199,21 +203,30 @@ const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const esc = s => String(s ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
 
 // ---------------------------------------------------------------- token ----
-function token(){ return localStorage.getItem(TOKKEY) || ""; }
+function token(){ try { return localStorage.getItem(TOKKEY) || ""; } catch { return ""; } }
 function showTokState(){
   $("tokState").innerHTML = token()
     ? `Token: <span class="on">saved in this browser</span> (…${token().slice(-4)})`
     : `Token: <span class="off">not set</span> — viewing works, saving doesn't.`;
 }
-$("tokSave").onclick = () => {
-  const v = $("tok").value.trim();
-  if(!v) return;
-  localStorage.setItem(TOKKEY, v);
-  $("tok").value = "";
+if(LEGACY){
+  $("tokSave").onclick = () => {
+    const v = $("tok").value.trim();
+    if(!v) return;
+    localStorage.setItem(TOKKEY, v);
+    $("tok").value = "";
+    showTokState();
+  };
+  $("tokClear").onclick = () => { localStorage.removeItem(TOKKEY); showTokState(); };
   showTokState();
-};
-$("tokClear").onclick = () => { localStorage.removeItem(TOKKEY); showTokState(); };
-showTokState();
+}else{
+  $("tokPanel").querySelector("h2").textContent = "Signed in";
+  $("tokPanel").querySelectorAll(".note, .tokrow").forEach(e => e.remove());
+  $("tokState").textContent = "Checking…";
+  fetch("/api/me").then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(j => { $("tokState").innerHTML = `Signed in as <span class="on">${esc(j.email || "unknown")}</span>. Changes save straight to the repo.`; })
+    .catch(() => { $("tokState").innerHTML = `<span class="off">Not signed in</span> — reload the page to sign in.`; });
+}
 
 function hdrs(){
   const h = { "Accept": "application/vnd.github+json",
@@ -224,12 +237,16 @@ function hdrs(){
 function msg(el, kind, html){ el.className = "msg " + kind; el.innerHTML = html; }
 function clearMsg(el){ el.className = "msg"; }
 function needToken(el){
-  if(token()) return false;
+  if(!LEGACY || token()) return false;
   msg(el, "err", "Save your access token first (top of page).");
   return true;
 }
 function apiErr(el, r, what){
-  const why = r.status === 401 ? "token rejected — is it valid?"
+  const why = !LEGACY
+    ? (r.status === 401 ? "not signed in — reload the page"
+      : r.status === 403 || r.status === 404 ? "the server's GitHub token lacks permission (needs Contents + Actions read/write)"
+      : `HTTP ${r.status}`)
+    : r.status === 401 ? "token rejected — is it valid?"
     : r.status === 403 || r.status === 404 ? "token lacks permission (needs Contents + Actions read/write)"
     : `HTTP ${r.status}`;
   msg(el, "err", `${what} failed: ${why}`);
@@ -239,18 +256,28 @@ const b64enc = s => btoa(String.fromCharCode(...new TextEncoder().encode(s)));
 const b64dec = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\n/g, "")), c => c.charCodeAt(0)));
 
 async function ghGet(path){
+  if(!LEGACY){
+    const r = await fetch(`/api/file?path=${encodeURIComponent(path)}&t=${Date.now()}`);
+    if(!r.ok) throw new Error("HTTP " + r.status + " reading " + path);
+    return await r.json();
+  }
   const r = await fetch(`${API}/contents/${path}?ref=main&t=${Date.now()}`, { headers: hdrs() });
   if(!r.ok) throw new Error("HTTP " + r.status + " reading " + path);
   const j = await r.json();
   return { data: JSON.parse(b64dec(j.content)), sha: j.sha };
 }
 async function ghPut(path, obj, sha, message, el){
-  const r = await fetch(`${API}/contents/${path}`, {
-    method: "PUT", headers: hdrs(),
-    body: JSON.stringify({ message, branch: "main", sha,
-      content: b64enc(JSON.stringify(obj, null, 2) + "\n") })
-  });
-  if(r.ok) return (await r.json()).content.sha;
+  const r = LEGACY
+    ? await fetch(`${API}/contents/${path}`, {
+        method: "PUT", headers: hdrs(),
+        body: JSON.stringify({ message, branch: "main", sha,
+          content: b64enc(JSON.stringify(obj, null, 2) + "\n") })
+      })
+    : await fetch("/api/file", {
+        method: "PUT", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ path, data: obj, sha, message })
+      });
+  if(r.ok) return LEGACY ? (await r.json()).content.sha : (await r.json()).sha;
   if(r.status === 409){
     msg(el, "err", "Conflict: the file changed elsewhere (a scan may have just committed). Reloading — re-apply your edit.");
     loadAll();
@@ -258,10 +285,15 @@ async function ghPut(path, obj, sha, message, el){
   return null;
 }
 async function dispatch(workflow, inputs, el, okHtml){
-  const r = await fetch(`${API}/actions/workflows/${workflow}/dispatches`, {
-    method: "POST", headers: hdrs(),
-    body: JSON.stringify({ ref: "main", inputs })
-  });
+  const r = LEGACY
+    ? await fetch(`${API}/actions/workflows/${workflow}/dispatches`, {
+        method: "POST", headers: hdrs(),
+        body: JSON.stringify({ ref: "main", inputs })
+      })
+    : await fetch("/api/dispatch", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ workflow, inputs })
+      });
   if(r.status === 204) msg(el, "ok", okHtml);
   else apiErr(el, r, "Workflow dispatch");
   return r.status === 204;
@@ -547,7 +579,7 @@ async function loadAll(){
     clearMsg($("listMsg"));
   }catch(e){
     msg($("listMsg"), "err", "Could not load repo files: " + e.message +
-      " (unauthenticated reads are rate-limited — save your token and reload)");
+      (LEGACY ? " (unauthenticated reads are rate-limited — save your token and reload)" : " — try reloading the page."));
   }
 }
 loadAll();

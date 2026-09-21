@@ -1,0 +1,21 @@
+{
+  // Fare Board on Cloudflare Workers: static site from docs/ plus /api/* for
+  // the admin page. Protected by Cloudflare Access (Worker → Access tab).
+  // GITHUB_TOKEN is a secret set in the dashboard, never in this file.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fare-board",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-20",
+  "assets": {
+    "directory": "./docs",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    "GITHUB_REPO": "BrandonMahon/fare-scanner",
+    "GITHUB_BRANCH": "main"
+  },
+  "observability": { "enabled": true },
+  // Local `wrangler dev` only: simulates a signed-in Access user.
+  "access": { "dev": { "aud": "local-dev", "identity": { "email": "dev@example.com" } } }
+}

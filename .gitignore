@@ -1,3 +1,6 @@
 .venv/
 __pycache__/
 deals_found.txt
+node_modules/
+.wrangler/
+.dev.vars
