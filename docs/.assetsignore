@@ -1,0 +1,2 @@
+# Cloudflare Worker: data/ is served live from the repo, not bundled.
+data/

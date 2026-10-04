@@ -1,6 +1,6 @@
-// Fare Board backend: serves docs/ as static assets and proxies a small,
-// allowlisted slice of the GitHub API for the admin page, so no browser ever
-// holds a GitHub token. The whole Worker sits behind Cloudflare Access; a
+// Fare Board backend: serves docs/ as static assets, reads docs/data/* live
+// from the repo, and proxies a small, allowlisted slice of the GitHub API for
+// the admin page, so no browser ever holds a GitHub token. The whole Worker sits behind Cloudflare Access; a
 // request that Access did not authenticate has no ctx.access and is refused.
 //
 // Env: GITHUB_TOKEN (secret: fine-grained PAT, Contents + Actions read/write,
@@ -12,12 +12,14 @@ const WORKFLOWS = new Set(["trips.yml", "scan.yml"]);
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    if (!url.pathname.startsWith("/api/")) return env.ASSETS.fetch(request);
+    const isData = url.pathname.startsWith("/data/");
+    if (!isData && !url.pathname.startsWith("/api/")) return env.ASSETS.fetch(request);
 
     if (!ctx.access) return json({ error: "Sign-in required" }, 401);
-    const who = await ctx.access.getIdentity().catch(() => null);
 
     try {
+      if (isData) return await dataFile(env, ctx, url);
+      const who = await ctx.access.getIdentity().catch(() => null);
       const route = `${request.method} ${url.pathname}`;
       if (route === "GET /api/me") return json({ email: who?.email ?? null });
       if (route === "GET /api/file") return await getFile(env, url.searchParams.get("path"));
@@ -29,6 +31,31 @@ export default {
     }
   },
 };
+
+// Dashboard data (docs/data/*) is read live from the repo rather than bundled
+// into the deploy, so scan commits show up without redeploying. Cached briefly
+// at the edge; the dashboard's ?t= cache-buster is ignored for the cache key.
+const DATA_TTL = 60;
+async function dataFile(env, ctx, url) {
+  const name = url.pathname.slice("/data/".length);
+  if (!/^[\w-]+\.(json|csv)$/.test(name)) return json({ error: "Not found" }, 404);
+  const key = new Request(`${url.origin}/data/${name}`);
+  const cache = caches.default;
+  const hit = await cache.match(key);
+  if (hit) return hit;
+
+  const r = await gh(env, `/contents/docs/data/${name}?ref=${env.GITHUB_BRANCH}`,
+                     {}, "application/vnd.github.raw+json");
+  if (!r.ok) return passError(r);
+  const res = new Response(r.body, {
+    headers: {
+      "Content-Type": name.endsWith(".csv") ? "text/csv; charset=utf-8" : "application/json",
+      "Cache-Control": `private, max-age=${DATA_TTL}`,
+    },
+  });
+  ctx.waitUntil(cache.put(key, res.clone()));
+  return res;
+}
 
 async function getFile(env, path) {
   if (!FILES.has(path)) return json({ error: "Path not allowed" }, 400);
@@ -67,9 +94,9 @@ async function dispatch(env, body) {
   return new Response(null, { status: 204 });
 }
 
-function gh(env, path, init = {}) {
+function gh(env, path, init = {}, accept = "application/vnd.github+json") {
   const headers = {
-    "Accept": "application/vnd.github+json",
+    "Accept": accept,
     "X-GitHub-Api-Version": "2022-11-28",
     "User-Agent": "fare-board-worker",
   };
